@@ -1,0 +1,107 @@
+// для media-запросов
+@mixin media-medium {
+  @media (max-width: $medium-width) {
+    @content;
+  }
+}
+
+@mixin media-small {
+  @media (max-width: $small-width) {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin media-hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+// списки
+@mixin list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// ссылки и кнопки с hover
+@mixin link($color: $color-dark-xl) {
+  text-decoration: none;
+  color: $color;
+  @extend %transition-opacity;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  @extend %transition-opacity;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// для текста ссылок
+@mixin menu-link {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.38;
+
+  @include media-small {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
+
+// для заголовков секций
+@mixin section-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 3.8rem;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;
+
+  &:after {
+    content: '';
+    width: 100%;
+    min-height: 2.3rem;
+    border-bottom: 1px $color-light-l solid;
+  }
+
+  @include media-mobile {
+    font-size: 2.8rem;
+    letter-spacing: -0.72px;
+
+    &:after {
+      min-height: 2.8rem;
+    }
+  }
+}
+
+// для текста
+@mixin text($color: $color-dark-xl) {
+  margin: 0;
+  color: $color;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  @include media-mobile {
+    font-size: 1.4rem;
+  }
+}

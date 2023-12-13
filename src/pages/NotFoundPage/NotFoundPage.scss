@@ -1,0 +1,83 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.not-found {
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.not-found__wrapper {
+  min-height: 58rem;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  align-items: center;
+
+  @include media-mobile {
+    display: block;
+    min-height: 100vh;
+  }
+}
+
+.not-found__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+
+  @include media-mobile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 1rem;
+  }
+}
+
+.not-found__title {
+  margin: 0;
+  font-size: 14rem;
+  font-weight: 400;
+  line-height: normal;
+
+  @include media-mobile {
+    font-size: 8rem;
+  }
+}
+
+.not-found__subtitle {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+
+  @include media-mobile {
+    font-size: 1.2rem;
+  }
+}
+
+.not-found__link {
+  @include link;
+  margin: auto;
+  max-width: 5rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @include media-mobile {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 1.2rem;
+  }
+}
