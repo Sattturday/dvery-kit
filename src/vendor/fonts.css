@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/Roboto/roboto_regular.eot'),
+    url('./fonts/Roboto/roboto_regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Roboto/roboto_regular.woff2') format('woff2'),
+    url('./fonts/Roboto/roboto_regular.woff') format('woff'),
+    url('./fonts/Roboto/roboto_regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./fonts/Roboto/roboto_medium.eot'),
+    url('./fonts/Roboto/roboto_medium.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Roboto/roboto_medium.woff2') format('woff2'),
+    url('./fonts/Roboto/roboto_medium.woff') format('woff'),
+    url('./fonts/Roboto/roboto_medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/Roboto/roboto_bold.eot'),
+    url('./fonts/Roboto/roboto_bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Roboto/roboto_bold.woff2') format('woff2'),
+    url('./fonts/Roboto/roboto_bold.woff') format('woff'),
+    url('./fonts/Roboto/roboto_bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Times New Roman';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/Times_New_Roman/times_new_roman.eot'),
+    url('./fonts/Times_New_Roman/times_new_roman.eot?#iefix')
+      format('embedded-opentype'),
+    url('./fonts/Times_New_Roman/times_new_roman.woff2') format('woff2'),
+    url('./fonts/Times_New_Roman/times_new_roman.woff') format('woff'),
+    url('./fonts/Times_New_Roman/times_new_roman.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Times New Roman';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/Times_New_Roman/times_new_roman_bold.eot'),
+    url('./fonts/Times_New_Roman/times_new_roman_bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('./fonts/Times_New_Roman/times_new_roman_bold.woff2') format('woff2'),
+    url('./fonts/Times_New_Roman/times_new_roman_bold.woff') format('woff'),
+    url('./fonts/Times_New_Roman/times_new_roman_bold.ttf') format('truetype');
+}
