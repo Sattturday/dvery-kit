@@ -9,7 +9,7 @@ export const Footer = () => (
     <div className='wrapper'>
       <div className='footer__container'>
         <Logo isHeader={true} />
-        <p className='header__location'>Новочебоксарск | Канаш</p>
+        <p className='footer__location'>Новочебоксарск | Канаш</p>
         <Navigation />
         <CallButton />
       </div>

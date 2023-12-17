@@ -34,7 +34,7 @@ body {
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
-  background-color: $color-light-xl;
+  background-color: $color-light-l;
 
   main {
     width: 100%;
@@ -48,8 +48,10 @@ body {
 
 .wrapper {
   max-width: $content-width;
+  height: 100%;
   margin: auto;
   padding: 0 8rem;
+  position: relative;
 
   @include media-medium {
     padding: 0 4rem;

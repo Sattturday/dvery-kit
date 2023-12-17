@@ -35,6 +35,31 @@
 }
 
 @font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/Roboto/robotocondensed-regular.eot'),
+    url('./fonts/Roboto/robotocondensed-regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('./fonts/Roboto/robotocondensed-regular.woff2') format('woff2'),
+    url('./fonts/Roboto/robotocondensed-regular.woff') format('woff'),
+    url('./fonts/Roboto/robotocondensed-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./fonts/Roboto/RobotoCondensed-Medium.eot'),
+    url('./fonts/Roboto/RobotoCondensed-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('./fonts/Roboto/RobotoCondensed-Medium.woff2') format('woff2'),
+    url('./fonts/Roboto/RobotoCondensed-Medium.woff') format('woff'),
+    url('./fonts/Roboto/RobotoCondensed-Medium.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Times New Roman';
   font-style: normal;
   font-weight: 400;

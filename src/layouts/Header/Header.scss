@@ -30,18 +30,5 @@
 
 .header__location {
   @include text($color-light-xl);
-  padding-left: 3.2rem;
-  position: relative;
-
-  &:before {
-    content: '';
-    width: 2.4rem;
-    height: 2.4rem;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    background-image: url(../../image/icons/place.svg);
-    background-size: cover;
-  }
+  @include location;
 }

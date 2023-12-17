@@ -12,3 +12,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+.footer__location {
+  @include text($color-light-xl);
+  @include location;
+}
