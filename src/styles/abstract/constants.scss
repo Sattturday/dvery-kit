@@ -6,8 +6,17 @@ $color-light-xs: #2f2f2f;
 $color-dark-xs: #313131;
 $color-dark-l: #202020;
 $color-dark-xl: #000;
+$color-bg: #660066;
+$color-bg-dark: #2e002e;
 
-$content-width: 128rem;
+// для медиа-запросов
+$content-width: 144rem;
 $medium-width: 1024px;
 $small-width: 768px;
 $mobile-width: 550px;
+
+/* font */
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;

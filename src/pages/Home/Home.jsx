@@ -1,3 +1,3 @@
-import React from 'react';
-
-export const Home = () => <h1>Здесь скоро будут Двери-КИТ</h1>;
+export const Home = () => (
+  <h1 style={{ height: '100vh' }}>Здесь скоро будут Двери-КИТ</h1>
+);

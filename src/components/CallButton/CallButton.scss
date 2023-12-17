@@ -1,0 +1,22 @@
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.call-button {
+  @include button;
+  @include text($color-light-xl);
+  padding-left: 3.2rem;
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    background-image: url(../../image/icons/phone.svg);
+    background-size: cover;
+  }
+}

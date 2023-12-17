@@ -1,0 +1,14 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.footer {
+  padding: 5.2rem 0 10.8rem;
+  width: 100%;
+  background-color: $color-bg-dark;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
