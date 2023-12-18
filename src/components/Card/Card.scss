@@ -1,0 +1,95 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.card {
+  padding: 3rem;
+  position: relative;
+  max-width: 23.7rem;
+  min-height: 50.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $color-light-xl;
+  border-radius: 2rem;
+  @extend %transition-all;
+
+  &:hover {
+    filter: drop-shadow(0px 16px 48px rgba(0, 0, 0, 0.22));
+    transform: scale(1.01);
+  }
+}
+
+.card__labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.card__label {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.8rem;
+
+  &_type {
+    &_sale {
+      @include text-s;
+      background-color: $color-lime;
+    }
+
+    &_order {
+      @include text-s($color-light-xl);
+      background-color: $color-bg-light;
+    }
+  }
+}
+
+.card__image {
+  padding: 0 2rem;
+  width: 17.9rem;
+  aspect-ratio: 1 / 1.57;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card__title {
+  @include text;
+  position: relative;
+  display: -webkit-box;
+  display: box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-line-clamp: 3;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+}
+
+.card__price-container {
+  display: flex;
+  @include text;
+
+  p {
+    margin: 0;
+  }
+}
+
+.card__price {
+  @include text($font-weight: $fw-bold);
+
+  &_sale {
+    text-decoration: line-through;
+  }
+}
+
+.card__sale {
+  @include text($color-red, $fw-semibold);
+}

@@ -1,0 +1,12 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.button {
+  @include button;
+  @include text;
+  width: 18.7rem;
+  height: 3.8rem;
+  border-radius: 1.2rem;
+  border: 2px solid $color-bg;
+}
