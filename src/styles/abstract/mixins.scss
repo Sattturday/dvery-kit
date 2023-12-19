@@ -59,6 +59,7 @@
 @mixin section-title($color: $color-dark-xl) {
   margin: 0;
   padding-bottom: 4rem;
+  @extend %font-thin;
   color: $color;
   font-size: 4rem;
   font-weight: $fw-regular;

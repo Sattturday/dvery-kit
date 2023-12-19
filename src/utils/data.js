@@ -5,13 +5,48 @@ import img4 from '../images/Cards/Межком_Ламинат_Камея ПГ_31
 import img5 from '../images/Cards/Межком_Ламинат_Классика_2200.jpg';
 import img6 from '../images/Cards/Межком_Ламинат_Классика ПГ_2200.jpg';
 import img7 from '../images/Cards/спец.jpg';
-import { BASE_URL } from './constants';
+import img8 from '../images/Cards/рольставни.png';
+import img9 from '../images/Cards/окна.jpg';
+import img10 from '../images/Cards/фурнитура.png';
 
 export const messages = {
   loadMessage: 'Идет загрузка...',
   errorMessage: 'Что-то пошло не так, попробуйте еще раз.',
   searchMessage: 'По вашему запросу ничего не найдено.',
 };
+
+export const catalogData = [
+  {
+    id: 'cat0',
+    name: 'Входные двери',
+    img: img2,
+    link: '/catalog',
+  },
+  {
+    id: 'cat1',
+    name: 'Межкомнатные двери',
+    img: img6,
+    link: '/catalog',
+  },
+  {
+    id: 'cat2',
+    name: 'Рольставни',
+    img: img8,
+    link: '/catalog',
+  },
+  {
+    id: 'cat3',
+    name: 'Окна',
+    img: img9,
+    link: '/catalog',
+  },
+  {
+    id: 'cat4',
+    name: 'Фурнитура',
+    img: img10,
+    link: '/catalog',
+  },
+];
 
 export const cardsExamples = [
   {

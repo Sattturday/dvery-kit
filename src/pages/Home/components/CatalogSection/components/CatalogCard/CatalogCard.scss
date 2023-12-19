@@ -1,0 +1,34 @@
+@import '../../../../../../styles/abstract/constants.scss';
+@import '../../../../../../styles/abstract/mixins.scss';
+@import '../../../../../../styles/abstract/placeholders.scss';
+
+.catalog-card {
+  padding: 2.8rem;
+  max-width: 23.7rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-light-xl;
+  border-radius: 2rem;
+  cursor: pointer;
+  @extend %transition-all;
+
+  &:hover {
+    filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.22));
+    transform: scale(1.01);
+  }
+}
+
+.catalog-card__image {
+  padding: 0 2rem;
+  width: 17.9rem;
+  aspect-ratio: 1 / 1.57;
+  object-fit: contain;
+  object-position: center;
+}
+
+.catalog-card__title {
+  @include text-l;
+  @extend %font-thin;
+  min-height: 9.5rem;
+  padding-top: 1.5rem;
+}

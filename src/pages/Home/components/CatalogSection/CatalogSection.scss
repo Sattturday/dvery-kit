@@ -1,0 +1,18 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.catalog {
+  width: 100%;
+  padding: 14.4rem 0 17.1rem;
+}
+
+.catalog__title {
+  @include section-title;
+}
+
+.catalog__list {
+  @include list;
+  display: flex;
+  justify-content: space-between;
+}

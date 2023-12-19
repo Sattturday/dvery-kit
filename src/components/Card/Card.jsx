@@ -1,9 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import './Card.scss';
 
 export const Card = ({ data }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/cards/${data.id}`);
+  };
+
   return (
-    <div className='card'>
+    <div className='card' onClick={handleClick}>
       <div className='card__labels'>
         {data.for_sale && (
           <span className='card__label card__label_type_sale'>Акция</span>

@@ -9,7 +9,6 @@
 
 .bestsellers__title {
   @include section-title;
-  @extend %font-thin;
   padding-left: 1rem;
   padding-bottom: 2.9rem;
 }
