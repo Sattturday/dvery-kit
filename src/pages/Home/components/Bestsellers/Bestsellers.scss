@@ -3,6 +3,8 @@
 @import '../../../../styles/abstract/mixins.scss';
 
 .bestsellers {
+  margin: auto;
+  max-width: $content-width;
   width: 100%;
   padding: 15.6rem 7rem 4.3rem;
 }

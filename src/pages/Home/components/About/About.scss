@@ -1,0 +1,57 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.about {
+  width: 100%;
+  padding: 7.1rem 0 11.2rem;
+  background-color: $color-bg;
+  border-radius: 2.4rem;
+
+  .wrapper {
+    align-items: center;
+  }
+}
+
+.about__title {
+  @include section-title($color-light-xl);
+  align-self: flex-start;
+}
+
+.about__list {
+  width: 100%;
+  max-width: 122rem;
+  @include list;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5.2rem;
+}
+
+.about__item {
+  width: 100%;
+  max-width: 37.2rem;
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-template-rows: min-content auto;
+  justify-content: start;
+  align-items: center;
+  row-gap: 2rem;
+  column-gap: 1.8rem;
+}
+
+.about__img {
+  width: 5.2rem;
+  aspect-ratio: 1 / 1;
+}
+
+.about__subtitle {
+  @include text-l($color-light-xl);
+  @extend %font-thin;
+}
+
+.about__description {
+  @include text-m($color-light-xl);
+  grid-column: 1 / 3;
+  align-self: start;
+}

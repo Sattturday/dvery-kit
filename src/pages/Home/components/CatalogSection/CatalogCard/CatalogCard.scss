@@ -1,9 +1,9 @@
-@import '../../../../../../styles/abstract/constants.scss';
-@import '../../../../../../styles/abstract/mixins.scss';
-@import '../../../../../../styles/abstract/placeholders.scss';
+@import '../../../../../styles/abstract/constants.scss';
+@import '../../../../../styles/abstract/mixins.scss';
+@import '../../../../../styles/abstract/placeholders.scss';
 
 .catalog-card {
-  padding: 2.8rem;
+  padding: 2.9rem;
   max-width: 23.7rem;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,6 @@
 }
 
 .catalog-card__image {
-  padding: 0 2rem;
   width: 17.9rem;
   aspect-ratio: 1 / 1.57;
   object-fit: contain;

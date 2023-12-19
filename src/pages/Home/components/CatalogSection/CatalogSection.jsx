@@ -1,5 +1,5 @@
 import { catalogData } from '../../../../utils/data';
-import { CatalogCard } from './components/CatalogCard';
+import { CatalogCard } from './CatalogCard';
 import './CatalogSection.scss';
 
 export const CatalogSection = () => {

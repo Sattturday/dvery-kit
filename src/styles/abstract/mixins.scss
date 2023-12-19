@@ -58,7 +58,7 @@
 // для заголовков секций
 @mixin section-title($color: $color-dark-xl) {
   margin: 0;
-  padding-bottom: 4rem;
+  padding-bottom: 3.9rem;
   @extend %font-thin;
   color: $color;
   font-size: 4rem;

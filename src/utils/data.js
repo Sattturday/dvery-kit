@@ -5,8 +5,8 @@ import img4 from '../images/Cards/Межком_Ламинат_Камея ПГ_31
 import img5 from '../images/Cards/Межком_Ламинат_Классика_2200.jpg';
 import img6 from '../images/Cards/Межком_Ламинат_Классика ПГ_2200.jpg';
 import img7 from '../images/Cards/спец.jpg';
-import img8 from '../images/Cards/рольставни.png';
-import img9 from '../images/Cards/окна.jpg';
+import img8 from '../images/Cards/roll.jpg';
+import img9 from '../images/Cards/window.jpg';
 import img10 from '../images/Cards/фурнитура.png';
 
 export const messages = {
