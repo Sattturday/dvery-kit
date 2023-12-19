@@ -6,18 +6,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import './Promo.scss';
 
-const CustomNextArrow = ({ onClick }) => {
-  return (
-    <button
-      className='custom-next-arrow'
-      type='button'
-      onClick={onClick}
-    ></button>
-  );
-};
-
 export const Promo = () => {
-  const settings = {
+  const promoSettings = {
     dots: true,
     fade: true,
     infinite: true,
@@ -27,13 +17,11 @@ export const Promo = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
-    prevArrow: <></>,
-    nextArrow: <CustomNextArrow />,
   };
 
   return (
     <section className='promo'>
-      <Slider {...settings}>
+      <Slider {...promoSettings}>
         <div className='promo__item promo__item_1'>
           <div className='wrapper'>
             <div className='promo__container'>

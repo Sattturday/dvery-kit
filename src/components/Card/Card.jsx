@@ -5,8 +5,12 @@ export const Card = ({ data }) => {
   return (
     <div className='card'>
       <div className='card__labels'>
-        <span className='card__label card__label_type_sale'>Акция</span>
-        <span className='card__label card__label_type_order'>Под заказ </span>
+        {data.for_sale && (
+          <span className='card__label card__label_type_sale'>Акция</span>
+        )}
+        {data.for_order && (
+          <span className='card__label card__label_type_order'>Под заказ </span>
+        )}
       </div>
       <img
         src={data.productalbum[0].image}

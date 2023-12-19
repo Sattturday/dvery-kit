@@ -4,6 +4,8 @@ import img3 from '../images/Cards/Входная_ДВ(1).jpg';
 import img4 from '../images/Cards/Межком_Ламинат_Камея ПГ_3190.jpg';
 import img5 from '../images/Cards/Межком_Ламинат_Классика_2200.jpg';
 import img6 from '../images/Cards/Межком_Ламинат_Классика ПГ_2200.jpg';
+import img7 from '../images/Cards/спец.jpg';
+import { BASE_URL } from './constants';
 
 export const messages = {
   loadMessage: 'Идет загрузка...',
@@ -174,6 +176,36 @@ export const cardsExamples = [
     productalbum: [
       {
         image: img6,
+      },
+    ],
+    productalbumcolor: [],
+  },
+  {
+    id: 6,
+    type: 'entrance_door',
+    category: 'None',
+    name: 'Спец',
+    price: '7990.00',
+    for_sale: true,
+    old_price: '10890.00',
+    subproduct: [],
+    description:
+      '<p><strong>Подходит для установки в помещении и на улице</strong>' +
+      '</p>\r\n\r\n<p>Модель&nbsp;<strong>&quot;СПЕЦ&quot;</strong></p>\r\n\r\n<p><strong>1 контура уплотнителя.</strong></p>' +
+      '\r\n\r\n<p>Покрытие:&nbsp;<strong>Антик медь.</strong></p>\r\n\r\n<p><strong>Глазок с широким углом обзора.</strong></p>\r\n\r\n' +
+      '<p>Замок:&nbsp;<strong>цилиндровый.</strong></p>\r\n\r\n<p>Внутренняя отделка:<strong>&nbsp;ЛДВП Беленый дуб.</strong></p>\r\n\r\n' +
+      '<p>Петли простые:&nbsp;<strong>Открывание 180 градусов</strong></p>\r\n\r\n<p><strong>Левые и Правые.</strong></p>',
+    size: [
+      {
+        size: '860/960*2050',
+      },
+    ],
+    for_order: false,
+    hit_sale: true,
+    productalbum: [
+      {
+        name: 'Входная дверь Спец',
+        image: img7,
       },
     ],
     productalbumcolor: [],

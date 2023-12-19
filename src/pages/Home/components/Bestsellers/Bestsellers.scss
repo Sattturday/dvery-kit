@@ -3,4 +3,42 @@
 @import '../../../../styles/abstract/mixins.scss';
 
 .bestsellers {
+  width: 100%;
+  padding: 15.6rem 7rem 4.3rem;
+}
+
+.bestsellers__title {
+  @include section-title;
+  @extend %font-thin;
+  padding-left: 1rem;
+  padding-bottom: 2.9rem;
+}
+
+.bestsellers__container {
+  padding: 1.2rem;
+}
+
+.custom-arrow {
+  @include button;
+  position: absolute;
+  bottom: -4.3rem;
+  width: 5.2rem;
+  height: 3.2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30rem;
+  border: 2px solid $color-bg;
+  @include hover;
+
+  &_type {
+    &_prev {
+      left: calc(50% - 5.6rem);
+      background-image: url(../../../../images/icons/arrow-lert-purple.svg);
+    }
+
+    &_next {
+      left: calc(50% + 0.4rem);
+      background-image: url(../../../../images/icons/arrow-right-purple.svg);
+    }
+  }
 }
