@@ -1,0 +1,49 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.form {
+  width: 100%;
+  min-height: 38rem;
+  display: grid;
+  align-items: end;
+
+  &_type_call {
+    grid-template-rows: min-content min-content min-content 1fr;
+  }
+
+  &_type_measure {
+    grid-template-rows: min-content min-content min-content min-content min-content 1fr;
+  }
+}
+
+.form__submit {
+  @include button;
+  @include text;
+  width: 100%;
+  max-width: 49.3rem;
+  min-height: 5.4rem;
+  background-color: transparent;
+  border-radius: 0.8rem;
+  border: 0.2rem solid $color-bg;
+  outline: none;
+  @extend %transition-all;
+
+  &:hover {
+    font-weight: $fw-bold;
+    border: 0.3rem solid $color-bg;
+  }
+
+  &:active {
+    color: $color-light-xl;
+    background-color: $color-bg;
+  }
+
+  &_disabled {
+    color: $color-dark-l;
+    @include disabled;
+    background-color: transparent;
+    border: 0.2rem solid rgba(102, 0, 102, 0.4);
+    opacity: 0.8;
+  }
+}

@@ -29,17 +29,36 @@
   background-repeat: no-repeat;
   border-radius: 30rem;
   border: 2px solid $color-bg;
-  @include hover;
+  @extend %transition-all;
+
+  @include media-hover {
+    &:hover {
+      color: $color-light-xl;
+      background-color: $color-bg;
+    }
+  }
 
   &_type {
     &_prev {
       left: calc(50% - 5.6rem);
-      background-image: url(../../../../images/icons/arrow-lert-purple.svg);
+      background-image: url(../../../../images/icons/arrow-left-purple.svg);
+
+      @include media-hover {
+        &:hover {
+          background-image: url(../../../../images/icons/arrow-left.svg);
+        }
+      }
     }
 
     &_next {
       left: calc(50% + 0.4rem);
       background-image: url(../../../../images/icons/arrow-right-purple.svg);
+
+      @include media-hover {
+        &:hover {
+          background-image: url(../../../../images/icons/arrow-right.svg);
+        }
+      }
     }
   }
 }

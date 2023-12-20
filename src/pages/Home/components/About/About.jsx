@@ -4,6 +4,7 @@ import img3 from '../../../../images/icons/3.svg';
 import img4 from '../../../../images/icons/4.svg';
 import img5 from '../../../../images/icons/5.svg';
 import img6 from '../../../../images/icons/6.svg';
+
 import './About.scss';
 
 export const About = () => {

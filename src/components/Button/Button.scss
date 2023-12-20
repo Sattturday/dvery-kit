@@ -9,4 +9,17 @@
   height: 3.8rem;
   border-radius: 1.2rem;
   border: 2px solid $color-bg;
+  @extend %transition-all;
+
+  &:active {
+    color: $color-light-xl;
+    background-color: $color-bg;
+  }
+
+  @include media-hover {
+    &:hover {
+      font-weight: $fw-bold;
+      border: 0.3rem solid $color-bg;
+    }
+  }
 }

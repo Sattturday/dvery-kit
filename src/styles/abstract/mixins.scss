@@ -30,18 +30,9 @@
   list-style: none;
 }
 
-@mixin hover {
-  @extend %transition-opacity;
-
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
 @mixin link($color: $color-dark-xl) {
   text-decoration: none;
   color: $color;
-  @include hover;
 }
 
 @mixin button {
@@ -52,7 +43,15 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  @include hover;
+}
+
+// disabled
+@mixin disabled {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 // для заголовков секций

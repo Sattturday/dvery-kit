@@ -95,10 +95,22 @@
   position: relative;
   @include link;
   @include button;
-  @include text-m;
+  @include text;
   width: 36.7rem;
   height: 5.4rem;
   border-radius: 0.8rem;
   background-color: $color-lime;
   z-index: 9;
+  @extend %transition-all;
+
+  &:active {
+    font-weight: $fw-bold;
+    background-color: $color-lime-active;
+  }
+
+  @include media-hover {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
 }

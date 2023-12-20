@@ -1,0 +1,25 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.measure {
+  width: 100%;
+  padding: 16rem 0;
+}
+
+.measure__title {
+  @include section-title;
+  padding-bottom: 2.6rem;
+}
+
+.measure__container {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.measure__img {
+  width: 100%;
+  max-width: 75.5rem;
+  aspect-ratio: 1 / 0.7;
+  border-radius: 2rem;
+}

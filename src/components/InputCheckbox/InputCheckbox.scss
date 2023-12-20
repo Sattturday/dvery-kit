@@ -1,0 +1,60 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.checkbox {
+  padding-left: 0.8rem;
+}
+
+.checkbox__label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  @extend %transition-all;
+
+  p {
+    @include text-s;
+  }
+
+  @include media-hover {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.checkbox__input-new {
+  width: 2.4rem;
+  height: 2.4rem;
+  position: relative;
+  background-image: url(../../images/icons/checkbox_black_empty.svg);
+  background-size: cover;
+
+  &:after {
+    content: '';
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: url(../../images/icons/checkbox_black_check.svg);
+    background-size: cover;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+}
+
+.checkbox__input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.checkbox__input:checked ~ .checkbox__input-new:after {
+  opacity: 1;
+}

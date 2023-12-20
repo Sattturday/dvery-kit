@@ -1,0 +1,71 @@
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.input__name {
+  margin: 0;
+  @include text-s;
+}
+
+.input__field {
+  @include text;
+  margin: 0.6rem 0 0.3rem;
+  padding: 1.6rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $color-light-xl;
+  border: none;
+  border-radius: 8px;
+  caret-color: $color-dark-xl;
+  outline: none;
+
+  &:focus {
+    background-color: $color-light-xl;
+  }
+
+  &_type_error {
+    color: $color-red;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color-dark-m;
+    @extend %font-prim;
+    font-style: normal;
+  }
+
+  &::-moz-placeholder {
+    color: $color-dark-m;
+    @extend %font-prim;
+    font-style: normal;
+  }
+
+  &::-ms-input-placeholder {
+    color: $color-dark-m;
+    @extend %font-prim;
+    font-style: normal;
+  }
+
+  &::placeholder {
+    color: $color-dark-m;
+    @extend %font-prim;
+    font-style: normal;
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px $color-light-xl inset;
+  }
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: $color-dark-xl;
+  }
+}
+
+.input__error {
+  min-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  color: $color-red;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
