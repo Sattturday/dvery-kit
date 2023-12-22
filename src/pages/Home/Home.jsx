@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { Measure } from './components/Measure';
 import { Delivery } from './components/Delivery';
 import { Articles } from './components/Articles';
+import { Contacts } from './components/Contacts';
 
 export const Home = () => (
   <>
@@ -15,5 +16,6 @@ export const Home = () => (
     <Measure />
     <Delivery />
     <Articles />
+    <Contacts />
   </>
 );

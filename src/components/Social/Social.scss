@@ -1,0 +1,40 @@
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.social {
+  @include list;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.social__icon {
+  width: 4rem;
+  aspect-ratio: 1 / 1;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  @extend %transition-all;
+
+  &_type {
+    &_vk {
+      background-image: url(../../images/icons/vk.svg);
+    }
+
+    &_viber {
+      background-image: url(../../images/icons/viber.svg);
+    }
+
+    &_whatsapp {
+      background-image: url(../../images/icons/whatsapp.svg);
+    }
+  }
+
+  @include media-hover {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.contacts {
+  padding: 4rem 0 17.2rem;
+  width: 100%;
+  background-color: $color-bg-violet;
+  border-radius: 2.4rem 2.4rem 0 0;
+
+  .wrapper {
+    padding: 0 9rem;
+  }
+}
+
+.contacts__title {
+  @include section-title($color-light-xl);
+  padding-bottom: 0.8rem;
+}
+
+.contacts__list {
+  @include list;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__container {
+  margin-top: 3.2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-light-xl;
+
+  &:last-child {
+    margin-top: 0.8rem;
+    border-bottom: none;
+  }
+}
+
+.contacts__items {
+  @include list;
+  width: 100%;
+  padding-bottom: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  &:first-child {
+    max-width: 45.6rem;
+    width: 100%;
+  }
+}
+
+.contacts__label {
+  display: none;
+  @include text-l($color-light-xl);
+  @extend %font-thin;
+  padding-bottom: 1.2rem;
+
+  &_desktop {
+    display: block;
+  }
+}
+
+.contacts__content {
+  @include text-m($color-light-xl);
+}
