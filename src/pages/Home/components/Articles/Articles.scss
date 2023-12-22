@@ -2,19 +2,19 @@
 @import '../../../../styles/abstract/placeholders.scss';
 @import '../../../../styles/abstract/mixins.scss';
 
-.bestsellers {
+.articles {
   margin: auto;
   max-width: $content-width;
   width: 100%;
-  padding: 15.6rem 7rem 4.3rem;
+  padding: 16rem 7rem 10.4rem;
 }
 
-.bestsellers__title {
+.articles__title {
   @include section-title;
   padding-left: 1rem;
-  padding-bottom: 2.9rem;
+  padding-bottom: 3.9rem;
 }
 
-.bestsellers__container {
+.articles__container {
   padding: 1.2rem;
 }

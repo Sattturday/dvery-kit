@@ -4,6 +4,7 @@ import { CatalogSection } from './components/CatalogSection';
 import { About } from './components/About';
 import { Measure } from './components/Measure';
 import { Delivery } from './components/Delivery';
+import { Articles } from './components/Articles';
 
 export const Home = () => (
   <>
@@ -13,5 +14,6 @@ export const Home = () => (
     <About />
     <Measure />
     <Delivery />
+    <Articles />
   </>
 );

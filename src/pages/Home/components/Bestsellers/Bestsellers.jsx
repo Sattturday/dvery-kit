@@ -3,29 +3,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { Card } from '../../../../components/Card/Card';
+import { SliderButton } from '../../../../components/SliderButton';
+import { Card } from '../../../../components/Card';
 import { cardsExamples } from '../../../../utils/data';
+
 import './Bestsellers.scss';
-
-const CustomPrevArrow = ({ onClick }) => {
-  return (
-    <button
-      className='custom-arrow custom-arrow_type_prev'
-      type='button'
-      onClick={onClick}
-    ></button>
-  );
-};
-
-const CustomNextArrow = ({ onClick }) => {
-  return (
-    <button
-      className='custom-arrow custom-arrow_type_next'
-      type='button'
-      onClick={onClick}
-    ></button>
-  );
-};
 
 export const Bestsellers = ({ data }) => {
   const bestsellersSettings = {
@@ -34,8 +16,8 @@ export const Bestsellers = ({ data }) => {
     slidesToShow: 5,
     slidesToScroll: 3,
     arrows: true,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
+    prevArrow: <SliderButton type='prev' />,
+    nextArrow: <SliderButton type='next' />,
   };
 
   return (
