@@ -3,6 +3,7 @@ import { Bestsellers } from './components/Bestsellers';
 import { CatalogSection } from './components/CatalogSection';
 import { About } from './components/About';
 import { Measure } from './components/Measure';
+import { Delivery } from './components/Delivery';
 
 export const Home = () => (
   <>
@@ -11,5 +12,6 @@ export const Home = () => (
     <CatalogSection />
     <About />
     <Measure />
+    <Delivery />
   </>
 );

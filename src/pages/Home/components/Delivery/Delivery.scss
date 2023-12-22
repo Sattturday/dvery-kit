@@ -1,0 +1,46 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.delivery {
+  width: 100%;
+
+  .wrapper {
+    padding: 0 4rem;
+  }
+}
+
+.delivery__container {
+  padding: 10.4rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-bg-light;
+  border-radius: 2rem;
+}
+
+.delivery__image {
+  width: 49.8rem;
+  aspect-ratio: 1 / 0.7;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1.6rem;
+}
+
+.delivery__info {
+  padding: 4rem;
+  max-width: 75.2rem;
+  width: 100%;
+  min-height: 34.9rem;
+  background-color: $color-light-xl;
+  border-radius: 2rem;
+}
+
+.delivery__title {
+  @include section-title;
+}
+
+.delivery__description {
+  max-width: 62.6rem;
+  @include text-m;
+  padding-bottom: 1.2rem;
+}
