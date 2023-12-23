@@ -6,6 +6,10 @@
   @include list;
   display: flex;
   gap: 1.6rem;
+
+  @include media-medium {
+    order: 2;
+  }
 }
 
 .social__icon {

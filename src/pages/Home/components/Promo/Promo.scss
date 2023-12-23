@@ -25,6 +25,18 @@
   }
 }
 
+.promo {
+  padding-top: 7.6rem;
+
+  @include media-medium {
+    padding-top: 5.2rem;
+  }
+
+  @include media-small {
+    padding-top: 4.7rem;
+  }
+}
+
 .promo__item {
   position: relative;
   max-width: 100%;
@@ -64,6 +76,14 @@
       url('../../../../images/Promo/3.jpg');
     background-position: center;
     background-size: cover;
+  }
+
+  @include media-medium {
+    height: calc(100vh - 52px);
+  }
+
+  @include media-small {
+    height: calc(100vh - 47px);
   }
 }
 

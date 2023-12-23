@@ -23,8 +23,9 @@ export const Measure = () => {
   useEffect(() => {
     resetForm();
   }, [resetForm]);
+
   return (
-    <section className='measure'>
+    <section className='measure' id={'measure'}>
       <div className='wrapper'>
         <h2 className='measure__title'>Записаться на замер </h2>
         <div className='measure__container'>

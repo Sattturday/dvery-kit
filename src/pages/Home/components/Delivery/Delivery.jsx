@@ -4,7 +4,7 @@ import './Delivery.scss';
 
 export const Delivery = () => {
   return (
-    <section className='delivery'>
+    <section className='delivery' id='delivery'>
       <div className='wrapper'>
         <div className='delivery__container'>
           <img

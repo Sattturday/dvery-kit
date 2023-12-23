@@ -4,25 +4,22 @@
 
 .logo {
   @include link($color-light-xl);
-  @extend %font-add;
+  @extend %transition-all;
+
+  @include media-hover {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.logo__img {
   width: 21.3rem;
-  min-height: 4.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
+  height: 4.4rem;
+  object-fit: contain;
 
-.logo__title {
-  margin: 0;
-  font-size: 4rem;
-  font-weight: $fw-bold;
-  line-height: 0.75;
-}
-
-.logo__subtitle {
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: $fw-regular;
-  line-height: normal;
+  @include media-medium {
+    width: 12rem;
+    height: 2.4rem;
+  }
 }

@@ -1,0 +1,164 @@
+@import '../../../styles/abstract/placeholders.scss';
+@import '../../../styles/abstract/constants.scss';
+@import '../../../styles/abstract/mixins.scss';
+
+.navigation {
+  padding-top: 0.3rem;
+  max-width: 53.8rem;
+  width: 100%;
+
+  @include media-medium {
+    padding-top: 0;
+    max-width: 2.4rem;
+    display: flex;
+    justify-content: center;
+    order: 2;
+    z-index: 999;
+  }
+}
+
+.navigation__menu {
+  display: flex;
+  @extend %transition-all;
+
+  @include media-medium {
+    padding-top: 3.5rem;
+    width: 32rem;
+    min-height: 100vh;
+    align-items: flex-start;
+    position: absolute;
+    top: 4.1rem;
+    right: -100%;
+    background-color: $color-light-xl;
+  }
+
+  &_open {
+    right: 0;
+  }
+
+  @include media-small {
+    width: 100%;
+    top: 3.7rem;
+  }
+}
+
+.navigation__list {
+  max-width: 53rem;
+  width: 100%;
+  @include list;
+  display: flex;
+  justify-content: space-between;
+
+  @include media-medium {
+    flex-direction: column;
+    justify-content: start;
+    gap: 2rem;
+    padding-left: 1.6rem;
+
+    a {
+      color: $color-bg;
+    }
+  }
+}
+
+.navigation__item {
+  display: block;
+  @include link;
+  @include text($color-light-xl);
+  @extend %transition-all;
+
+  &_type_active {
+    font-weight: $fw-bold;
+  }
+
+  @include media-hover {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  @include media-medium {
+    padding-left: 0.3rem;
+  }
+}
+
+.navigation__add {
+  display: none;
+
+  @include media-medium {
+    display: block;
+  }
+}
+
+.navigation__location {
+  @include text($color-bg);
+  @include location;
+  padding-top: 0.3rem;
+
+  &::before {
+    background-image: url(../../../images/icons/place_bg.svg);
+  }
+
+  @include media-medium {
+    padding-top: 0;
+  }
+}
+
+.burger {
+  margin: 6px 3px;
+  display: none;
+  position: relative;
+  width: 1.8rem;
+  min-height: 1.2rem;
+  @extend %transition-all;
+
+  @include media-medium {
+    display: inline-block;
+    z-index: 11;
+    cursor: pointer;
+  }
+
+  &:before {
+    @include burger-line;
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    @include burger-line;
+    bottom: 0;
+    left: 0;
+  }
+
+  &_active .burger__line {
+    transform: scale(0) translate(0px, -50%);
+  }
+
+  &_active:before {
+    top: 50%;
+    left: 50%;
+    transform: rotate(45deg) translate(0px, -75%);
+
+    @include media-small {
+      left: 0;
+    }
+  }
+
+  &_active:after {
+    bottom: 50%;
+    left: 50%;
+    transform: rotate(-45deg) translate(0, 75%);
+
+    @include media-small {
+      left: 0;
+    }
+  }
+}
+
+.burger__line {
+  top: calc(50% - 1px);
+  left: 0;
+  @include burger-line;
+  transform: scale(1);
+  @extend %transition-all;
+}

@@ -7,11 +7,12 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+.page {
   margin: 0;
 
   &_lock {
     overflow: hidden;
+
     @include media-hover {
       padding-right: 17px;
     }
@@ -60,10 +61,10 @@ body {
   }
 
   @include media-small {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 
   @include media-mobile {
-    padding: 0 1.4rem;
+    padding: 0 1.6rem;
   }
 }

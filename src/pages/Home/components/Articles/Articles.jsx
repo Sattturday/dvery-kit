@@ -33,7 +33,7 @@ export const Articles = () => {
   }, [articlesApiData, dispatch]);
 
   return (
-    <section className='articles'>
+    <section className='articles' id='articles'>
       <h2 className='articles__title'>Статьи</h2>
       <Slider {...articlesSettings}>
         {articlesData.map((data) => (

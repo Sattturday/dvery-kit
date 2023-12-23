@@ -3,17 +3,66 @@
 @import '../../styles/abstract/placeholders.scss';
 
 .footer {
-  padding: 5.2rem 0 10.8rem;
+  padding: 5.2rem 0 7.2rem;
   width: 100%;
   background-color: $color-bg-dark;
+
+  @include media-medium {
+    padding: 5.2rem 0 5.2rem;
+  }
+
+  @include media-mobile {
+    padding: 4.2rem 0 5.2rem;
+  }
 }
 
 .footer__container {
   display: flex;
   justify-content: space-between;
+
+  @include media-small {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.footer__item {
+  padding-top: 0.6rem;
+  padding-right: 2rem;
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+
+  @include media-medium {
+    width: 25.4rem;
+    align-content: flex-start;
+  }
+
+  @include media-mobile {
+    gap: 2.5rem;
+  }
 }
 
 .footer__location {
   @include text($color-light-xl);
   @include location;
+}
+
+.footer__item-right {
+  padding-top: 0.6rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+
+  @include media-small {
+    padding-top: 2.4rem;
+    padding-left: 0;
+  }
+
+  @include media-mobile {
+    padding-top: 3.4rem;
+    gap: 2.2rem;
+  }
 }
