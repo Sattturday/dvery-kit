@@ -1,30 +1,15 @@
-import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 import './Navigation.scss';
 import { CallButton } from '../../../components/CallButton';
 
-export const Navigation = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  function handleBurgerClick() {
-    setMenuOpen(!menuOpen);
-  }
-
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.classList.add('page_lock');
-    } else {
-      document.body.classList.remove('page_lock');
-    }
-  }, [menuOpen]);
-
+export const Navigation = ({ onBurgerClick, menuOpen }) => {
   return (
     <div className='navigation'>
       <span
         className={`burger${(menuOpen && ' burger_active') || ''}`}
-        onClick={handleBurgerClick}
+        onClick={onBurgerClick}
       >
         <span className='burger__line'></span>
       </span>
@@ -40,7 +25,7 @@ export const Navigation = () => {
           <li className='navigation__add'>
             <CallButton type='menu' />
           </li>
-          <li onClick={menuOpen ? handleBurgerClick : undefined}>
+          <li onClick={menuOpen ? onBurgerClick : undefined}>
             <NavLink
               to='/'
               className={({ isActive }) => {
@@ -52,7 +37,7 @@ export const Navigation = () => {
               Главная
             </NavLink>
           </li>
-          <li onClick={menuOpen ? handleBurgerClick : undefined}>
+          <li onClick={menuOpen ? onBurgerClick : undefined}>
             <NavLink
               to='/catalog'
               className={({ isActive }) => {
@@ -64,22 +49,22 @@ export const Navigation = () => {
               Каталог
             </NavLink>
           </li>
-          <li onClick={menuOpen ? handleBurgerClick : undefined}>
+          <li onClick={menuOpen ? onBurgerClick : undefined}>
             <HashLink to='/#articles' className='navigation__item'>
               Статьи
             </HashLink>
           </li>
-          <li onClick={menuOpen ? handleBurgerClick : undefined}>
+          <li onClick={menuOpen ? onBurgerClick : undefined}>
             <HashLink to='/#measure' className='navigation__item'>
               Замер
             </HashLink>
           </li>
-          <li onClick={menuOpen ? handleBurgerClick : undefined}>
+          <li onClick={menuOpen ? onBurgerClick : undefined}>
             <HashLink to='/#delivery' className='navigation__item'>
               Доставка
             </HashLink>
           </li>
-          <li onClick={menuOpen ? handleBurgerClick : undefined}>
+          <li onClick={menuOpen ? onBurgerClick : undefined}>
             <HashLink to='/#contacts' className='navigation__item'>
               Контакты
             </HashLink>
