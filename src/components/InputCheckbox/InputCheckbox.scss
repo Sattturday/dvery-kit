@@ -3,6 +3,7 @@
 @import '../../styles/abstract/placeholders.scss';
 
 .checkbox__label {
+  padding-bottom: 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -12,6 +13,10 @@
 
   p {
     @include text-s;
+
+    @include media-mobile {
+      max-width: 90%;
+    }
   }
 
   @include media-hover {

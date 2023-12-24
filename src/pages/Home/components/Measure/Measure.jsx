@@ -27,7 +27,7 @@ export const Measure = () => {
   return (
     <section className='measure' id={'measure'}>
       <div className='wrapper'>
-        <h2 className='measure__title'>Записаться на замер </h2>
+        <h2 className='measure__title'>Записаться на&nbsp;замер </h2>
         <div className='measure__container'>
           <Form
             name='measure'
@@ -79,7 +79,7 @@ export const Measure = () => {
               type='text'
               minLength='4'
               maxLength='200'
-              placeholder='Входная дверь, межкомнатная, окна и т.д.'
+              placeholder='Входная дверь, окна и т.д.'
               errors={errors}
               values={values}
               handleChange={handleChange}
