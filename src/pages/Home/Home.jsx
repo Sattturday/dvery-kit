@@ -11,8 +11,8 @@ export const Home = () => (
   <>
     <Promo />
     <Bestsellers />
-    {/* <CatalogSection />
-    <About />
+    <CatalogSection />
+    {/* <About />
     <Measure />
     <Delivery />
     <Articles />

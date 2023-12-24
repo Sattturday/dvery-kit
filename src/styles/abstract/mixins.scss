@@ -71,6 +71,7 @@
   line-height: normal;
 
   @include media-laptop {
+    padding-bottom: 2.3rem;
     font-size: 3.6rem;
   }
 }

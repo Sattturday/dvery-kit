@@ -8,6 +8,7 @@ import img7 from '../images/Cards/спец.jpg';
 import img8 from '../images/Cards/roll.jpg';
 import img9 from '../images/Cards/window.jpg';
 import img10 from '../images/Cards/фурнитура.png';
+import img11 from '../images/Cards/Межком_двери.jpg';
 
 export const messages = {
   loadMessage: 'Идет загрузка...',
@@ -25,7 +26,7 @@ export const catalogData = [
   {
     id: 'cat1',
     name: 'Межкомнатные двери',
-    img: img6,
+    img: img11,
     link: '/catalog',
   },
   {

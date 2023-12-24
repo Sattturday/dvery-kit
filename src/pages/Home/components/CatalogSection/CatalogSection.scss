@@ -5,6 +5,14 @@
 .catalog {
   width: 100%;
   padding: 14.4rem 0 17.1rem;
+
+  @include media-medium {
+    padding: 6rem 0 14rem;
+  }
+
+  @include media-small {
+    padding: 6rem 0 8.2rem;
+  }
 }
 
 .catalog__title {
@@ -15,4 +23,17 @@
   @include list;
   display: flex;
   justify-content: space-between;
+  gap: 1.4rem;
+  flex: 0 0 50%;
+
+  @include media-laptop {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include media-mobile {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
 }
