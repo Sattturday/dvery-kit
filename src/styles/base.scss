@@ -7,17 +7,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-
-  &_lock {
-    overflow: hidden;
-    @include media-hover {
-      padding-right: 17px;
-    }
-  }
-}
-
 #root {
   display: flex;
   position: relative;
@@ -34,7 +23,7 @@ body {
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
-  background-color: $color-light-xl;
+  background-color: $color-light-l;
 
   main {
     width: 100%;
@@ -46,20 +35,54 @@ body {
   }
 }
 
+.page {
+  margin: 0;
+
+  &_lock {
+    overflow: hidden;
+
+    @include media-hover {
+      padding-right: 17px;
+    }
+  }
+}
+
 .wrapper {
-  max-width: $content-width;
   margin: auto;
-  padding: 0 7rem;
+  padding: 0 8rem;
+  max-width: $content-width;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
   @include media-medium {
     padding: 0 4rem;
   }
 
-  @include media-small {
-    padding: 0 3rem;
+  @include media-laptop {
+    padding: 0 2rem;
   }
 
   @include media-mobile {
-    padding: 0 1.4rem;
+    padding: 0 1.6rem;
+  }
+}
+
+.background {
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  @extend %transition-all;
+  z-index: 9;
+
+  &_active {
+    visibility: visible;
   }
 }

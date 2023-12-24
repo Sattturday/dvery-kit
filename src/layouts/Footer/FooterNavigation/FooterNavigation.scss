@@ -1,0 +1,63 @@
+@import '../../../styles/abstract/placeholders.scss';
+@import '../../../styles/abstract/constants.scss';
+@import '../../../styles/abstract/mixins.scss';
+
+.footer-nav {
+  padding-top: 0.6rem;
+  width: 53.8rem;
+
+  @include media-medium {
+    width: 20.3rem;
+  }
+
+  @include media-small {
+    padding-top: 2.4rem;
+  }
+
+  @include media-mobile {
+    padding-top: 3.2rem;
+  }
+}
+
+.footer-nav__list {
+  @include list;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  justify-items: center;
+
+  @include media-medium {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 2.6rem;
+    column-gap: 5.2rem;
+    justify-items: start;
+  }
+
+  @include media-small {
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    column-gap: 8%;
+  }
+
+  @include media-mobile {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 2.4rem;
+    column-gap: 8.2rem;
+    justify-items: start;
+  }
+}
+
+.footer-nav__item {
+  display: block;
+  @include link;
+  @include text($color-light-xl);
+  @extend %transition-all;
+
+  @include media-hover {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}

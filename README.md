@@ -6,7 +6,7 @@
 
    ```bash
    git clone https://github.com/Sattturday/dvery-kit.git
-   cd FilmHub
+   cd dvery-kit
    ```
 
 2. Установите зависимости:

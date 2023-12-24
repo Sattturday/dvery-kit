@@ -1,0 +1,62 @@
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.call-button {
+  @include button;
+  @include text($color-light-xl);
+  padding-left: 3.4rem;
+  padding-top: 0.3rem;
+  width: 16.4rem;
+  position: relative;
+  flex-shrink: 0;
+  @extend %transition-all;
+
+  &:before {
+    content: '';
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    display: block;
+    background-image: url(../../images/icons/phone.svg);
+    background-size: cover;
+  }
+
+  &_type {
+    &_menu {
+      color: $color-bg;
+      &:before {
+        background-image: url(../../images/icons/phone_bg.svg);
+      }
+    }
+
+    &_header {
+      @include media-mobile {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include media-hover {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  @include media-medium {
+    order: 1;
+    padding-top: 0;
+    padding-left: 2.6rem;
+
+    &:before {
+      top: 0;
+    }
+  }
+}

@@ -2,10 +2,18 @@
   transition: opacity 0.4s linear;
 }
 
+%transition-all {
+  transition: all 0.3s ease-in;
+}
+
 %font-prim {
   font-family: 'Roboto', 'Arial', sans-serif;
 }
 
 %font-add {
   font-family: 'Times New Roman', Times, serif;
+}
+
+%font-thin {
+  font-family: 'Roboto Condensed', Times, serif;
 }

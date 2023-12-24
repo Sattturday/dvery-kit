@@ -1,0 +1,88 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.about {
+  width: 100%;
+  padding: 7.1rem 0 11.5rem;
+  background-color: $color-bg;
+  border-radius: 2.4rem;
+
+  .wrapper {
+    align-items: center;
+  }
+
+  @include media-medium {
+    padding: 5rem 0 5rem;
+    border-radius: 1.6rem;
+  }
+
+  @include media-small {
+    padding: 5rem 0 5.2rem;
+    border-radius: 0;
+  }
+}
+
+.about__title {
+  @include section-title($color-light-xl);
+  align-self: flex-start;
+
+  @include media-small {
+    width: 27rem;
+  }
+}
+
+.about__list {
+  width: 100%;
+  max-width: 122rem;
+  @include list;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5.2rem;
+
+  @include media-medium {
+    padding-top: 1rem;
+    gap: 3.2rem;
+  }
+
+  @include media-small {
+    gap: 2.4rem;
+  }
+}
+
+.about__item {
+  width: 100%;
+  max-width: 37.2rem;
+  display: grid;
+  grid-template-columns: 5.2rem auto;
+  grid-template-rows: 5.2rem auto;
+  justify-content: start;
+  align-items: center;
+  row-gap: 2rem;
+  column-gap: 1.8rem;
+
+  @include media-medium {
+    max-width: 28.8rem;
+  }
+}
+
+.about__img {
+  width: 5.2rem;
+  aspect-ratio: 1 / 1;
+}
+
+.about__subtitle {
+  @include text-l($color-light-xl);
+  @extend %font-thin;
+}
+
+.about__description {
+  @include text-m($color-light-xl);
+  grid-column: 1 / 3;
+  align-self: start;
+
+  @include media-medium {
+    @include text($color-light-xl);
+  }
+}

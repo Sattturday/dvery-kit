@@ -1,0 +1,65 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.measure {
+  width: 100%;
+  padding: 16rem 0 6rem;
+
+  @include media-medium {
+    padding: 8rem 0 5rem;
+    border-radius: 1.6rem;
+  }
+
+  @include media-small {
+    padding: 6rem 0 5.8rem;
+    border-radius: 0;
+  }
+}
+
+.measure__title {
+  @include section-title;
+  padding-bottom: 2.6rem;
+
+  @include media-medium {
+    padding-bottom: 4.2rem;
+  }
+}
+
+.measure__container {
+  display: flex;
+  gap: 3.2rem;
+
+  @media (max-width: 1150px) {
+    max-width: 72.8rem;
+    flex-direction: column-reverse;
+    gap: 1.2rem;
+
+    form {
+      width: 43.2rem;
+    }
+  }
+
+  @include media-mobile {
+    gap: 4.3rem;
+
+    form {
+      width: 100%;
+    }
+  }
+}
+
+.measure__img {
+  width: 59%;
+  // max-width: 75.5rem;
+  aspect-ratio: 1 / 0.7;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2rem;
+
+  @media (max-width: 1150px) {
+    aspect-ratio: 1 / 0.63;
+    width: 100%;
+    border-radius: 1.2rem;
+  }
+}

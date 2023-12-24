@@ -1,0 +1,44 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.catalog {
+  width: 100%;
+  padding: 14.4rem 0 17.1rem;
+
+  .wrapper {
+    align-items: center;
+  }
+
+  @include media-medium {
+    padding: 6rem 0 14rem;
+  }
+
+  @include media-small {
+    padding: 6rem 0 6.3rem;
+  }
+}
+
+.catalog__title {
+  @include section-title;
+  align-self: flex-start;
+}
+
+.catalog__list {
+  @include list;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.4rem;
+
+  @include media-laptop {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include media-mobile {
+    width: 28.8rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+}
