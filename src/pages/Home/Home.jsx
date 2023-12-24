@@ -16,6 +16,6 @@ export const Home = () => (
     <Measure />
     <Delivery />
     <Articles />
-    {/* <Contacts /> */}
+    <Contacts />
   </>
 );

@@ -66,7 +66,7 @@ export const Contacts = () => {
             <ul className='contacts__items'>
               <li className='contacts__item'>
                 <p className='contacts__label'>Адрес:</p>
-                <p className='contacts__content'>
+                <p className='contacts__content contacts__content_small'>
                   г. Новочебоксарск, ул. 10 Пятилетки, д.23а, 2 этаж, офис 32
                 </p>
               </li>

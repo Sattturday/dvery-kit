@@ -11,30 +11,100 @@
   .wrapper {
     padding: 0 9rem;
   }
+
+  @include media-laptop {
+    padding: 5.2rem 0 8rem;
+    border-radius: 1.6rem 1.6rem 0 0;
+
+    .wrapper {
+      padding: 0 2rem;
+    }
+  }
+
+  @include media-small {
+    border-radius: 0;
+
+    .wrapper {
+      padding: 0 1.6rem;
+    }
+  }
 }
 
 .contacts__title {
   @include section-title($color-light-xl);
   padding-bottom: 0.8rem;
+
+  @include media-laptop {
+    padding-bottom: 1.1rem;
+  }
 }
 
 .contacts__list {
   @include list;
   display: flex;
   flex-direction: column;
+
+  @include media-medium {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @include media-laptop {
+    max-width: 61.8rem;
+    width: 100%;
+  }
+
+  @include media-small {
+    max-width: 100%;
+  }
 }
 
 .contacts__container {
   margin-top: 3.2rem;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 1px solid $color-light-xl;
 
   &:last-child {
     margin-top: 0.8rem;
     border-bottom: none;
+  }
+
+  @include media-medium {
+    margin-top: 2rem;
+    padding-right: 5.2rem;
+    min-width: 30rem;
+    width: 50%;
+
+    &:last-child,
+    &:nth-child(3) {
+      width: 100%;
+    }
+  }
+
+  @include media-laptop {
+    padding-right: 5.2rem;
+
+    &:nth-child(2) {
+      padding-right: 0;
+      padding-left: 2.6rem;
+    }
+
+    &:last-child {
+      margin-top: 2.6rem;
+    }
+  }
+
+  @include media-small {
+    min-width: 28.8rem;
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
+
+    &:nth-child(2) {
+      padding-left: 0;
+    }
   }
 }
 
@@ -45,6 +115,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @include media-medium {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
 }
 
 .contacts__item {
@@ -67,8 +142,23 @@
   &_desktop {
     display: block;
   }
+
+  @include media-medium {
+    display: block;
+    padding-bottom: 0;
+  }
 }
 
 .contacts__content {
   @include text-m($color-light-xl);
+
+  &_small {
+    @include media-medium {
+      width: 70%;
+    }
+
+    @include media-laptop {
+      width: 62%;
+    }
+  }
 }
