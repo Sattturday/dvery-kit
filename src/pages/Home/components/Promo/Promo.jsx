@@ -25,9 +25,9 @@ export const Promo = () => {
         <div className='promo__item promo__item_1'>
           <div className='wrapper'>
             <div className='promo__container'>
-              <h2 className='promo__title'>
+              <h1 className='promo__title'>
                 Межкомнатные двери от&nbsp;1700&nbsp;₽
-              </h2>
+              </h1>
               <p className='promo__subtitle'>Хорошим людям - хороший товар!</p>
               <Link to='/catalog' className='promo__button'>
                 Посмотреть каталог

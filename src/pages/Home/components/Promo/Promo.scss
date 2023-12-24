@@ -9,6 +9,10 @@
 
 .slick-dots {
   bottom: 1.4rem;
+
+  @include media-laptop {
+    bottom: 0.9rem;
+  }
 }
 
 .slick-dots li button {
@@ -22,6 +26,11 @@
     height: 1.6rem;
     border-radius: 50%;
     background-color: $color-light-xl;
+
+    @include media-laptop {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
   }
 }
 
@@ -52,6 +61,17 @@
       url('../../../../images/Promo/1.jpg');
     background-position: center;
     background-size: cover;
+
+    @include media-mobile {
+      background: linear-gradient(
+          0deg,
+          #171718 14.09%,
+          rgba(23, 23, 24, 0) 55.58%
+        ),
+        url(../../../../images/Promo/1.jpg);
+      background-position: center;
+      background-size: cover;
+    }
   }
 
   &_2 {
@@ -64,6 +84,17 @@
       url('../../../../images/Promo/2.jpg');
     background-position: center;
     background-size: cover;
+
+    @include media-mobile {
+      background: linear-gradient(
+          0deg,
+          #171718 14.09%,
+          rgba(23, 23, 24, 0) 55.58%
+        ),
+        url(../../../../images/Promo/2.jpg);
+      background-position: center;
+      background-size: cover;
+    }
   }
 
   &_3 {
@@ -76,6 +107,17 @@
       url('../../../../images/Promo/3.jpg');
     background-position: center;
     background-size: cover;
+
+    @include media-mobile {
+      background: linear-gradient(
+          0deg,
+          #171718 14.09%,
+          rgba(23, 23, 24, 0) 55.58%
+        ),
+        url(../../../../images/Promo/3.jpg);
+      background-position: center;
+      background-size: cover;
+    }
   }
 
   @include media-medium {
@@ -93,6 +135,18 @@
   left: 5.5%;
   max-width: 55rem;
   width: 100%;
+
+  @include media-laptop {
+    max-width: 28.8rem;
+    top: 31%;
+    left: 3%;
+  }
+
+  @include media-mobile {
+    max-width: 28.8rem;
+    top: 54%;
+    left: calc(50% - 14.4rem);
+  }
 }
 
 .promo__title {
@@ -103,12 +157,25 @@
   font-weight: $fw-medium;
   line-height: normal;
   color: $color-light-xl;
+
+  @include media-laptop {
+    font-size: 3.6rem;
+  }
 }
 
 .promo__subtitle {
   @include text-l($color-light-xl);
   @extend %font-thin;
   padding-bottom: 5.1rem;
+
+  @include media-laptop {
+    @include text($color-light-xl);
+    padding-bottom: 3.1rem;
+  }
+
+  @include media-mobile {
+    padding-bottom: 2.3rem;
+  }
 }
 
 .promo__button {
@@ -132,5 +199,9 @@
     &:hover {
       transform: scale(1.03);
     }
+  }
+
+  @include media-laptop {
+    width: 28.8rem;
   }
 }
