@@ -1,0 +1,207 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.slick-slider {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slick-dots {
+  bottom: 1.4rem;
+
+  @include media-laptop {
+    bottom: 0.9rem;
+  }
+}
+
+.slick-dots li button {
+  padding: 0.7rem;
+  width: 3rem;
+  height: 3rem;
+
+  &:before {
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color: $color-light-xl;
+
+    @include media-laptop {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+}
+
+.promo {
+  padding-top: 7.6rem;
+
+  @include media-medium {
+    padding-top: 5.2rem;
+  }
+
+  @include media-small {
+    padding-top: 4.7rem;
+  }
+}
+
+.promo__item {
+  position: relative;
+  max-width: 100%;
+  height: calc(100vh - 76px);
+
+  &_1 {
+    background: linear-gradient(
+        90deg,
+        rgba(23, 23, 24, 1) 3%,
+        rgba(23, 23, 24, 0.8) 20%,
+        rgba(0, 0, 0, 0) 57.5%
+      ),
+      url('../../../../images/Promo/1.jpg');
+    background-position: center;
+    background-size: cover;
+
+    @include media-mobile {
+      background: linear-gradient(
+          0deg,
+          #171718 14.09%,
+          rgba(23, 23, 24, 0) 55.58%
+        ),
+        url(../../../../images/Promo/1.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &_2 {
+    background: linear-gradient(
+        90deg,
+        rgba(23, 23, 24, 1) 3%,
+        rgba(23, 23, 24, 0.8) 20%,
+        rgba(0, 0, 0, 0) 57.5%
+      ),
+      url('../../../../images/Promo/2.jpg');
+    background-position: center;
+    background-size: cover;
+
+    @include media-mobile {
+      background: linear-gradient(
+          0deg,
+          #171718 14.09%,
+          rgba(23, 23, 24, 0) 55.58%
+        ),
+        url(../../../../images/Promo/2.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &_3 {
+    background: linear-gradient(
+        90deg,
+        rgba(23, 23, 24, 1) 3%,
+        rgba(23, 23, 24, 0.8) 20%,
+        rgba(0, 0, 0, 0) 57.5%
+      ),
+      url('../../../../images/Promo/3.jpg');
+    background-position: center;
+    background-size: cover;
+
+    @include media-mobile {
+      background: linear-gradient(
+          0deg,
+          #171718 14.09%,
+          rgba(23, 23, 24, 0) 55.58%
+        ),
+        url(../../../../images/Promo/3.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  @include media-medium {
+    height: calc(100vh - 52px);
+  }
+
+  @include media-small {
+    height: calc(100vh - 47px);
+  }
+}
+
+.promo__container {
+  position: absolute;
+  top: 34%;
+  left: 5.5%;
+  max-width: 55rem;
+  width: 100%;
+
+  @include media-laptop {
+    max-width: 28.8rem;
+    top: 31%;
+    left: 3%;
+  }
+
+  @include media-mobile {
+    max-width: 28.8rem;
+    top: 54%;
+    left: calc(50% - 14.4rem);
+  }
+}
+
+.promo__title {
+  margin: 0;
+  padding-bottom: 1.1rem;
+  @extend %font-thin;
+  font-size: 5.2rem;
+  font-weight: $fw-medium;
+  line-height: normal;
+  color: $color-light-xl;
+
+  @include media-laptop {
+    font-size: 3.6rem;
+  }
+}
+
+.promo__subtitle {
+  @include text-l($color-light-xl);
+  @extend %font-thin;
+  padding-bottom: 5.1rem;
+
+  @include media-laptop {
+    @include text($color-light-xl);
+    padding-bottom: 3.1rem;
+  }
+
+  @include media-mobile {
+    padding-bottom: 2.3rem;
+  }
+}
+
+.promo__button {
+  position: relative;
+  @include link;
+  @include button;
+  @include text;
+  width: 36.7rem;
+  height: 5.4rem;
+  border-radius: 0.8rem;
+  background-color: $color-lime;
+  z-index: 9;
+  @extend %transition-all;
+
+  &:active {
+    font-weight: $fw-bold;
+    background-color: $color-lime-active;
+  }
+
+  @include media-hover {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  @include media-laptop {
+    width: 28.8rem;
+  }
+}

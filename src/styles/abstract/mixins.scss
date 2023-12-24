@@ -1,0 +1,139 @@
+// для media-запросов
+@mixin media-medium {
+  @media (max-width: $medium-width) {
+    @content;
+  }
+}
+
+@mixin media-laptop {
+  @media (max-width: $laptop-width) {
+    @content;
+  }
+}
+
+@mixin media-small {
+  @media (max-width: $small-width) {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin media-hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+// списки, ссылки и кнопки с hover
+@mixin list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin link($color: $color-dark-xl) {
+  text-decoration: none;
+  color: $color;
+}
+
+@mixin button {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+// disabled
+@mixin disabled {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// для заголовков секций
+@mixin section-title($color: $color-dark-xl) {
+  margin: 0;
+  padding-bottom: 3.9rem;
+  @extend %font-thin;
+  color: $color;
+  font-size: 4rem;
+  font-weight: $fw-regular;
+  line-height: normal;
+
+  @include media-laptop {
+    padding-bottom: 2.3rem;
+    font-size: 3.6rem;
+  }
+}
+
+// для текста
+@mixin text-s($color: $color-dark-xl, $font-weight: $fw-regular) {
+  margin: 0;
+  color: $color;
+  font-size: 1.4rem;
+  font-weight: $font-weight;
+  line-height: normal;
+}
+
+@mixin text($color: $color-dark-xl, $font-weight: $fw-regular) {
+  margin: 0;
+  color: $color;
+  font-size: 1.6rem;
+  font-weight: $font-weight;
+  line-height: 1.38;
+}
+
+@mixin text-m($color: $color-dark-xl, $font-weight: $fw-regular) {
+  margin: 0;
+  color: $color;
+  font-size: 1.8rem;
+  font-weight: $font-weight;
+  line-height: 1.33;
+}
+
+@mixin text-l($color: $color-dark-xl, $font-weight: $fw-regular) {
+  margin: 0;
+  color: $color;
+  font-size: 2.4rem;
+  font-weight: $font-weight;
+  line-height: normal;
+}
+
+// location
+@mixin location {
+  padding-left: 3.2rem;
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    background-image: url(../../images/icons/place.svg);
+    background-size: cover;
+  }
+}
+
+// для элементов бургера
+@mixin burger-line {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background-color: $color-light-xl;
+  width: 100%;
+  min-height: 2px;
+  @extend %transition-all;
+}

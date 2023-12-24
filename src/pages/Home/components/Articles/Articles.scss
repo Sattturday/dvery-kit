@@ -1,0 +1,28 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.articles {
+  margin: auto;
+  max-width: $content-width;
+  width: 100%;
+  padding: 6rem 7rem 14.8rem;
+
+  @include media-medium {
+    padding: 4.5rem 1rem 10.2rem;
+  }
+
+  @include media-small {
+    padding: 2.5rem 0.4rem 10.2rem;
+  }
+}
+
+.articles__title {
+  @include section-title;
+  padding-left: 1rem;
+  padding-bottom: 3.9rem;
+}
+
+.articles__container {
+  padding: 1.2rem;
+}
