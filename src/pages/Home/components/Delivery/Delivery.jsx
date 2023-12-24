@@ -1,4 +1,4 @@
-import img1 from '../../../../images/delivery.jpg';
+import img1 from '../../../../images/delivery_b.jpg';
 
 import './Delivery.scss';
 
@@ -21,9 +21,9 @@ export const Delivery = () => {
               услугах и выберите наиболее подходящий вариант для вас!
             </p>
             <p className='delivery__description'>
-              По телефону +7-937-393-91-93 – Двери-КИТ в г.Канаше,
-              или&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              +7-927-999-10-40 Двери-КИТ в г.Новчебоксарске.
+              По телефону <span>+7-937-393-91-93</span> – <span>Двери-КИТ</span>{' '}
+              в г.Канаше, или <span>+7-927-999-10-40</span>{' '}
+              <span>Двери-КИТ</span> в г.Новчебоксарске.
             </p>
           </div>
         </div>
