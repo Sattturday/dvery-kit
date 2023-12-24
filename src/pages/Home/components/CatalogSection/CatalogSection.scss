@@ -6,6 +6,10 @@
   width: 100%;
   padding: 14.4rem 0 17.1rem;
 
+  .wrapper {
+    align-items: center;
+  }
+
   @include media-medium {
     padding: 6rem 0 14rem;
   }
@@ -17,6 +21,7 @@
 
 .catalog__title {
   @include section-title;
+  align-self: flex-start;
 }
 
 .catalog__list {
@@ -24,7 +29,6 @@
   display: flex;
   justify-content: space-between;
   gap: 1.4rem;
-  flex: 0 0 50%;
 
   @include media-laptop {
     flex-wrap: wrap;
@@ -32,6 +36,7 @@
   }
 
   @include media-mobile {
+    width: 28.8rem;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 2rem;
