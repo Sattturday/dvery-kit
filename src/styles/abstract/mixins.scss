@@ -69,6 +69,10 @@
   font-size: 4rem;
   font-weight: $fw-regular;
   line-height: normal;
+
+  @include media-laptop {
+    font-size: 3.6rem;
+  }
 }
 
 // для текста

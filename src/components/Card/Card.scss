@@ -21,6 +21,10 @@
       transform: scale(1.02);
     }
   }
+
+  @include media-laptop {
+    padding: 2.8rem 2.5rem;
+  }
 }
 
 .card__labels {
@@ -49,7 +53,8 @@
 
 .card__image {
   padding: 0 2rem;
-  width: 17.9rem;
+  max-width: 17.9rem;
+  width: 100%;
   aspect-ratio: 1 / 1.57;
   object-fit: contain;
   object-position: center;

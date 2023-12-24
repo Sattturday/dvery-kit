@@ -10,8 +10,8 @@ import { Contacts } from './components/Contacts';
 export const Home = () => (
   <>
     <Promo />
-    {/* <Bestsellers />
-    <CatalogSection />
+    <Bestsellers />
+    {/* <CatalogSection />
     <About />
     <Measure />
     <Delivery />

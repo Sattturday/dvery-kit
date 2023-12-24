@@ -7,12 +7,52 @@
   max-width: $content-width;
   width: 100%;
   padding: 15.6rem 7rem 4.3rem;
+
+  @include media-medium {
+    padding: 10.6rem 3rem 4.3rem;
+  }
+
+  @include media-laptop {
+    padding: 7.6rem 1rem 4.3rem;
+  }
+
+  @include media-mobile {
+    padding: 3.3rem 0.6rem 4.3rem;
+  }
 }
 
 .bestsellers__title {
   @include section-title;
   padding-left: 1rem;
   padding-bottom: 2.9rem;
+
+  @include media-mobile {
+    // padding-left: 3.6rem;
+    padding-left: 0;
+    padding-bottom: 1.2rem;
+    text-align: center;
+  }
+}
+
+.bestsellers__box {
+  margin: auto;
+  max-width: 130rem;
+
+  @media (max-width: 1400px) {
+    max-width: 104rem;
+  }
+
+  @media (max-width: 1170px) {
+    max-width: 78rem;
+  }
+
+  @media (max-width: 760px) {
+    max-width: 52rem;
+  }
+
+  @media (max-width: 530px) {
+    max-width: 26rem;
+  }
 }
 
 .bestsellers__container {
