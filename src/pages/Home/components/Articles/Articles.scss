@@ -7,6 +7,14 @@
   max-width: $content-width;
   width: 100%;
   padding: 6rem 7rem 14.8rem;
+
+  @include media-medium {
+    padding: 4.5rem 1rem 10.2rem;
+  }
+
+  @include media-small {
+    padding: 2.5rem 0.4rem 10.2rem;
+  }
 }
 
 .articles__title {

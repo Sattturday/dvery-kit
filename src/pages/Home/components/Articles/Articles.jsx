@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -12,25 +12,46 @@ import { ArticleCard } from './ArticleCard/ArticleCard';
 import './Articles.scss';
 
 export const Articles = () => {
+  const [slidesToShow, setSlidesToShow] = useState(2);
   const dispatch = useDispatch();
   const articlesData = useSelector((state) => state.articles.list);
   const { data: articlesApiData, error, isLoading } = useGetArticlesQuery();
 
-  const articlesSettings = {
-    infinite: true,
-    speed: 700,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    arrows: true,
-    prevArrow: <SliderButton type='prev' />,
-    nextArrow: <SliderButton type='next' />,
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth <= 650) {
+        setSlidesToShow(1);
+      } else {
+        setSlidesToShow(2);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (articlesApiData) {
       dispatch(setArticles(articlesApiData));
     }
   }, [articlesApiData, dispatch]);
+
+  const articlesSettings = {
+    infinite: true,
+    speed: 700,
+    slidesToShow: slidesToShow,
+    slidesToScroll: 1,
+    arrows: true,
+    prevArrow: <SliderButton type='prev' />,
+    nextArrow: <SliderButton type='next' />,
+  };
 
   return (
     <section className='articles' id='articles'>
