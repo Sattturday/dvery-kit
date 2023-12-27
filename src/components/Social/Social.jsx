@@ -15,7 +15,7 @@ export const Social = () => {
       <li>
         <a
           className='social__icon social__icon_type_viber'
-          href='viber://chat?number=+79279991040'
+          href='viber://add?number=+79279991040'
           target='_blank'
           rel='noopener noreferrer'
           aria-label='Viber'
