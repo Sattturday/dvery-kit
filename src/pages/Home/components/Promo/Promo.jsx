@@ -9,13 +9,13 @@ import './Promo.scss';
 export const Promo = () => {
   const promoSettings = {
     dots: true,
-    fade: true,
+    //fade: true,
     infinite: true,
     speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 7000,
     arrows: false,
   };
 

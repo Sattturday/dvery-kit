@@ -29,10 +29,7 @@ export const Header = () => {
       />
       <div className='wrapper'>
         <div className='header__container'>
-          <div className='header__container-left'>
-            <Logo />
-            <p className='header__location'>Новочебоксарск | Канаш</p>
-          </div>
+          <Logo />
           <div className='header__container-right'>
             <Navigation menuOpen={menuOpen} onBurgerClick={handleBurgerClick} />
             <CallButton type='header' />

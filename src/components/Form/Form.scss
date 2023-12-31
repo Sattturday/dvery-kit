@@ -8,12 +8,24 @@
   display: grid;
   align-items: end;
 
-  &_type_call {
-    grid-template-rows: min-content min-content min-content 1fr;
-  }
+  &_type {
+    &_call {
+      grid-template-rows: min-content min-content min-content 1fr;
+    }
 
-  &_type_measure {
-    grid-template-rows: min-content min-content min-content min-content min-content 1fr;
+    &_measure {
+      grid-template-rows: min-content min-content min-content min-content min-content 1fr;
+    }
+
+    &_search {
+      width: auto;
+      min-height: auto;
+      grid-template-rows: min-content;
+      grid-template-columns: 49.3rem 15.1rem;
+      align-items: start;
+      column-gap: 0.8rem;
+      justify-self: end;
+    }
   }
 }
 

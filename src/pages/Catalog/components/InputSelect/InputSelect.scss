@@ -1,0 +1,31 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/mixins.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+
+.select__label {
+  cursor: pointer;
+  @extend %transition-all;
+
+  &_checked {
+    p {
+      @include text($color-dark-xl, $fw-bold);
+    }
+  }
+}
+
+.select__name {
+  @include text;
+  @include media-hover {
+    &:hover {
+      @include text($color-bg-violet, $fw-bold);
+    }
+  }
+}
+
+.select__input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}

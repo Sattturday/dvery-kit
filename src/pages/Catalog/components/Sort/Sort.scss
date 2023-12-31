@@ -1,0 +1,104 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/mixins.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+
+.sort {
+  padding: 0;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  &_active {
+    border-radius: 0.8rem 0.8rem 0 0;
+    box-shadow: 0 -3px 15px 4px rgba(122, 112, 112, 0.1);
+  }
+}
+
+.sort__wrapper {
+  width: 18.5rem;
+  height: 5.4rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.8rem;
+  background: $color-light-xl;
+  transition: all 0.4s ease-out;
+
+  &_active {
+    border-radius: 0.8rem 0.8rem 0 0;
+  }
+}
+
+.sort__arrow {
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url(../../../../images/icons/sort_down.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sort__button {
+  @include button;
+  @include text;
+  padding: 1.2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sort__list {
+  @include list;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 0.8rem 0.8rem;
+  background: white;
+  box-shadow: 0 10px 10px 4px rgba(122, 112, 112, 0.1); /* получившаяся тень */
+  visibility: hidden;
+  opacity: 0;
+  @extend %transition-all;
+
+  &_active {
+    top: 100%;
+    z-index: 5;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.sort__item {
+  position: relative;
+}
+
+.sort__label {
+  @include button;
+  padding: 1.2rem;
+  width: 100%;
+  height: 5.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  span {
+    @include text;
+  }
+
+  &:hover {
+    background-color: $color-light-m;
+    border-radius: 0.8rem;
+
+    span {
+      @include text($color-bg, $fw-bold);
+    }
+  }
+}
+
+.sort__radio {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}

@@ -1,0 +1,47 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.filter-checkbox {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  cursor: pointer;
+}
+
+.filter-checkbox__input {
+  position: absolute;
+  width: 0.01rem;
+  height: 0.01rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.filter-checkbox__input-new {
+  width: 5.2rem;
+  min-height: 2.8rem;
+  background-image: url(../../../../images/icons/checkbox-off.svg);
+  background-size: cover;
+  transition: background-image 0.4s ease-in-out;
+
+  &:after {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+.filter-checkbox__input:checked + .filter-checkbox__input-new {
+  background-image: url(../../../../images/icons/checkbox-on.svg);
+
+  &:after {
+    opacity: 1;
+  }
+}
+
+.filter-checkbox__title {
+  @include text-m;
+}

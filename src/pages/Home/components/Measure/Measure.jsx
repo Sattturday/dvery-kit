@@ -12,12 +12,13 @@ import { InputCheckbox } from '../../../../components/InputCheckbox/InputCheckbo
 export const Measure = () => {
   const [isConfirm, setIsConfirm] = useState(false);
   const { values, handleChange, errors, isValid, resetForm } =
-    useFormAndValidation('measure');
+    useFormAndValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(values);
-    // handleRegister(values);
+    resetForm();
+    setIsConfirm(false);
   }
 
   useEffect(() => {

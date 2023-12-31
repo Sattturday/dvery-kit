@@ -3,7 +3,7 @@
 @import '../../styles/abstract/placeholders.scss';
 
 .header {
-  padding: 1.6rem 0;
+  padding: 1.3rem 0;
   width: 100%;
   position: fixed;
   top: 0;
@@ -25,21 +25,10 @@
   justify-content: space-between;
 }
 
-.header__container-left {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.6rem;
-
-  @include media-medium {
-    gap: 1.2rem;
-    align-items: center;
-  }
-}
-
 .header__container-right {
-  width: 58.9%;
+  width: 69%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 1.2rem;
 

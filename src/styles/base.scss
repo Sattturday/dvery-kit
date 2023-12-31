@@ -86,3 +86,14 @@ html {
     visibility: visible;
   }
 }
+
+.info-message {
+  @include text-l;
+  @extend %font-thin;
+  overflow-wrap: break-word;
+  hyphens: auto;
+
+  @include media-medium {
+    @include text-m;
+  }
+}
