@@ -6,7 +6,6 @@
   @include button;
   @include text($color-light-xl);
   padding-left: 3.4rem;
-  padding-top: 0.3rem;
   width: 16.4rem;
   position: relative;
   flex-shrink: 0;
@@ -18,7 +17,7 @@
     height: 2.4rem;
     position: absolute;
     left: 0;
-    top: 0.3rem;
+    top: 0;
     display: block;
     background-image: url(../../images/icons/phone.svg);
     background-size: cover;
@@ -52,7 +51,6 @@
 
   @include media-medium {
     order: 1;
-    padding-top: 0;
     padding-left: 2.6rem;
 
     &:before {

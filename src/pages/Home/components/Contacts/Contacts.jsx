@@ -14,7 +14,7 @@ export const Contacts = () => {
                   Адрес:
                 </p>
                 <p className='contacts__content'>
-                  г. Канаш, ул. К.Маркса д.4, Склад №30
+                  г.&nbsp;Канаш, ул.&nbsp;К.Маркса, д.4, Склад&nbsp;№30
                 </p>
               </li>
               <li className='contacts__item'>
@@ -31,10 +31,10 @@ export const Contacts = () => {
               </li>
               <li className='contacts__item'>
                 <p className='contacts__label contacts__label_desktop'>
-                  Время работы:
+                  Время&nbsp;работы:
                 </p>
-                <p className='contacts__content'>Пн – Пт с 8:00 до18:00</p>
-                <p className='contacts__content'>Сб – Вс с 8:00 до15:00</p>
+                <p className='contacts__content'>Пн – Пт с 8:00 до 18:00</p>
+                <p className='contacts__content'>Сб – Вс с 8:00 до 15:00</p>
               </li>
             </ul>
           </li>
@@ -44,7 +44,8 @@ export const Contacts = () => {
               <li className='contacts__item'>
                 <p className='contacts__label'>Адрес:</p>
                 <p className='contacts__content'>
-                  г. Новочебоксарск, ул. Винокурова д.59, ТЦ - цокольный этаж
+                  г.&nbsp;Новочебоксарск, ул.&nbsp;Винокурова, д.59,
+                  ТЦ&nbsp;-&nbsp;цокольный этаж
                 </p>
               </li>
               <li className='contacts__item'>
@@ -67,7 +68,8 @@ export const Contacts = () => {
               <li className='contacts__item'>
                 <p className='contacts__label'>Адрес:</p>
                 <p className='contacts__content contacts__content_small'>
-                  г. Новочебоксарск, ул. 10 Пятилетки, д.23а, 2 этаж, офис 32
+                  г.&nbsp;Новочебоксарск, ул.&nbsp;10&nbsp;Пятилетки, д.23а,
+                  2&nbsp;этаж, офис&nbsp;32
                 </p>
               </li>
               <li className='contacts__item'>

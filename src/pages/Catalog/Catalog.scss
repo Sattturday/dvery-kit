@@ -1,0 +1,21 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.catalog-page {
+  padding: 12.7rem 0 16rem;
+  width: 100%;
+}
+
+.catalog-page__title {
+  @include section-title;
+  padding-bottom: 3.1rem;
+}
+
+.catalog-page__container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 2.2rem;
+  row-gap: 1rem;
+}

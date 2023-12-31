@@ -1,10 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import './Card.scss';
+import { BASE_URL_IMG } from '../../utils/constants';
 
 export const Card = ({ data }) => {
   const navigate = useNavigate();
 
+  const src = `${BASE_URL_IMG}${data.productalbum[0].image}`;
   const handleClick = () => {
     navigate(`/cards/${data.id}`);
   };
@@ -19,11 +21,7 @@ export const Card = ({ data }) => {
           <span className='card__label card__label_type_order'>Под заказ </span>
         )}
       </div>
-      <img
-        src={data.productalbum[0].image}
-        alt={data.name}
-        className='card__image'
-      />
+      <img src={src} alt={data.name} className='card__image' />
       <div className='card__info'>
         <h3 className='card__title'>{data.name}</h3>
         <div className='card__price-container'>

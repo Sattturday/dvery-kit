@@ -5,7 +5,7 @@
 .about {
   width: 100%;
   padding: 7.1rem 0 11.5rem;
-  background-color: $color-bg;
+  background-color: $color-light-xl;
   border-radius: 2.4rem;
 
   .wrapper {
@@ -24,7 +24,7 @@
 }
 
 .about__title {
-  @include section-title($color-light-xl);
+  @include section-title;
   align-self: flex-start;
 
   @include media-small {
@@ -73,16 +73,16 @@
 }
 
 .about__subtitle {
-  @include text-l($color-light-xl);
+  @include text-l($color-bg);
   @extend %font-thin;
 }
 
 .about__description {
-  @include text-m($color-light-xl);
+  @include text-m;
   grid-column: 1 / 3;
   align-self: start;
 
   @include media-medium {
-    @include text($color-light-xl);
+    @include text;
   }
 }

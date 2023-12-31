@@ -3,12 +3,10 @@
 @import '../../../styles/abstract/mixins.scss';
 
 .navigation {
-  padding-top: 0.3rem;
   max-width: 53.8rem;
   width: 100%;
 
   @include media-medium {
-    padding-top: 0;
     max-width: 2.4rem;
     display: flex;
     justify-content: center;

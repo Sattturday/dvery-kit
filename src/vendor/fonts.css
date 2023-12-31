@@ -54,8 +54,8 @@
   src: url('./fonts/Roboto/RobotoCondensed-Medium.eot'),
     url('./fonts/Roboto/RobotoCondensed-Medium.eot?#iefix')
       format('embedded-opentype'),
-    url('./fonts/Roboto/RobotoCondensed-Medium.woff2') format('woff2'),
-    url('./fonts/Roboto/RobotoCondensed-Medium.woff') format('woff'),
+    /* url('./fonts/Roboto/RobotoCondensed-Medium.woff2') format('woff2'), */
+      url('./fonts/Roboto/RobotoCondensed-Medium.woff') format('woff'),
     url('./fonts/Roboto/RobotoCondensed-Medium.ttf') format('truetype');
 }
 

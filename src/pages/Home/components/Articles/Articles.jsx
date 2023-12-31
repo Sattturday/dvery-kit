@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { setArticles } from '../../../../store/articlesSlice';
 import { useGetArticlesQuery } from '../../../../api/articlesApi';
 import { SliderButton } from '../../../../components/SliderButton';
+import { messages } from '../../../../utils/data';
 
 import { ArticleCard } from './ArticleCard/ArticleCard';
 import './Articles.scss';
@@ -56,13 +57,17 @@ export const Articles = () => {
   return (
     <section className='articles' id='articles'>
       <h2 className='articles__title'>Статьи</h2>
-      <Slider {...articlesSettings}>
-        {articlesData.map((data) => (
-          <div key={data.id} className='articles__container'>
-            <ArticleCard data={data} />
-          </div>
-        ))}
-      </Slider>
+      {articlesData && (
+        <Slider {...articlesSettings}>
+          {articlesData.map((data) => (
+            <div key={data.id} className='articles__container'>
+              <ArticleCard data={data} />
+            </div>
+          ))}
+        </Slider>
+      )}
+      {isLoading && <p className='info-message'>{messages.loadMessage}</p>}
+      {error && <p className='info-message'>{messages.errorMessage}</p>}
     </section>
   );
 };

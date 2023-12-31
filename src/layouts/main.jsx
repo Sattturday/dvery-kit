@@ -1,12 +1,30 @@
+import { useEffect, useState } from 'react';
+
+import { Preloader } from '../components/Preloder';
+
 import { Header } from './Header';
 import { Footer } from './Footer';
 
-const Layout = ({ children }) => (
-  <>
-    <Header />
-    <main>{children}</main>
-    <Footer />
-  </>
-);
+export const Layout = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(false);
 
-export default Layout;
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsLoading(false);
+    };
+
+    window.addEventListener('load', handleLoad);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
+  return (
+    <>
+      <Header />
+      {isLoading ? <Preloader /> : <main>{children}</main>}
+      <Footer />
+    </>
+  );
+};
