@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { Card } from '../../../../components/Card';
+import { useGetHitProductsQuery } from '../../../../api/productsApi';
+import { setHitSale } from '../../../../store/productsSlice';
 import { SliderButton } from '../../../../components/SliderButton';
-import { cardsExamples } from '../../../../utils/data';
+import { Card } from '../../../../components/Card';
+import { messages } from '../../../../utils/data';
 
 import './Bestsellers.scss';
 
-export const Bestsellers = ({ data }) => {
+export const Bestsellers = () => {
   const [slidesToShow, setSlidesToShow] = useState(5);
   const [slidesToScroll, setSlidesToScroll] = useState(3);
+
+  const dispatch = useDispatch();
+  const hitSaleData = useSelector((state) => state.products.hitSale);
+  const { data: productsApiData, error, isLoading } = useGetHitProductsQuery();
+
+  useEffect(() => {
+    if (productsApiData) {
+      dispatch(setHitSale(productsApiData));
+    }
+  }, [productsApiData, dispatch]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -58,13 +71,17 @@ export const Bestsellers = ({ data }) => {
     <section className='bestsellers'>
       <h2 className='bestsellers__title'>Хиты продаж</h2>
       <div className='bestsellers__box'>
-        <Slider {...bestsellersSettings}>
-          {cardsExamples.map((cardData) => (
-            <div key={cardData.id} className='bestsellers__container'>
-              <Card data={cardData} />
-            </div>
-          ))}
-        </Slider>
+        {hitSaleData && (
+          <Slider {...bestsellersSettings}>
+            {hitSaleData.map((cardData) => (
+              <div key={cardData.id} className='bestsellers__container'>
+                <Card data={cardData} />
+              </div>
+            ))}
+          </Slider>
+        )}
+        {isLoading && <p className='info-message'>{messages.loadMessage}</p>}
+        {error && <p className='info-message'>{messages.errorMessage}</p>}
       </div>
     </section>
   );

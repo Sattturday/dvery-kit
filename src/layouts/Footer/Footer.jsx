@@ -9,10 +9,7 @@ export const Footer = () => (
   <footer className='footer'>
     <div className='wrapper'>
       <div className='footer__container'>
-        <div className='footer__item'>
-          <Logo />
-          <p className='footer__location'>Новочебоксарск&nbsp;| Канаш</p>
-        </div>
+        <Logo />
         <FooterNavigation />
         <div className='footer__item-right'>
           <CallButton type='footer' />
