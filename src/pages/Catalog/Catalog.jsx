@@ -19,6 +19,7 @@ import { ShowList } from './components/ShowList/ShowList';
 import { SearchForm } from './components/SearchForm';
 import { Sort } from './components/Sort';
 import './Catalog.scss';
+import { messages } from '../../utils/data';
 
 export const Catalog = () => {
   const { filter } = useSelector((state) => state, { noopCheck: 'never' });
@@ -36,6 +37,12 @@ export const Catalog = () => {
     error,
     isLoading,
   } = useGetFilterProductsQuery([paramsUrl]);
+
+  const infoMessage = isLoading
+    ? messages.loadMessage
+    : error
+    ? messages.errorMessage
+    : '';
 
   // Обработчик изменения строки поиска
   const searchHandler = (value) => {
@@ -176,13 +183,19 @@ export const Catalog = () => {
               aria-label='Войти в меню фильтров'
             />
             {windowWidth > 750 && (
-              <ShowList data={ProductsData ? ProductsData : []} />
+              <ShowList
+                data={ProductsData ? ProductsData : []}
+                message={infoMessage}
+              />
             )}
           </div>
         </div>
       </section>
       {windowWidth <= 750 && (
-        <ShowList data={ProductsData ? ProductsData : []} />
+        <ShowList
+          data={ProductsData ? ProductsData : []}
+          message={infoMessage}
+        />
       )}
     </>
   );

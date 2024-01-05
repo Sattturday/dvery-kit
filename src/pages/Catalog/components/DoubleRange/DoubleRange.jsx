@@ -12,7 +12,7 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
   const dispatch = useDispatch();
   const { price } = useSelector((state) => state.filter);
 
-  const { data: filterData = [], error, isLoading } = useGetFilterRangeQuery();
+  const { data: filterData = [], isLoading } = useGetFilterRangeQuery();
 
   // Локальное состояние для временного хранения значений
   const [localPrice, setLocalPrice] = useState({
