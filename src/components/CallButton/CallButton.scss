@@ -5,8 +5,8 @@
 .call-button {
   @include button;
   @include text($color-light-xl);
-  padding-left: 3.4rem;
-  width: 16.4rem;
+  letter-spacing: 0.6px;
+  padding-left: 3.2rem;
   position: relative;
   flex-shrink: 0;
   @extend %transition-all;

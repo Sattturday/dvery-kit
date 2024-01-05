@@ -1,7 +1,33 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/mixins.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+
 .show-list {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.8rem;
   grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 23.7rem);
+  justify-content: start;
+  gap: 1.2rem 1.6rem;
+
+  @include media-medium {
+    grid-row: 3 / 4;
+  }
+
+  @include media-laptop {
+    grid-template-columns: repeat(auto-fit, 13.6rem);
+    gap: 1.8rem;
+    grid-column: 3 / 4;
+  }
+
+  @include media-small {
+    padding: 30rem 1.6rem 8rem;
+    justify-content: center;
+    grid-column: 1 / 2;
+  }
+
+  @include media-mobile {
+    padding-top: 36.3rem;
+    gap: 1.6rem 1.4rem;
+  }
 }

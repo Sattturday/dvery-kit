@@ -31,22 +31,20 @@ export const ProductCard = ({ cardData }) => {
       <div className='product-card__info'>
         <h3 className='product-card__title'>{cardData.name}</h3>
         <div className='product-card__price-container'>
-          <p>Цена:</p>
+          <p>Цена:&nbsp;</p>
           {cardData.for_sale ? (
             <>
               <span className='product-card__price product-card__price_sale'>
-                {cardData.price}
+                {cardData.old_price}&nbsp;
               </span>
-              <span className='product-card__sale'>
-                {cardData.price_discount}
-              </span>
+              <span className='product-card__sale'>{cardData.price}</span>
             </>
           ) : (
             <span className='product-card__price'>{cardData.price}</span>
           )}
         </div>
       </div>
-      <Button />
+      <Button size='small' />
     </div>
   );
 };

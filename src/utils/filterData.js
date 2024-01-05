@@ -82,11 +82,6 @@ export const filterOptions = [
     category: 'accessories',
     type: 'select',
   },
-  {
-    id: 13,
-    category: 'price',
-    type: 'range',
-  },
 ];
 
 export const sortButtons = [

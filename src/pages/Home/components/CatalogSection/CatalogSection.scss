@@ -2,7 +2,7 @@
 @import '../../../../styles/abstract/placeholders.scss';
 @import '../../../../styles/abstract/mixins.scss';
 
-.catalog {
+.catalog-section {
   width: 100%;
   padding: 14.4rem 0 17.1rem;
 
@@ -19,18 +19,18 @@
   }
 }
 
-.catalog__title {
+.catalog-section__title {
   @include section-title;
   align-self: flex-start;
 }
 
-.catalog__list {
+.catalog-section__list {
   @include list;
   display: flex;
   justify-content: space-between;
   gap: 1.4rem;
 
-  @include media-laptop {
+  @include media-tablet {
     flex-wrap: wrap;
     justify-content: center;
   }

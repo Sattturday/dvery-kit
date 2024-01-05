@@ -12,7 +12,7 @@
     padding: 0 9rem;
   }
 
-  @include media-laptop {
+  @include media-tablet {
     padding: 5.2rem 0 8rem;
     border-radius: 1.6rem 1.6rem 0 0;
 
@@ -34,7 +34,7 @@
   @include section-title($color-light-xl);
   padding-bottom: 0.8rem;
 
-  @include media-laptop {
+  @include media-tablet {
     padding-bottom: 1.1rem;
   }
 }
@@ -49,7 +49,7 @@
     flex-wrap: wrap;
   }
 
-  @include media-laptop {
+  @include media-tablet {
     max-width: 61.8rem;
     width: 100%;
   }
@@ -83,7 +83,7 @@
     }
   }
 
-  @include media-laptop {
+  @include media-tablet {
     padding-right: 5.2rem;
 
     &:nth-child(2) {
@@ -157,7 +157,7 @@
       width: 70%;
     }
 
-    @include media-laptop {
+    @include media-tablet {
       width: 62%;
     }
   }

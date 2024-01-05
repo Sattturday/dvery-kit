@@ -8,16 +8,17 @@
 
   &_checked {
     p {
-      @include text($color-dark-xl, $fw-bold);
+      @include text-m($color-dark-xl, $fw-bold);
     }
   }
 }
 
 .select__name {
-  @include text;
+  @include text-m;
+
   @include media-hover {
     &:hover {
-      @include text($color-bg-violet, $fw-bold);
+      @include text-m($color-bg-violet, $fw-bold);
     }
   }
 }
