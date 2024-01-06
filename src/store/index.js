@@ -5,6 +5,7 @@ import articlesReducer from './articlesSlice';
 import filterReducer from './filterSlice';
 import { productsApi } from '../api/productsApi';
 import { articlesApi } from '../api/articlesApi';
+import { orderApi } from '../api/orderApi';
 
 const store = configureStore({
   reducer: {
@@ -13,11 +14,13 @@ const store = configureStore({
     filter: filterReducer,
     [productsApi.reducerPath]: productsApi.reducer,
     [articlesApi.reducerPath]: articlesApi.reducer,
+    [orderApi.reducerPath]: orderApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
       productsApi.middleware,
-      articlesApi.middleware
+      articlesApi.middleware,
+      orderApi.middleware
     ),
 });
 

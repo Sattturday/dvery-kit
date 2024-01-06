@@ -1,274 +1,77 @@
 @import '../../../styles/abstract/constants.scss';
+@import '../../../styles/abstract/placeholders.scss';
 @import '../../../styles/abstract/mixins.scss';
 
 .popup {
-  background-color: rgba(25, 26, 49, 0.63);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  overflow: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   opacity: 0;
   visibility: hidden;
-  padding: 106px 0 70px;
-  z-index: 110;
-  transition:
-    opacity 0.4s ease,
-    visibility 0.4s ease;
+  transition: opacity 0.4s ease;
 
   &_opened {
     visibility: visible;
     opacity: 1;
   }
-  &_type_news-modal {
-    padding: 98px 186px;
-    @include media-medium {
-      // margin: 98px -186px;
-    }
-  }
-
-  &_type_review {
-    padding-top: 112px;
-  }
-
-  @include media-medium {
-    padding: 48px 0 0;
-    align-items: flex-start;
-
-    &_type_review-modal {
-      padding-top: 42px;
-    }
-
-    &_type_review {
-      padding-top: 42px;
-    }
-  }
-
-  @include media-small {
-    padding-top: 20px;
-    align-items: flex-start;
-
-    &_type_review {
-      padding-top: 14px;
-    }
-  }
 }
 
 .popup__container {
-  margin: auto;
-  padding: 60px 80px;
-  background: $white;
-  border-radius: 16px;
+  padding: 0 4rem;
+  width: 35rem;
+  background: $color-light-xl;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   position: relative;
 
-  &_type_image {
-    margin: 0;
-    padding: 0;
-    width: auto;
-    aspect-ratio: auto;
-    background-color: transparent;
-  }
-
-  &_type_register-modal {
-    @include popup-container-main;
-    @include popup-paddings-main;
-  }
-
-  &_type_login-modal {
-    @include popup-container-main;
-    @include popup-paddings-main;
-  }
-
-  &_type_register-success-modal {
-    padding: 100px 80px;
-  }
-
-  &_type_password-recovery-modal {
-    @include popup-container-main;
-    @include popup-paddings-main;
-  }
-
-  &_type_message-modal {
-    @include popup-container-second;
-    @include popup-paddings-main;
-  }
-
-  &_type_news-modal {
-    padding: 50px 64px;
-    width: 100%;
-    margin-top: 0;
-    @include media-medium {
-      width: 100%;
-      max-width: 710px;
-      gap: 20px;
-    }
-    @include media-small {
-      padding: 50px 16px;
-    }
-  }
-
-  &_type_review-modal {
-    @include popup-container-upper(954px);
-    padding: 0;
-
-    @include media-medium {
-      max-width: 540px;
-      padding: 32px;
-    }
-
-    @include media-mobile {
-      max-width: 320px;
-      padding: 56px 16px 28px;
-    }
-  }
-
-  &_type_review {
-    @include popup-container-upper(908px);
-    padding: 40px 52px;
-    gap: 40px;
-
-    @include media-medium {
-      max-width: 604px;
-      padding: 40px 32px 32px;
-      gap: 16px;
-    }
-
-    @include media-mobile {
-      max-width: 320px;
-      padding: 52px 16px 40px;
-      gap: 20px;
-    }
-  }
-
-  &_type_gratitude {
-    width: 692px;
-    height: 356px;
-    padding: 60px 86px;
-  }
-
-  @include media-medium {
-    margin-top: 0;
+  @include media-small {
+    width: 24rem;
+    padding: 0 2rem;
   }
 }
 
 .popup__title {
-  @include text-xl($fw-semi-bold);
-  @include margin-padding-null;
+  margin: 0;
+  padding: 6rem 0;
+  color: $color-dark-xl;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: center;
 
-  &_centered {
-    text-align: center;
+  @include media-small {
+    font-size: 1.8rem;
   }
-
-  @include media-medium {
-    @include text-xls($fw-semi-bold);
-  }
 }
 
-.popup__image {
-  max-width: 75vw;
-  max-height: 75vh;
-  width: 100%;
-  aspect-ratio: auto;
-}
-
-.popup__submit-button {
-  @include popup-button-main;
-}
-
-.popup__close-btn {
-  @include button;
-  width: 24px;
-  height: 24px;
+.popup__close {
+  width: 3.2rem;
+  height: 3.2rem;
+  background-image: url(../../../images/icon/popup__close.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: transparent;
+  border: none;
+  padding: 0;
   position: absolute;
-  top: -36px;
-  right: 0;
-
-  &:hover {
-    opacity: 0.8;
-  }
+  top: -4rem;
+  right: -4rem;
+  cursor: pointer;
+  @include button;
 
   @include media-small {
-    width: 18px;
-    height: 18px;
-    top: 16px;
-    right: 16px;
-  }
-}
-
-.popup__close-image {
-  width: 100%;
-  height: 100%;
-
-  & path {
-    @include media-small {
-      fill: $button-violet;
-    }
-  }
-
-  &:hover path {
-    @include media-small {
-      fill: $button-violet-hover;
-    }
-  }
-
-  &:active path {
-    @include media-small {
-      fill: $button-violet-active;
-    }
-  }
-}
-
-.popup_type_profile-modal {
-  padding-top: 96px;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  align-items: flex-start;
-  text-align: center;
-}
-
-.popup__container_type_profile-modal {
-  padding: 60px 80px;
-  max-width: 690px;
-  align-items: center;
-}
-
-@media screen and (max-width: 768px) {
-  .popup_type_profile-modal {
-    padding-top: 48px;
-  }
-
-  .popup__container_type_profile-modal {
-    width: 364px;
-    padding: 20px 32px 32px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .popup_type_profile-modal {
-    padding-top: 20px;
-  }
-
-  .popup__container_type_profile-modal {
-    width: 364px;
-    padding: 44px 16px 40px;
-  }
-
-  .popup__close-btn_profile-modal {
-    width: 16px;
-    height: 16px;
-    background-image: url(../../../images/Popup/btn-profile-close.svg);
-    top: 20px;
-    right: 16px;
+    width: 2rem;
+    height: 2rem;
+    top: -3.6rem;
+    right: 0;
   }
 }
