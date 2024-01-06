@@ -1,7 +1,12 @@
+import { useDispatch } from 'react-redux';
+
+import { openCallPopup } from '../../store/popupsSlice';
+
 import './CallButton.scss';
 
 export const CallButton = ({ type }) => {
-  const callHandler = () => console.log('Call me!');
+  const dispatch = useDispatch();
+  const callHandler = () => dispatch(openCallPopup());
 
   return (
     <button

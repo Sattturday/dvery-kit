@@ -8,9 +8,9 @@ export function InputCheckbox({
   onChange,
 }) {
   return (
-    <div className='checkbox'>
+    <div className={`checkbox checkbox_type_${option.slug}`}>
       <label
-        className={`checkbox__label${
+        className={`checkbox__label checkbox__label_type_${option.slug}${
           isChecked ? ' checkbox__label_checked' : ''
         }`}
       >

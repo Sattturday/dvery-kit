@@ -13,16 +13,16 @@ import { buildUrlParams } from '../../utils/filterUtils';
 import { useGetFilterProductsQuery } from '../../api/productsApi';
 import { findTitleByCategory } from '../../utils/utils';
 import { filterOptions } from '../../utils/filterData';
+import { messages } from '../../utils/data';
 
 import { FilterList } from './components/FilterList/FilterList';
 import { ShowList } from './components/ShowList/ShowList';
 import { SearchForm } from './components/SearchForm';
 import { Sort } from './components/Sort';
 import './Catalog.scss';
-import { messages } from '../../utils/data';
 
 export const Catalog = () => {
-  const { filter } = useSelector((state) => state, { noopCheck: 'never' });
+  const filter = useSelector((state) => state.filter);
   const [paramsUrl, setParamsUrl] = useState('');
   const [menuOpen, setMenuOpen] = useState(false); // Открытие закрытие фильтров
 

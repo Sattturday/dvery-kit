@@ -7,6 +7,7 @@ import img5 from '../images/Catalog/5.png';
 export const messages = {
   loadMessage: 'Идет загрузка...',
   errorMessage: 'Что-то пошло не так, попробуйте еще раз.',
+  successMessage: 'Заявка успешно отправлена, ожидайте наш звонок.',
   searchMessage:
     'По вашему запросу ничего не найдено. Попробуйте изменить параметры поиска или ввести запрос по другому.',
 };
