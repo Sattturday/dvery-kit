@@ -152,6 +152,17 @@
 .contacts__content {
   @include text-m($color-light-xl);
 
+  &_tel {
+    text-decoration: none;
+    @extend %transition-all;
+
+    @include media-hover {
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+  }
+
   &_small {
     @include media-medium {
       width: 70%;

@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { InputCheckbox } from '../../../../components/InputCheckbox/InputCheckbox';
+import { closeAllPopups, setMessage } from '../../../../store/popupsSlice';
 import { usePostMeasureMutation } from '../../../../api/orderApi';
-import { addressRegex, nameRegex, phoneRegex } from '../../../../utils/regex';
 import { useFormAndValidation } from '../../../../hooks/useFormAndValidation';
+import { addressRegex, nameRegex, phoneRegex } from '../../../../utils/regex';
 import { Form } from '../../../../components/Form';
 import { Input } from '../../../../components/Input';
+import { InputCheckbox } from '../../../../components/InputCheckbox';
+import { messages } from '../../../../utils/data';
 import img1 from '../../../../images/measure-min.jpg';
 
 import './Measure.scss';
@@ -14,18 +17,29 @@ export const Measure = () => {
   const [isConfirm, setIsConfirm] = useState(false);
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
-  const [postMeasure] = usePostMeasureMutation();
+  const [postMeasure, { isLoading }] = usePostMeasureMutation();
+
+  const dispatch = useDispatch();
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log('values:', values);
-
     if (values && typeof values === 'object') {
-      console.log('Posting measure:', values);
-      postMeasure(values);
-      resetForm();
-      setIsConfirm(false);
+      postMeasure(values)
+        .then((data) => {
+          if (data && data.error) {
+            throw new Error(data.error);
+          }
+
+          resetForm();
+          setIsConfirm(false);
+          dispatch(closeAllPopups());
+          dispatch(setMessage(messages.successMessage));
+        })
+        .catch(() => {
+          dispatch(closeAllPopups());
+          dispatch(setMessage(messages.errorMessage));
+        });
     }
   }
 
@@ -42,7 +56,7 @@ export const Measure = () => {
             name='measure'
             buttonText='Записаться'
             loadingText='Идет отправка...'
-            isLoading={false}
+            isLoading={isLoading}
             isValid={isValid && isConfirm}
             onSubmit={handleSubmit}
           >

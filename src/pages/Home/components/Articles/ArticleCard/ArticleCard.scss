@@ -87,7 +87,7 @@
 .article-card__link {
   @include link;
   @include text($color-bg);
-  padding-top: 2rem;
+  padding-top: 3rem;
   @extend %transition-all;
 
   @include media-hover {

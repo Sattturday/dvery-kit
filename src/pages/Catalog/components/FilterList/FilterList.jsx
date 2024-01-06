@@ -51,7 +51,7 @@ export function FilterList({
                     <ul className='filter__list'>
                       {block.items.map((item) => {
                         return (
-                          <li>
+                          <li key={item.id}>
                             <InputCheckbox
                               option={{
                                 name: item.title,

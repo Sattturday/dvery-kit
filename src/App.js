@@ -6,6 +6,8 @@ import { CardPage } from './pages/CardPage';
 import { Catalog } from './pages/Catalog';
 import { ArticlePage } from './pages/ArticlePage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { CallbackPopup } from './components/CallbackPopup';
+import { InfoPopup } from './components/InfoPopup';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path='/cards/:id' element={<CardPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
+      <CallbackPopup />
+      <InfoPopup />
     </Layout>
   );
 }
