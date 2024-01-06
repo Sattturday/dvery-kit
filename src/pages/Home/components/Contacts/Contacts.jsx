@@ -21,13 +21,27 @@ export const Contacts = () => {
                 <p className='contacts__label contacts__label_desktop'>
                   Телефон:
                 </p>
-                <p className='contacts__content'>+7-937-393-91-93</p>
+                <a
+                  className='contacts__content contacts__content_tel'
+                  href='tel:+79373939193'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  +7-937-393-91-93
+                </a>
               </li>
               <li className='contacts__item'>
                 <p className='contacts__label contacts__label_desktop'>
                   Эл.почта:
                 </p>
-                <p className='contacts__content'>kupectorg21@mail.ru</p>
+                <a
+                  className='contacts__content contacts__content_tel'
+                  href='mailto:kupectorg21@mail.ru'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  kupectorg21@mail.ru
+                </a>
               </li>
               <li className='contacts__item'>
                 <p className='contacts__label contacts__label_desktop'>
@@ -50,11 +64,25 @@ export const Contacts = () => {
               </li>
               <li className='contacts__item'>
                 <p className='contacts__label'>Телефон:</p>
-                <p className='contacts__content'>+7-927-999-10-40</p>
+                <a
+                  className='contacts__content contacts__content_tel'
+                  href='tel:+79279991040'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  +7-927-999-10-40
+                </a>
               </li>
               <li className='contacts__item'>
                 <p className='contacts__label'>Эл.почта:</p>
-                <p className='contacts__content'>dverikitnchk@mail.ru</p>
+                <a
+                  className='contacts__content contacts__content_tel'
+                  href='mailto:dverikitnchk@mail.ru'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  dverikitnchk@mail.ru
+                </a>
               </li>
               <li className='contacts__item'>
                 <p className='contacts__label'>Время работы:</p>
@@ -74,11 +102,25 @@ export const Contacts = () => {
               </li>
               <li className='contacts__item'>
                 <p className='contacts__label'>Телефон:</p>
-                <p className='contacts__content'>+7-927-999-10-40</p>
+                <a
+                  className='contacts__content contacts__content_tel'
+                  href='tel:+79279991040'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  +7-927-999-10-40
+                </a>
               </li>
               <li className='contacts__item'>
                 <p className='contacts__label'>Эл.почта:</p>
-                <p className='contacts__content'>dverikitnchk@mail.ru</p>
+                <a
+                  className='contacts__content contacts__content_tel'
+                  href='mailto:dverikitnchk@mail.ru'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  dverikitnchk@mail.ru
+                </a>
               </li>
               <li className='contacts__item'>
                 <p className='contacts__label'>Время работы:</p>

@@ -1,6 +1,6 @@
-@import '../../../styles/abstract/constants.scss';
-@import '../../../styles/abstract/placeholders.scss';
-@import '../../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
 
 .popup {
   background-color: rgba(0, 0, 0, 0.5);
@@ -9,69 +9,88 @@
   left: 0;
   bottom: 0;
   right: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease;
+  padding: 7.8rem 0 70px;
+  z-index: 110;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 
   &_opened {
     visibility: visible;
     opacity: 1;
   }
+
+  @include media-medium {
+    padding: 5rem 0 0;
+  }
+
+  @include media-small {
+    padding-top: 2rem;
+  }
 }
 
 .popup__container {
-  padding: 0 4rem;
-  width: 35rem;
-  background: $color-light-xl;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 1rem;
+  margin: auto;
+  padding: 3.6rem 2rem 2.4rem;
+  max-width: 40.8rem;
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
+  background: $color-light-l;
+  border-radius: 1.2rem;
 
-  @include media-small {
-    width: 24rem;
-    padding: 0 2rem;
+  &_type_image {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    aspect-ratio: auto;
+    background-color: transparent;
+  }
+
+  @include media-mobile {
+    padding: 3.6rem 1.6rem 2.4rem;
   }
 }
 
 .popup__title {
-  margin: 0;
-  padding: 6rem 0;
-  color: $color-dark-xl;
-  font-size: 2.4rem;
-  line-height: 1.2;
-  font-weight: 500;
-  text-align: center;
-
-  @include media-small {
-    font-size: 1.8rem;
-  }
+  @include text-l;
+  @extend %font-thin;
+  padding-bottom: 2rem;
 }
 
-.popup__close {
-  width: 3.2rem;
-  height: 3.2rem;
-  background-image: url(../../../images/icon/popup__close.svg);
+.popup__image {
+  max-width: 75vw;
+  max-height: 75vh;
+  width: 100%;
+  aspect-ratio: auto;
+}
+
+.popup__close-btn {
+  @include button;
+  width: 24px;
+  height: 24px;
+  background-image: url(../../images/icons/close.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: transparent;
-  border: none;
-  padding: 0;
   position: absolute;
-  top: -4rem;
-  right: -4rem;
-  cursor: pointer;
-  @include button;
+  top: 1.2rem;
+  right: 2rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   @include media-small {
-    width: 2rem;
-    height: 2rem;
-    top: -3.6rem;
-    right: 0;
+    width: 18px;
+    height: 18px;
+    top: 16px;
+    right: 16px;
   }
 }

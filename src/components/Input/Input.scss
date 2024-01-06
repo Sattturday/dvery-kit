@@ -7,13 +7,13 @@
 }
 
 .input__name {
-  margin: 0;
   @include text-s;
 }
 
 .input__field {
   @include text;
   padding: 1.6rem;
+  margin-top: 0.8rem;
   width: 100%;
   box-sizing: border-box;
   background-color: $color-light-xl;

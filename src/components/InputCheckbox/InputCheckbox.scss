@@ -2,6 +2,13 @@
 @import '../../styles/abstract/mixins.scss';
 @import '../../styles/abstract/placeholders.scss';
 
+.checkbox {
+  &_type {
+    &_agree-call {
+      padding-bottom: 1.2rem;
+    }
+  }
+}
 .checkbox__label {
   display: flex;
   justify-content: flex-start;
@@ -15,6 +22,15 @@
 
     @include media-mobile {
       max-width: 90%;
+    }
+  }
+
+  &_type {
+    &_agree-call {
+      p {
+        max-width: 90%;
+        line-height: 1;
+      }
     }
   }
 

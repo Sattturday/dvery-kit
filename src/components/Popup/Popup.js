@@ -1,14 +1,23 @@
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
+import { closeAllPopups } from '../../store/popupsSlice';
 import './Popup.scss';
 
-export const Popup = ({ isOpen, name, onClose, children }) => {
+export const Popup = ({
+  isOpen,
+  name,
+  children,
+  title = '',
+  className = '',
+}) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     if (!isOpen) return;
-
     const closeByEscape = (e) => {
       if (e.key === 'Escape') {
-        onClose();
+        dispatch(closeAllPopups());
       }
     };
 
@@ -19,11 +28,11 @@ export const Popup = ({ isOpen, name, onClose, children }) => {
       document.body.classList.remove('page_lock');
       document.removeEventListener('keydown', closeByEscape);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, dispatch]);
 
   const handleOverlay = (e) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      dispatch(closeAllPopups());
     }
   };
 
@@ -32,9 +41,18 @@ export const Popup = ({ isOpen, name, onClose, children }) => {
       className={`popup${(isOpen && ' popup_opened') || ''} popup_type_${name}`}
       onMouseDown={handleOverlay}
     >
-      <div className={`popup__container popup__container_type_${name}`}>
+      <div
+        className={`popup__container popup__container_type_${name} ${
+          className ? className : ''
+        }`}
+      >
+        {title && <h2 className='popup__title'>{title}</h2>}
         {children}
-        <button className='popup__close' type='button' onClick={onClose} />
+        <button
+          className={`popup__close-btn popup__close-btn_${name}`}
+          type='button'
+          onClick={() => dispatch(closeAllPopups())}
+        />
       </div>
     </div>
   );
