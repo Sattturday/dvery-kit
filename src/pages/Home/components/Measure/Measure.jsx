@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { InputCheckbox } from '../../../../components/InputCheckbox/InputCheckbox';
+import { usePostMeasureMutation } from '../../../../api/orderApi';
 import { addressRegex, nameRegex, phoneRegex } from '../../../../utils/regex';
 import { useFormAndValidation } from '../../../../hooks/useFormAndValidation';
 import { Form } from '../../../../components/Form';
@@ -7,18 +9,24 @@ import { Input } from '../../../../components/Input';
 import img1 from '../../../../images/measure-min.jpg';
 
 import './Measure.scss';
-import { InputCheckbox } from '../../../../components/InputCheckbox/InputCheckbox';
 
 export const Measure = () => {
   const [isConfirm, setIsConfirm] = useState(false);
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
+  const [postMeasure] = usePostMeasureMutation();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(values);
-    resetForm();
-    setIsConfirm(false);
+
+    console.log('values:', values);
+
+    if (values && typeof values === 'object') {
+      console.log('Posting measure:', values);
+      postMeasure(values);
+      resetForm();
+      setIsConfirm(false);
+    }
   }
 
   useEffect(() => {
@@ -39,7 +47,7 @@ export const Measure = () => {
             onSubmit={handleSubmit}
           >
             <Input
-              name='name'
+              name='name_surname'
               title='Имя'
               type='text'
               minLength='2'
@@ -51,7 +59,7 @@ export const Measure = () => {
               pattern={nameRegex.source}
             />
             <Input
-              name='phone'
+              name='telefone'
               title='Телефон'
               type='tel'
               minLength='5'
@@ -75,7 +83,7 @@ export const Measure = () => {
               pattern={addressRegex.source}
             />
             <Input
-              name='category'
+              name='content'
               title='Что будем измерять?'
               type='text'
               minLength='4'
