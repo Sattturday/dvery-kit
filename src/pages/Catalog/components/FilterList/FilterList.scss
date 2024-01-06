@@ -2,28 +2,26 @@
 @import '../../../../styles/abstract/mixins.scss';
 
 .filter {
-  padding: 2.4rem 0.8rem;
-  width: 26.2rem;
-  height: 65.2rem;
+  padding: 2.8rem 0.8rem;
   background-color: $color-light-xl;
   border-radius: 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  grid-row: 1 / 3;
-  // button {
-  //   @include button;
-  //   width: 20px;
-  //   height: 20px;
-  //   background-image: url(../../../../images/Catalog/cross_small.svg);
-  // }
+  gap: 2.34rem;
+
+  @include media-small {
+    padding: 1.8rem 0.8rem;
+  }
 }
 
 .filter__wrapper {
-  padding: 0 1.6rem;
+  padding: 0 2rem;
 }
 
 .filter__list {
   @include list;
-  padding: 1.2rem 0 0 1.6rem;
+  padding: 1.8rem 0 0 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
 }

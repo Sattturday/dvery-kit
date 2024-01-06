@@ -5,6 +5,7 @@
 .form {
   width: 100%;
   min-height: 38rem;
+  position: relative;
   display: grid;
   align-items: end;
 
@@ -18,13 +19,40 @@
     }
 
     &_search {
-      width: auto;
+      width: 100%;
       min-height: auto;
       grid-template-rows: min-content;
-      grid-template-columns: 49.3rem 15.1rem;
+      grid-template-columns: auto 15.1rem;
       align-items: start;
       column-gap: 0.8rem;
       justify-self: end;
+
+      .input__error {
+        min-height: 1rem;
+      }
+
+      input {
+        padding-right: 4rem;
+      }
+
+      @include media-medium {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+      }
+
+      @include media-small {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        // input {
+        //   padding: 1rem 4rem 1rem 1rem;
+        // }
+      }
+
+      @include media-mobile {
+        grid-template-rows: min-content min-content;
+        grid-template-columns: 1fr;
+      }
     }
   }
 }

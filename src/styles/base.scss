@@ -60,7 +60,7 @@ html {
     padding: 0 4rem;
   }
 
-  @include media-laptop {
+  @include media-tablet {
     padding: 0 2rem;
   }
 
@@ -92,6 +92,7 @@ html {
   @extend %font-thin;
   overflow-wrap: break-word;
   hyphens: auto;
+  grid-column: 1 / 4;
 
   @include media-medium {
     @include text-m;

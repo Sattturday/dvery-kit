@@ -2,12 +2,16 @@ import { ProductCard } from '../ProductCard';
 
 import './ShowList.scss';
 
-export const ShowList = ({ data }) => {
+export const ShowList = ({ data, message }) => {
   return (
     <div className='show-list'>
-      {data.map((card) => {
-        return <ProductCard key={card.id} cardData={card} />;
-      })}
+      {message ? (
+        <p className='info-message'>{message}</p>
+      ) : (
+        data.map((card) => {
+          return <ProductCard key={card.id} cardData={card} />;
+        })
+      )}
     </div>
   );
 };

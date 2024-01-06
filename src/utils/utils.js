@@ -1,3 +1,5 @@
+import { filterOptions } from './filterData';
+
 // записываем все в ЛС
 export const saveToLocalStorage = (title, state) => {
   try {
@@ -18,4 +20,21 @@ export const loadFromLocalStorage = () => {
     console.error(e);
     return undefined;
   }
+};
+
+export const findTitleByCategory = (category, options) => {
+  for (const option of options) {
+    if (option.category === category) {
+      return option.title;
+    }
+
+    if (option.items && Array.isArray(option.items)) {
+      const nestedTitle = findTitleByCategory(category, option.items);
+      if (nestedTitle) {
+        return nestedTitle;
+      }
+    }
+  }
+
+  return '';
 };

@@ -30,6 +30,7 @@ const filterSlice = createSlice({
     setCategoryFilter(state, action) {
       state.category = action.payload;
     },
+    // Устанавливаем диапазон цен
     setPriceFilter(state, action) {
       const { min, max } = action.payload;
 
@@ -45,7 +46,6 @@ const filterSlice = createSlice({
         state.price.max = max;
       }
     },
-
     // Возвращает состояние фильтра к начальному состоянию
     setFilterDefault() {
       return initialState;

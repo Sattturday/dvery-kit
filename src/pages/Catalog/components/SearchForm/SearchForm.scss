@@ -1,0 +1,37 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/mixins.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+
+.search-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 17rem;
+  display: block;
+  background-image: url(../../../../images/icons/search.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  // @include media-small {
+  //   top: 0.9rem;
+  // }
+
+  @include media-mobile {
+    right: 1.6rem;
+  }
+}
+
+.search-clean {
+  @include button;
+  width: 2.4rem;
+  height: 2.4rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 17rem;
+
+  @include media-mobile {
+    right: 1.6rem;
+  }
+}

@@ -9,11 +9,17 @@ export const productsApi = createApi({
     getHitProducts: builder.query({
       query: () => '/products/?hit_sale=true',
     }),
+    getFilterRange: builder.query({
+      query: () => '/products/min_max_price/',
+    }),
     getFilterProducts: builder.query({
       query: ([params = '']) => `/products/${params ? '?' + params : ''}`,
     }),
   }),
 });
 
-export const { useGetHitProductsQuery, useGetFilterProductsQuery } =
-  productsApi;
+export const {
+  useGetHitProductsQuery,
+  useGetFilterRangeQuery,
+  useGetFilterProductsQuery,
+} = productsApi;

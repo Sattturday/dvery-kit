@@ -35,7 +35,7 @@ export const Bestsellers = () => {
         setSlidesToScroll(1);
       } else if (screenWidth <= 760) {
         setSlidesToShow(2);
-        setSlidesToScroll(2);
+        setSlidesToScroll(1);
       } else if (screenWidth <= 1170) {
         setSlidesToShow(3);
         setSlidesToScroll(3);
