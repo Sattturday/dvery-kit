@@ -29,12 +29,12 @@ export const Card = ({ data }) => {
           {data.for_sale ? (
             <>
               <span className='card__price card__price_sale'>
-                {data.old_price}&nbsp;
+                {data.old_price}₽&nbsp;
               </span>
-              <span className='card__sale'>{data.price}</span>
+              <span className='card__sale'>{data.price}₽</span>
             </>
           ) : (
-            <span className='card__price'>{data.price}</span>
+            <span className='card__price'>{data.price}₽</span>
           )}
         </div>
       </div>
