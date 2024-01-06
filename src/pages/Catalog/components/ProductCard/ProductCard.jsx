@@ -35,12 +35,12 @@ export const ProductCard = ({ cardData }) => {
           {cardData.for_sale ? (
             <>
               <span className='product-card__price product-card__price_sale'>
-                {cardData.old_price}&nbsp;
+                {cardData.old_price}₽&nbsp;
               </span>
-              <span className='product-card__sale'>{cardData.price}</span>
+              <span className='product-card__sale'>{cardData.price}₽</span>
             </>
           ) : (
-            <span className='product-card__price'>{cardData.price}</span>
+            <span className='product-card__price'>{cardData.price}₽</span>
           )}
         </div>
       </div>
