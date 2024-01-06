@@ -25,7 +25,6 @@ export const Input = ({
         required
         {...props}
       />
-      {name === 'search' && <span className='input__search'></span>}
       <span className='input__error'>{errors[name]}</span>
     </label>
   );

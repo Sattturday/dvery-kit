@@ -12,6 +12,16 @@
     border-radius: 0.8rem 0.8rem 0 0;
     box-shadow: 0 -3px 15px 4px rgba(122, 112, 112, 0.1);
   }
+
+  @include media-medium {
+    grid-column: 3 / 4;
+    justify-self: end;
+  }
+
+  @include media-small {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
 }
 
 .sort__wrapper {

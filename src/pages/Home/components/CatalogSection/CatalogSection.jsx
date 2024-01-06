@@ -4,12 +4,12 @@ import './CatalogSection.scss';
 
 export const CatalogSection = () => {
   return (
-    <section className='catalog'>
+    <section className='catalog-section'>
       <div className='wrapper'>
-        <h2 className='catalog__title'>Каталог</h2>
-        <ul className='catalog__list'>
+        <h2 className='catalog-section__title'>Каталог</h2>
+        <ul className='catalog-section__list'>
           {catalogData.map((data) => (
-            <li key={data.id} className='catalog__item'>
+            <li key={data.id} className='catalog-section__item'>
               <CatalogCard data={data} />
             </li>
           ))}

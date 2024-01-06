@@ -3,11 +3,10 @@ export function buildUrlParams(filters) {
   const params = new URLSearchParams();
 
   // Проверяем, есть ли параметр search
-  // if (filters['search']) {
-  //   params.append('search', filters['search']);
-  //   console.log(params.toString());
-  //   return params.toString();
-  // }
+  if (filters['search']) {
+    params.append('search', filters['search']);
+    return params.toString();
+  }
 
   for (const key in filters) {
     if (key === 'ordering' && filters[key] === 'ascending') {
@@ -35,14 +34,15 @@ export function buildUrlParams(filters) {
     if (key === 'category' && filters[key] !== 'interior_door') {
       continue;
     }
-    // if (
-    //   key === 'price' &&
-    //   (filters[key].minVal !== 0 || filters[key].maxVal !== 500000)
-    // ) {
-    //   params.append('min_price', filters[key].minVal);
-    //   params.append('max_price', filters[key].maxVal);
-    //   continue;
-    // }
+
+    if (
+      key === 'price' &&
+      (filters[key].min !== 0 || filters[key].max !== 500000)
+    ) {
+      params.append('min_price', filters[key].min);
+      params.append('max_price', filters[key].max);
+      continue;
+    }
 
     if (!filters[key].length) continue;
 

@@ -11,12 +11,14 @@ $color-bg: #660066;
 $color-bg-violet: #430043;
 $color-bg-dark: #2e002e;
 $color-bg-light: #a173df;
+$bg-overlay: rgba(0, 0, 0, 0.5);
 
 // для медиа-запросов
 $content-width: 144rem;
 $medium-width: 1280px;
-$laptop-width: 850px;
-$small-width: 650px;
+$laptop-width: 1024px;
+$tablet-width: 850px;
+$small-width: 750px;
 $mobile-width: 490px;
 
 /* font */

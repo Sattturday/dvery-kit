@@ -4,9 +4,9 @@ import { InputCheckbox } from '../../../../components/InputCheckbox/InputCheckbo
 import { filterOptions } from '../../../../utils/filterData';
 import { FilterCheckbox } from '../FilterCheckbox/FilterCheckbox';
 import { InputSelect } from '../InputSelect/InputSelect';
+import { DoubleRange } from '../DoubleRange/DoubleRange';
 
 import './FilterList.scss';
-import { DoubleRange } from '../DoubleRange/DoubleRange';
 
 export function FilterList({
   handleSubmit,
@@ -15,68 +15,73 @@ export function FilterList({
   selectHandler,
   radioHandler,
   onMenuClick,
+  windowWidth,
 }) {
   return (
-    <aside className='filter'>
-      {/* <button type='button' onClick={onMenuClick}></button> */}
-
-      {filterOptions.map((block, index) => {
-        return (
-          <div key={block.id} className='filter__wrapper'>
-            {block.type === 'checkbox' ? (
-              <FilterCheckbox
-                option={{
-                  name: block.title,
-                  slug: block.category,
-                }}
-                isChecked={filter[block.category]}
-                onChange={() => {
-                  checkboxHandler(block.category);
-                }}
-              />
-            ) : (
-              <>
-                <InputSelect
+    <aside>
+      <form className='filter' onSubmit={handleSubmit}>
+        {filterOptions.map((block) => {
+          return (
+            <div key={block.id} className='filter__wrapper'>
+              {block.type === 'checkbox' ? (
+                <FilterCheckbox
                   option={{
                     name: block.title,
                     slug: block.category,
                   }}
-                  type='radio'
-                  isChecked={filter['type'] === block.category}
+                  isChecked={filter[block.category]}
                   onChange={() => {
-                    selectHandler(block.category);
+                    checkboxHandler(block.category);
                   }}
                 />
-                {block.items && (
-                  <ul className='filter__list'>
-                    {block.items.map((item) => {
-                      return (
-                        <li>
-                          <InputCheckbox
-                            option={{
-                              name: item.title,
-                              slug: item.category,
-                            }}
-                            type='radio'
-                            isChecked={
-                              filter['category'] === item.category &&
-                              filter['type'] === 'interior_door'
-                            }
-                            onChange={() => {
-                              radioHandler(item.category);
-                            }}
-                          />
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-              </>
-            )}
-          </div>
-        );
-      })}
-      <DoubleRange />
+              ) : (
+                <>
+                  <InputSelect
+                    option={{
+                      name: block.title,
+                      slug: block.category,
+                    }}
+                    type='radio'
+                    isChecked={filter['type'] === block.category}
+                    onChange={() => {
+                      selectHandler(block.category);
+                    }}
+                  />
+                  {block.items && (
+                    <ul className='filter__list'>
+                      {block.items.map((item) => {
+                        return (
+                          <li>
+                            <InputCheckbox
+                              option={{
+                                name: item.title,
+                                slug: item.category,
+                              }}
+                              type='radio'
+                              isChecked={
+                                filter['category'] === item.category &&
+                                filter['type'] === 'interior_door'
+                              }
+                              onChange={() => {
+                                radioHandler(item.category);
+                              }}
+                            />
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </>
+              )}
+            </div>
+          );
+        })}
+        <DoubleRange
+          handleSubmit={handleSubmit}
+          onMenuClick={onMenuClick}
+          windowWidth={windowWidth}
+        />
+      </form>
     </aside>
   );
 }

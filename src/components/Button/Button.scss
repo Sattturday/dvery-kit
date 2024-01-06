@@ -17,6 +17,24 @@
     background-color: $color-bg;
   }
 
+  &_size {
+    &_large {
+      height: 5.6rem;
+      min-width: 22.8rem;
+      border-radius: 0.8rem;
+
+      @include media-small {
+        min-width: 100%;
+      }
+    }
+
+    &_small {
+      @include media-small {
+        height: 3.2rem;
+      }
+    }
+  }
+
   @include media-hover {
     &:hover {
       font-weight: $fw-bold;
