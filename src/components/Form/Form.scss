@@ -29,11 +29,12 @@
       justify-self: end;
 
       .input__error {
-        min-height: 1rem;
+        min-height: 0.8rem;
       }
 
       input {
         padding-right: 4rem;
+        margin: 0;
       }
 
       @include media-medium {
@@ -49,6 +50,14 @@
       @include media-mobile {
         grid-template-rows: min-content min-content;
         grid-template-columns: 1fr;
+
+        input {
+          padding: 1.1rem 4rem 1.1rem 1.6rem;
+        }
+
+        button {
+          min-height: 4.6rem;
+        }
       }
     }
   }

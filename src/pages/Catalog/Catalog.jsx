@@ -72,6 +72,10 @@ export const Catalog = () => {
     };
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const sortHandler = (btnId) => {
     dispatch(setSortFilter(btnId));
   };

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { useClickOutside } from '../../../../hooks/useClickOutside';
 import { sortButtons } from '../../../../utils/filterData';
+
 import './Sort.scss';
 
 export function Sort({ sortHandler }) {
