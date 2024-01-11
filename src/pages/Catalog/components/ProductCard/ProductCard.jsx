@@ -23,7 +23,7 @@ export const ProductCard = ({ cardData }) => {
         )}
         {cardData.for_order && (
           <span className='product-card__label product-card__label_type_order'>
-            Под заказ{' '}
+            Под заказ
           </span>
         )}
       </div>

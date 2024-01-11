@@ -15,6 +15,9 @@ export const productsApi = createApi({
     getFilterProducts: builder.query({
       query: ([params = '']) => `/products/${params ? '?' + params : ''}`,
     }),
+    getProductById: builder.query({
+      query: (id) => `/products/${id}/`,
+    }),
   }),
 });
 
@@ -22,4 +25,5 @@ export const {
   useGetHitProductsQuery,
   useGetFilterRangeQuery,
   useGetFilterProductsQuery,
+  useGetProductByIdQuery,
 } = productsApi;

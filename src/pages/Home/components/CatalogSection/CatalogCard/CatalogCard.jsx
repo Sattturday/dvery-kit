@@ -1,11 +1,17 @@
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import { Button } from '../../../../../components/Button/Button';
+import { setTypeFilter } from '../../../../../store/filterSlice';
+
 import './CatalogCard.scss';
 
 export const CatalogCard = ({ data }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleClick = () => {
+    dispatch(setTypeFilter(data.type));
     navigate('/catalog');
   };
 
