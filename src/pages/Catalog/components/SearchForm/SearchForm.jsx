@@ -41,7 +41,6 @@ export const SearchForm = ({ searchHandler }) => {
       <Input
         name='search'
         type='text'
-        minLength='2'
         maxLength='40'
         placeholder='Входная дверь белая'
         errors={errors}

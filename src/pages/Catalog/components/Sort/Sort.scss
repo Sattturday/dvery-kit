@@ -15,7 +15,7 @@
 
   @include media-medium {
     grid-column: 3 / 4;
-    justify-self: end;
+    justify-self: start;
   }
 
   @include media-small {
@@ -36,6 +36,10 @@
   &_active {
     border-radius: 0.8rem 0.8rem 0 0;
   }
+
+  @include media-small {
+    height: 4.6rem;
+  }
 }
 
 .sort__arrow {
@@ -53,6 +57,10 @@
   padding: 1.2rem;
   width: 100%;
   justify-content: space-between;
+
+  @include media-small {
+    padding: 0.8rem;
+  }
 }
 
 .sort__list {
@@ -102,6 +110,10 @@
     span {
       @include text($color-bg, $fw-bold);
     }
+  }
+
+  @include media-small {
+    height: 4.6rem;
   }
 }
 

@@ -1,0 +1,140 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.card-page {
+  padding: 10rem 0;
+}
+
+.card-page__container {
+  display: flex;
+
+  gap: 3rem;
+
+  @include media-laptop {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card-page__info {
+  max-width: 68.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card-page__image {
+  margin: auto;
+  width: 100%;
+  max-width: 32.9rem;
+  aspect-ratio: 1 / 1.57;
+  object-fit: contain;
+  object-position: center;
+}
+
+.card-page__title-block {
+  display: flex;
+  gap: 2rem;
+}
+
+.card-page__title {
+  @include text-l;
+  @extend %font-thin;
+}
+
+.card-page__label {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.8rem;
+  height: 3.2rem;
+
+  &_type {
+    &_sale {
+      @include text-s;
+      background-color: $color-lime;
+    }
+
+    &_order {
+      @include text-s($color-light-xl);
+      background-color: $color-bg-light;
+    }
+  }
+
+  @include media-laptop {
+    padding: 0.6rem;
+  }
+}
+
+.card-page__price-container {
+  display: flex;
+  @include text-m;
+
+  p {
+    margin: 0;
+  }
+
+  @include media-laptop {
+    p {
+      display: none;
+    }
+  }
+}
+
+.card-page__price {
+  @include text-m($font-weight: $fw-bold);
+
+  &_sale {
+    color: $color-dark-m;
+    text-decoration: line-through;
+  }
+
+  @include media-laptop {
+    @include text-s($font-weight: $fw-bold);
+
+    &_sale {
+      color: $color-dark-m;
+      text-decoration: line-through;
+    }
+  }
+}
+
+.card-page__sale {
+  @include text($color-red, $fw-semibold);
+
+  @include media-laptop {
+    @include text-s($color-red, $fw-semibold);
+  }
+}
+
+.card-page__size-block {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  @include text-m;
+}
+
+.card-page__size-list {
+  @include list;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+
+  li {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid $color-bg-violet;
+  }
+}
+
+.card-page__description {
+  span {
+    @include text-l;
+    @extend %font-thin;
+    padding-bottom: 1.6rem;
+  }
+
+  p {
+    @include text;
+    padding: 0.8rem 0;
+  }
+}
