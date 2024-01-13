@@ -40,14 +40,14 @@ export const Home = () => {
   return (
     <>
       <Promo />
-      {productsApiData.length !== 0 && (
+      {productsApiData?.length !== 0 && (
         <Bestsellers error={error} isLoading={isLoading} />
       )}
       <CatalogSection />
       <About />
       <Measure />
       <Delivery />
-      {articlesApiData.length !== 0 && (
+      {articlesApiData?.length !== 0 && (
         <Articles error={articlesError} isLoading={articlesIsLoading} />
       )}
       <Contacts />
