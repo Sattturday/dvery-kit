@@ -1,22 +1,18 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { setArticles } from '../../../../store/articlesSlice';
-import { useGetArticlesQuery } from '../../../../api/articlesApi';
 import { SliderButton } from '../../../../components/SliderButton';
 import { messages } from '../../../../utils/data';
 
 import { ArticleCard } from './ArticleCard/ArticleCard';
 import './Articles.scss';
 
-export const Articles = () => {
+export const Articles = ({ error, isLoading }) => {
   const [slidesToShow, setSlidesToShow] = useState(2);
-  const dispatch = useDispatch();
   const articlesData = useSelector((state) => state.articles.list);
-  const { data: articlesApiData, error, isLoading } = useGetArticlesQuery();
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,12 +33,6 @@ export const Articles = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  useEffect(() => {
-    if (articlesApiData) {
-      dispatch(setArticles(articlesApiData));
-    }
-  }, [articlesApiData, dispatch]);
 
   const articlesSettings = {
     infinite: true,

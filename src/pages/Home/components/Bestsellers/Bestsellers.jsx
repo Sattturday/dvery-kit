@@ -1,30 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { useGetHitProductsQuery } from '../../../../api/productsApi';
-import { setHitSale } from '../../../../store/productsSlice';
 import { SliderButton } from '../../../../components/SliderButton';
 import { Card } from '../../../../components/Card';
 import { messages } from '../../../../utils/data';
 
 import './Bestsellers.scss';
 
-export const Bestsellers = () => {
+export const Bestsellers = ({ error, isLoading }) => {
   const [slidesToShow, setSlidesToShow] = useState(5);
   const [slidesToScroll, setSlidesToScroll] = useState(3);
 
-  const dispatch = useDispatch();
   const hitSaleData = useSelector((state) => state.products.hitSale);
-  const { data: productsApiData, error, isLoading } = useGetHitProductsQuery();
-
-  useEffect(() => {
-    if (productsApiData) {
-      dispatch(setHitSale(productsApiData));
-    }
-  }, [productsApiData, dispatch]);
 
   useEffect(() => {
     const handleResize = () => {
