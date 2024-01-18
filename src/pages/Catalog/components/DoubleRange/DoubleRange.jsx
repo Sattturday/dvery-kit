@@ -73,7 +73,7 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
           min={0}
           max={maxValue}
           step={100}
-          value={localPrice.min}
+          value={localPrice.min || ''}
           onChange={(e) => handleInputChange('min', e)}
         />
       </label>
@@ -85,7 +85,7 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
           min={0}
           max={maxValue}
           step={100}
-          value={localPrice.max}
+          value={localPrice.max || ''}
           inputMode='numeric'
           onChange={(e) => handleInputChange('max', e)}
         />

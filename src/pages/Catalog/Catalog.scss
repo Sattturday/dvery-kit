@@ -46,7 +46,7 @@
 
 .catalog__subtitle_s {
   @include text($color-bg);
-  padding: 1rem 0 1.6rem;
+  padding: 1rem 0 1.6rem 3.6rem;
   display: none;
 
   @include media-small {

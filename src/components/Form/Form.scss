@@ -54,10 +54,6 @@
         input {
           padding: 1.1rem 4rem 1.1rem 1.6rem;
         }
-
-        button {
-          min-height: 4.6rem;
-        }
       }
     }
   }
@@ -91,5 +87,9 @@
     background-color: transparent;
     border: 0.2rem solid rgba(102, 0, 102, 0.4);
     opacity: 0.8;
+  }
+
+  @include media-mobile {
+    min-height: 4.6rem;
   }
 }
