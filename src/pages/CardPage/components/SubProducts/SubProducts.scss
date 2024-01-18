@@ -1,0 +1,59 @@
+@import '../../../../styles/abstract/constants.scss';
+@import '../../../../styles/abstract/placeholders.scss';
+@import '../../../../styles/abstract/mixins.scss';
+
+.sub-prod {
+  margin: auto;
+  padding: 4rem 7rem 10.3rem;
+  max-width: $content-width;
+  width: 100%;
+
+  @include media-medium {
+    padding: 4rem 3rem 10.3rem;
+  }
+
+  @include media-tablet {
+    padding: 3.2rem 1rem 9.5rem;
+  }
+
+  @include media-mobile {
+    padding: 3.2rem 0.6rem 9.5rem;
+  }
+}
+
+.sub-prod__title {
+  @include section-title;
+  padding-left: 1rem;
+  padding-bottom: 2.9rem;
+
+  @include media-mobile {
+    padding-left: 0;
+    padding-bottom: 1.2rem;
+    text-align: center;
+  }
+}
+
+.sub-prod__box {
+  margin: auto;
+  max-width: 130rem;
+
+  @media (max-width: 1400px) {
+    max-width: 104rem;
+  }
+
+  @media (max-width: 1170px) {
+    max-width: 78rem;
+  }
+
+  @media (max-width: 760px) {
+    max-width: 52rem;
+  }
+
+  @media (max-width: 530px) {
+    max-width: 26rem;
+  }
+}
+
+.sub-prod__container {
+  padding: 1.2rem;
+}

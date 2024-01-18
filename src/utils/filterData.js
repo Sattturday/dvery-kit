@@ -8,7 +8,7 @@ export const INITIAL_FILTER_STATE = {
 
   price: {
     min: 0,
-    max: 75000,
+    max: 500000,
   },
 };
 

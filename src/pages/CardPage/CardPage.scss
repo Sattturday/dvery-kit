@@ -3,39 +3,101 @@
 @import '../../styles/abstract/placeholders.scss';
 
 .card-page {
-  padding: 10rem 0;
+  padding-top: 10.3rem;
+  background-color: $color-light-xl;
+  padding-bottom: 6rem;
+
+  @include media-tablet {
+    padding-top: 8.3rem;
+  }
+
+  @include media-mobile {
+    padding-top: 7.3rem;
+  }
+}
+
+.card-page__breadcrumb {
+  display: flex;
+  align-items: center;
+}
+
+.card-page__breadcrumb-btn {
+  @include button;
+  width: 3.6rem;
+  height: 2.4rem;
+  display: flex;
+  background-image: url(../../images/icons/filter_list.svg);
+  background-position: 0;
+  background-repeat: no-repeat;
+  border-radius: 0.8rem;
+
+  &:active {
+    background-color: rgba(189, 180, 180, 0.4);
+  }
+}
+
+.card-page__type {
+  @include text-l;
+  @extend %font-thin;
+  padding: 0;
+}
+
+.card-page__category {
+  @include text-m($color-bg);
+  padding: 1rem 0 2rem 3.6rem;
+
+  @include media-tablet {
+    @include text($color-bg);
+    padding: 0.7rem 0 2rem 3.6rem;
+  }
+
+  @include media-mobile {
+    padding: 1rem 0 2rem 3.6rem;
+  }
 }
 
 .card-page__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 2.2rem;
 
-  gap: 3rem;
+  @include media-tablet {
+    column-gap: 1.1rem;
+  }
 
-  @include media-laptop {
+  @include media-small {
+    display: flex;
     flex-direction: column;
-    align-items: center;
   }
 }
 
 .card-page__info {
-  max-width: 68.9rem;
+  max-width: 66.7rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-}
-
-.card-page__image {
-  margin: auto;
-  width: 100%;
-  max-width: 32.9rem;
-  aspect-ratio: 1 / 1.57;
-  object-fit: contain;
-  object-position: center;
 }
 
 .card-page__title-block {
+  padding-bottom: 3.6rem;
   display: flex;
   gap: 2rem;
+
+  @include media-tablet {
+    padding-bottom: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+
+    div {
+      display: flex;
+      gap: 1.6rem;
+    }
+  }
+
+  @include media-mobile {
+    padding-top: 2.3rem;
+  }
 }
 
 .card-page__title {
@@ -44,14 +106,19 @@
 }
 
 .card-page__label {
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.8rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 1.2rem;
   height: 3.2rem;
 
   &_type {
     &_sale {
+      display: none;
       @include text-s;
       background-color: $color-lime;
+
+      @include media-tablet {
+        display: flex;
+      }
     }
 
     &_order {
@@ -59,24 +126,19 @@
       background-color: $color-bg-light;
     }
   }
-
-  @include media-laptop {
-    padding: 0.6rem;
-  }
 }
 
 .card-page__price-container {
-  display: flex;
   @include text-m;
+  padding-bottom: 3.3rem;
+  display: flex;
 
   p {
     margin: 0;
   }
 
-  @include media-laptop {
-    p {
-      display: none;
-    }
+  @include media-tablet {
+    padding-bottom: 2rem;
   }
 }
 
@@ -87,54 +149,67 @@
     color: $color-dark-m;
     text-decoration: line-through;
   }
-
-  @include media-laptop {
-    @include text-s($font-weight: $fw-bold);
-
-    &_sale {
-      color: $color-dark-m;
-      text-decoration: line-through;
-    }
-  }
 }
 
 .card-page__sale {
   @include text($color-red, $fw-semibold);
-
-  @include media-laptop {
-    @include text-s($color-red, $fw-semibold);
-  }
 }
 
 .card-page__size-block {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
   @include text-m;
+  padding-bottom: 3.3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+
+  span {
+    padding-top: 0.9rem;
+  }
+
+  @include media-laptop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+
+  @include media-mobile {
+    padding-bottom: 0;
+  }
 }
 
 .card-page__size-list {
+  @extend %font-thin;
   @include list;
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
 
   li {
-    padding: 1rem;
+    padding: 0 0.9rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
     border-radius: 1rem;
     border: 1px solid $color-bg-violet;
+  }
+
+  @include media-mobile {
+    gap: 0.8rem;
   }
 }
 
 .card-page__description {
-  span {
+  h2 {
     @include text-l;
     @extend %font-thin;
-    padding-bottom: 1.6rem;
   }
 
-  p {
+  div {
     @include text;
-    padding: 0.8rem 0;
+  }
+
+  @include media-tablet {
+    padding-top: 2rem;
+    grid-column: 1 / 3;
   }
 }
