@@ -31,7 +31,6 @@ export const CardPage = () => {
     if (data && data.productalbum.length !== 0) {
       setImages(data.productalbum);
     }
-
     if (data) {
       dispatch(setTypeFilter(data.type));
     }
@@ -39,10 +38,14 @@ export const CardPage = () => {
     if (data && data.category !== 'None') {
       dispatch(setCategoryFilter(data.category));
     }
+
+    if (data && data.category === 'None') {
+      dispatch(setCategoryFilter(''));
+    }
   }, [data]);
 
   const handleClick = () => {
-    navigate('/catalog');
+    navigate(-1);
   };
 
   return (
@@ -60,7 +63,7 @@ export const CardPage = () => {
                   className='card-page__breadcrumb-btn'
                   type='button'
                   onClick={handleClick}
-                  aria-label='Вернуться в каталог'
+                  aria-label='Вернуться'
                 />
                 <p className='card-page__type'>
                   {data && findTitleByCategory(filter['type'], filterOptions)}
