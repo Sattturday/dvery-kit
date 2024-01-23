@@ -1,16 +1,22 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import { SliderVerticalButton } from '../../../../components/SliderVerticalButton/SliderVerticalButton';
+import { openImagePopup, setImage } from '../../../../store/popupsSlice';
 import { BASE_URL_IMG } from '../../../../utils/constants';
-import './ImagesSlider.scss';
 import { SliderButton } from '../../../../components/SliderButton';
 
+import './ImagesSlider.scss';
+
 export const ImagesSlider = ({ images, sale }) => {
+  const reversedImages = [...images].reverse();
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderNavRef = useRef(null);
   const sliderRef = useRef(null);
+  const dispatch = useDispatch();
 
   const settings = {
     dots: false,
@@ -33,13 +39,24 @@ export const ImagesSlider = ({ images, sale }) => {
     slidesToScroll: 1,
     vertical: true,
     verticalSwiping: true,
-    //centerMode: true,
-    arrows: false,
+    arrows: true,
+    prevArrow: <SliderVerticalButton type='prev' />,
+    nextArrow: <SliderVerticalButton type='next' />,
     afterChange: (current) => setCurrentSlide(current),
   };
 
   const goToSlide = (index) => {
     sliderRef.current.slickGoTo(index);
+  };
+
+  useEffect(() => {
+    goToSlide(currentSlide);
+  }, [currentSlide]);
+
+  // Обработчик открытия попапа с изображением
+  const handleImagePopupOpen = () => {
+    dispatch(setImage(reversedImages[currentSlide]));
+    dispatch(openImagePopup());
   };
 
   return (
@@ -50,7 +67,7 @@ export const ImagesSlider = ({ images, sale }) => {
           {...navSettings}
           className='thumbnail-slider'
         >
-          {images.map((item, index) => (
+          {reversedImages.map((item, index) => (
             <div key={index}>
               <div
                 className={`thumbnail-slider__item ${
@@ -58,7 +75,6 @@ export const ImagesSlider = ({ images, sale }) => {
                 }`}
                 onClick={() => {
                   setCurrentSlide(index);
-                  goToSlide(index);
                 }}
               >
                 <img
@@ -74,12 +90,14 @@ export const ImagesSlider = ({ images, sale }) => {
       <div className='image-slider__full'>
         {sale && <span className='image-slider__label'>{sale}</span>}
         <Slider ref={sliderRef} {...settings}>
-          {images.map((item, index) => (
-            // <div>
+          {reversedImages.map((item, index) => (
             <div key={index} className='image-slider__image'>
-              <img src={`${BASE_URL_IMG}${item.image}`} alt={item.name} />
+              <img
+                onClick={() => handleImagePopupOpen()}
+                src={`${BASE_URL_IMG}${item.image}`}
+                alt={item.name}
+              />
             </div>
-            // </div>
           ))}
         </Slider>
       </div>
