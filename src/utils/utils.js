@@ -38,3 +38,14 @@ export const findTitleByCategory = (category, options) => {
 
   return '';
 };
+
+export function formatPrice(price) {
+  const priceStr = price.toString();
+
+  if (priceStr.length > 3) {
+    const formattedPrice = priceStr.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return formattedPrice;
+  } else {
+    return priceStr;
+  }
+}
