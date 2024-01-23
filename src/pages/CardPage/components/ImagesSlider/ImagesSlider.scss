@@ -31,8 +31,6 @@
 }
 
 .image-slider__items {
-  overflow: hidden;
-
   @include media-tablet {
     display: none;
   }
@@ -42,13 +40,14 @@
   width: 9.7rem;
 
   .slick-list {
-    height: 100% !important;
+    height: 45.8rem !important;
     padding: 0 !important;
+    margin: 3.2rem 0;
   }
 }
 
 .thumbnail-slider__item {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1rem;
   padding: 0.4rem;
   height: 14.4rem;
   display: flex;
@@ -79,6 +78,8 @@
 }
 
 .image-slider__image {
+  cursor: pointer;
+
   img {
     width: 100%;
     max-width: 32.9rem;

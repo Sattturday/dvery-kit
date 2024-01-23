@@ -26,6 +26,10 @@
     opacity: 1;
   }
 
+  &_type_image {
+    justify-content: center;
+  }
+
   @include media-medium {
     padding: 5rem 0 0;
   }
@@ -82,9 +86,15 @@
   position: absolute;
   top: 1.2rem;
   right: 2rem;
+  @extend %transition-opacity;
 
   &:hover {
     opacity: 0.8;
+  }
+
+  &_image {
+    top: -2rem;
+    right: -4rem;
   }
 
   @include media-small {
@@ -92,5 +102,10 @@
     height: 18px;
     top: 16px;
     right: 16px;
+
+    &_image {
+      top: 0;
+      right: 0;
+    }
   }
 }

@@ -8,7 +8,9 @@ import './ProductCard.scss';
 export const ProductCard = ({ cardData }) => {
   const navigate = useNavigate();
 
-  const src = `${BASE_URL_IMG}${cardData.productalbum[0].image}`;
+  const src = `${BASE_URL_IMG}${
+    cardData.productalbum[cardData.productalbum.length - 1].image
+  }`;
   const handleClick = () => {
     navigate(`/cards/${cardData.id}`);
   };

@@ -10,11 +10,15 @@ export const Card = ({ data }) => {
 
   const src =
     data.productalbum.length !== 0
-      ? `${BASE_URL_IMG}${data.productalbum[0].image}`
+      ? `${BASE_URL_IMG}${
+          data.productalbum[data.productalbum.length - 1].image
+        }`
       : '';
 
   const alt =
-    data.productalbum.length !== 0 ? `${data.productalbum[0].name}` : '';
+    data.productalbum.length !== 0
+      ? `${data.productalbum[data.productalbum.length - 1].name}`
+      : '';
 
   const handleClick = () => {
     navigate(`/cards/${data.id}`);

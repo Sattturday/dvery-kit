@@ -82,7 +82,8 @@ export const CallbackPopup = () => {
         <InputCheckbox
           option={{
             slug: 'agree-call',
-            name: 'Соглашаюсь с политикой обработки персональных данных',
+            name: 'Соглашаюсь с ',
+            link: 'политикой обработки персональных данных',
           }}
           isChecked={isConfirm}
           onChange={() => {

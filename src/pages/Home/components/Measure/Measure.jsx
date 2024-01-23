@@ -111,7 +111,8 @@ export const Measure = () => {
             <InputCheckbox
               option={{
                 slug: 'agree',
-                name: 'Соглашаюсь с политикой обработки персональных данных',
+                name: 'Соглашаюсь с ',
+                link: 'политикой обработки персональных данных',
               }}
               isChecked={isConfirm}
               onChange={() => {

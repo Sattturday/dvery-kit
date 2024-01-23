@@ -1,0 +1,44 @@
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.vertical-arrow {
+  @include button;
+  position: absolute;
+  left: calc(50% - 12px);
+  width: 2.4rem;
+  height: 2.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  @extend %transition-all;
+
+  @include media-hover {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &_type {
+    &_prev {
+      top: -3rem;
+      background-image: url(../../images/icons/arrow-up.svg);
+
+      @include media-hover {
+        &:hover {
+          background-image: url(../../images/icons/arrow-up.svg);
+        }
+      }
+    }
+
+    &_next {
+      top: 46.2rem;
+      background-image: url(../../images/icons/arrow_bottom.svg);
+
+      @include media-hover {
+        &:hover {
+          background-image: url(../../images/icons/arrow_bottom.svg);
+        }
+      }
+    }
+  }
+}

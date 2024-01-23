@@ -23,6 +23,12 @@
     @include media-mobile {
       max-width: 90%;
     }
+
+    a {
+      @include link;
+      @include text($color-bg-violet);
+      border-bottom: 1px solid $color-bg-violet;
+    }
   }
 
   &_type {
