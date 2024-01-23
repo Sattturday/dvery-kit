@@ -1,0 +1,29 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.privacy {
+  padding: 10rem 0;
+
+  h1 {
+    @include section-title;
+  }
+
+  h2 {
+    @include text-l;
+    padding: 1rem 0;
+  }
+
+  p {
+    @include text;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+  }
+
+  ul {
+  }
+
+  li {
+    @include text;
+  }
+}

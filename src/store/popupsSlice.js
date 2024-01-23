@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// Начальный стейт вынесен в переменную
 const initialState = {
   message: '',
+  image: {},
   isOpenCallPopup: false,
   isOpenInfoPopup: false,
+  isOpenImagePopup: false,
 };
 
 const popupSlice = createSlice({
@@ -12,24 +13,33 @@ const popupSlice = createSlice({
   initialState: initialState,
   reducers: {
     closeAllPopups(state) {
-      for (const key in state) {
-        state[key] = false;
-      }
+      state.isOpenCallPopup = false;
+      state.isOpenInfoPopup = false;
+      state.isOpenImagePopup = false;
+      state.image = {};
+      state.message = '';
     },
     openCallPopup(state) {
       state.isOpenCallPopup = true;
     },
-    openInfoPopup(state) {
-      state.isOpenInfoPopup = true;
+    openImagePopup(state) {
+      state.isOpenImagePopup = true;
     },
     setMessage(state, action) {
       state.message = action.payload;
     },
+    setImage(state, action) {
+      state.image = action.payload;
+    },
   },
 });
 
-// Экспорт экшенов для вызова диспетчера
-export const { closeAllPopups, openCallPopup, openInfoPopup, setMessage } =
-  popupSlice.actions;
+export const {
+  closeAllPopups,
+  openCallPopup,
+  openImagePopup,
+  setMessage,
+  setImage,
+} = popupSlice.actions;
 
 export default popupSlice.reducer;

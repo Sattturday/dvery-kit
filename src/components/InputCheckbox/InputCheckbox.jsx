@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom';
 import './InputCheckbox.scss';
+import { useDispatch } from 'react-redux';
+import { closeAllPopups } from '../../store/popupsSlice';
 
 // Функциональный компонент для отображения чекбокса
 export function InputCheckbox({
@@ -7,6 +10,12 @@ export function InputCheckbox({
   isChecked,
   onChange,
 }) {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(closeAllPopups());
+  };
+
   return (
     <div className={`checkbox checkbox_type_${option.slug}`}>
       <label
@@ -23,7 +32,12 @@ export function InputCheckbox({
           onChange={() => onChange(option)}
         />
         <span className='checkbox__input-new'></span>
-        <p>{option.name}</p>
+        <p>
+          {option.name}
+          <Link to={'/privacy'} onClick={handleClick}>
+            {option.link}
+          </Link>
+        </p>
       </label>
     </div>
   );

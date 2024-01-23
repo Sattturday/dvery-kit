@@ -29,8 +29,8 @@
   p {
     @include text;
     position: absolute;
-    top: 25%;
-    left: 1.2rem;
+    top: 26%;
+    left: 1rem;
   }
 }
 
@@ -38,10 +38,16 @@
   display: flex;
   width: 100%;
   @include text;
-  padding: 1.1rem 0.6rem 1.1rem 3.6rem;
+  padding: 1.1rem 0.6rem 1.1rem 3.2rem;
   border: 2px solid $color-light-l;
   border-radius: 0.8rem;
   background-color: $color-light-l;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
   &:focus {
     border: 2px solid $color-lime;

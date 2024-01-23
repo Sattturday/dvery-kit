@@ -8,6 +8,8 @@ import { ArticlePage } from './pages/ArticlePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { CallbackPopup } from './components/CallbackPopup';
 import { InfoPopup } from './components/InfoPopup';
+import { Privacy } from './pages/Privacy/Privacy';
+import ImagePopup from './components/ImagePopup/ImagePopup';
 
 function App() {
   return (
@@ -17,10 +19,12 @@ function App() {
         <Route path='/articles/:id' element={<ArticlePage />} />
         <Route path='/catalog' element={<Catalog />} />
         <Route path='/cards/:id' element={<CardPage />} />
+        <Route path='/privacy' element={<Privacy />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
       <CallbackPopup />
       <InfoPopup />
+      <ImagePopup />
     </Layout>
   );
 }
