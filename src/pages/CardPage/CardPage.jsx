@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { setCategoryFilter, setTypeFilter } from '../../store/filterSlice';
 import { useGetProductByIdQuery } from '../../api/productsApi';
-import { findTitleByCategory } from '../../utils/utils';
+import { findTitleByCategory, formatPrice } from '../../utils/utils';
 import { filterOptions } from '../../utils/filterData';
 import { messages } from '../../utils/data';
 import { Preloader } from '../../components/Preloder';
@@ -97,12 +97,16 @@ export const CardPage = () => {
                     {data.for_sale ? (
                       <>
                         <span className='card-page__price card-page__price_sale'>
-                          {data.old_price}₽&nbsp;
+                          {formatPrice(data.old_price)}₽&nbsp;
                         </span>
-                        <span className='card-page__sale'>{data.price}₽</span>
+                        <span className='card-page__sale'>
+                          {formatPrice(data.price)}₽
+                        </span>
                       </>
                     ) : (
-                      <span className='card-page__price'>{data.price}₽</span>
+                      <span className='card-page__price'>
+                        {formatPrice(data.price)}₽
+                      </span>
                     )}
                   </div>
                   {data.size.length !== 0 && (

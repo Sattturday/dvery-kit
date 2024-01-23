@@ -12,7 +12,6 @@ import { SliderButton } from '../../../../components/SliderButton';
 import './ImagesSlider.scss';
 
 export const ImagesSlider = ({ images, sale }) => {
-  const reversedImages = [...images].reverse();
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderNavRef = useRef(null);
   const sliderRef = useRef(null);
@@ -55,7 +54,7 @@ export const ImagesSlider = ({ images, sale }) => {
 
   // Обработчик открытия попапа с изображением
   const handleImagePopupOpen = () => {
-    dispatch(setImage(reversedImages[currentSlide]));
+    dispatch(setImage(images[currentSlide]));
     dispatch(openImagePopup());
   };
 
@@ -67,7 +66,7 @@ export const ImagesSlider = ({ images, sale }) => {
           {...navSettings}
           className='thumbnail-slider'
         >
-          {reversedImages.map((item, index) => (
+          {images.map((item, index) => (
             <div key={index}>
               <div
                 className={`thumbnail-slider__item ${
@@ -90,7 +89,7 @@ export const ImagesSlider = ({ images, sale }) => {
       <div className='image-slider__full'>
         {sale && <span className='image-slider__label'>{sale}</span>}
         <Slider ref={sliderRef} {...settings}>
-          {reversedImages.map((item, index) => (
+          {images.map((item, index) => (
             <div key={index} className='image-slider__image'>
               <img
                 onClick={() => handleImagePopupOpen()}

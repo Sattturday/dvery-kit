@@ -2,15 +2,15 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '../../../../components/Button';
 import { BASE_URL_IMG } from '../../../../utils/constants';
+import { formatPrice } from '../../../../utils/utils';
 
 import './ProductCard.scss';
 
 export const ProductCard = ({ cardData }) => {
   const navigate = useNavigate();
 
-  const src = `${BASE_URL_IMG}${
-    cardData.productalbum[cardData.productalbum.length - 1].image
-  }`;
+  const src = `${BASE_URL_IMG}${cardData.productalbum[0].image}`;
+
   const handleClick = () => {
     navigate(`/cards/${cardData.id}`);
   };
@@ -37,12 +37,16 @@ export const ProductCard = ({ cardData }) => {
           {cardData.for_sale ? (
             <>
               <span className='product-card__price product-card__price_sale'>
-                {cardData.old_price}₽&nbsp;
+                {formatPrice(cardData.old_price)}₽&nbsp;
               </span>
-              <span className='product-card__sale'>{cardData.price}₽</span>
+              <span className='product-card__sale'>
+                {formatPrice(cardData.price)}₽
+              </span>
             </>
           ) : (
-            <span className='product-card__price'>{cardData.price}₽</span>
+            <span className='product-card__price'>
+              {formatPrice(cardData.price)}₽
+            </span>
           )}
         </div>
       </div>
