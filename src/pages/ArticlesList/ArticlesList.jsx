@@ -16,10 +16,10 @@ export const ArticlesList = () => {
   const { data: articlesApiData, error, isLoading } = useGetArticlesQuery();
 
   useEffect(() => {
-    if (articlesApiData) {
+    if (!articlesData.length && articlesApiData) {
       dispatch(setArticles(articlesApiData));
     }
-  }, [articlesApiData, dispatch]);
+  }, [articlesApiData, articlesData, dispatch]);
 
   const handleClick = () => {
     navigate('/');

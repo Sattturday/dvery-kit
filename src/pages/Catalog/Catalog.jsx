@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -25,6 +25,9 @@ export const Catalog = () => {
   const filter = useSelector((state) => state.filter);
   const [paramsUrl, setParamsUrl] = useState('');
   const [menuOpen, setMenuOpen] = useState(false); // Открытие закрытие фильтров
+
+  // Для сокрытия строки поиска при скролле
+  const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
 
   // Состояние для отслеживания ширины экрана
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -75,6 +78,22 @@ export const Catalog = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Для сокрытия строки поиска при скролле
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.scrollY;
+      setPreviousScrollPosition(currentPosition);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []); // Пустой массив зависимостей указывает, что этот эффект должен запускаться только один раз при монтировании компонента
+
+  const isSearchBarHidden = useMemo(
+    () => window.innerWidth < 490 && previousScrollPosition > 0,
+    [previousScrollPosition]
+  );
 
   const sortHandler = (btnId) => {
     dispatch(setSortFilter(btnId));
@@ -153,7 +172,13 @@ export const Catalog = () => {
           <p className='catalog__subtitle_s'>
             {findTitleByCategory(filter['category'], filterOptions)}
           </p>
-          <div className='catalog__container'>
+          <div
+            className={
+              isSearchBarHidden
+                ? 'catalog__container catalog__container_small'
+                : 'catalog__container'
+            }
+          >
             <div
               className={`catalog__filter-menu${
                 (menuOpen && ' catalog__filter-menu_active') || ''
@@ -179,7 +204,10 @@ export const Catalog = () => {
               />
             </div>
             <Sort sortHandler={sortHandler} />
-            <SearchForm searchHandler={searchHandler} />
+            <SearchForm
+              searchHandler={searchHandler}
+              isSearchBarHidden={isSearchBarHidden}
+            />
             <button
               className='catalog__button'
               type='button'

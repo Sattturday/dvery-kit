@@ -2,6 +2,14 @@
 @import '../../../../styles/abstract/mixins.scss';
 @import '../../../../styles/abstract/placeholders.scss';
 
+.search-form {
+  @include media-mobile {
+    &_hidden {
+      visibility: hidden;
+    }
+  }
+}
+
 .search-icon {
   width: 2.4rem;
   height: 2.4rem;
@@ -13,10 +21,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  // @include media-small {
-  //   top: 0.9rem;
-  // }
 
   @include media-mobile {
     top: 1.1rem;

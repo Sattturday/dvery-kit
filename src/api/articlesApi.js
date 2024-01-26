@@ -10,7 +10,7 @@ export const articlesApi = createApi({
       query: () => '/articles/',
     }),
     getArticleById: builder.query({
-      query: (id) => `/articles/${id}`,
+      query: (id) => `/articles/${id}/`,
     }),
   }),
 });
