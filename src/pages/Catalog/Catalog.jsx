@@ -1,17 +1,18 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import {
   setCategoryFilter,
   setCheckboxFilter,
+  setFilterAllData,
   setRequestFilter,
   setSortFilter,
   setTypeFilter,
 } from '../../store/filterSlice';
 import { buildUrlParams } from '../../utils/filterUtils';
 import { useGetFilterProductsQuery } from '../../api/productsApi';
-import { findTitleByCategory } from '../../utils/utils';
+import { findTitleByCategory, loadFromLocalStorage } from '../../utils/utils';
 import { filterOptions } from '../../utils/filterData';
 import { messages } from '../../utils/data';
 
@@ -24,7 +25,7 @@ import './Catalog.scss';
 export const Catalog = () => {
   const filter = useSelector((state) => state.filter);
   const [paramsUrl, setParamsUrl] = useState('');
-  const [menuOpen, setMenuOpen] = useState(false); // Открытие закрытие фильтров
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Для сокрытия строки поиска при скролле
   const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
@@ -51,6 +52,14 @@ export const Catalog = () => {
   const searchHandler = (value) => {
     dispatch(setRequestFilter(value));
   };
+
+  // Проверяем LS, если там есть состояния фильтров, то отправляем их в стор
+  useEffect(() => {
+    const storedFilter = loadFromLocalStorage('filter');
+    if (storedFilter) {
+      dispatch(setFilterAllData(storedFilter));
+    }
+  }, [dispatch]);
 
   // Обработка изменений фильтра сортировки
   useEffect(() => {

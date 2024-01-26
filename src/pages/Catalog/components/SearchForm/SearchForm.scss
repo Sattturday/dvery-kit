@@ -3,6 +3,17 @@
 @import '../../../../styles/abstract/placeholders.scss';
 
 .search-form {
+  width: 100%;
+  justify-self: end;
+  @include media-medium {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+
+  @include media-small {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
   @include media-mobile {
     &_hidden {
       visibility: hidden;
