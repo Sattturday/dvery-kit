@@ -126,7 +126,7 @@ export const CardPage = () => {
                 </div>
               </div>
               {data.productalbumcolor.length !== 0 && (
-                <Colors colors={data.productalbumcolor} />
+                <Colors colors={data.color_product} />
               )}
             </>
           )}
