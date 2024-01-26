@@ -1,0 +1,78 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.articles-page {
+  padding: 12.8rem 0 16rem;
+
+  @include media-tablet {
+    padding: 7.8rem 0 6rem;
+  }
+
+  @include media-small {
+    padding: 7.8rem 0 4rem;
+  }
+}
+
+.articles-page__links {
+  padding-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  @include media-tablet {
+    padding-bottom: 2rem;
+  }
+}
+
+.articles-page__crumb {
+  @include link;
+  @include text-s;
+  opacity: 0.6;
+}
+
+.articles-page__title {
+  @include section-title;
+  padding-bottom: 1.2rem;
+}
+
+.articles-page__date {
+  @include text;
+  @extend %font-thin;
+  padding-bottom: 3.2rem;
+  opacity: 0.7;
+
+  @include media-tablet {
+    @include text-s;
+    padding-bottom: 2rem;
+  }
+}
+
+.articles-page__text {
+  p {
+    @include text-m;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  img {
+    margin: 2.4rem 0;
+    width: 100%;
+    max-width: 48%;
+    border-radius: 1.2rem;
+  }
+
+  @include media-tablet {
+    p {
+      @include text;
+      gap: 0;
+    }
+
+    img {
+      margin: 0.6rem 0;
+      max-width: 100%;
+      border-radius: 0.8rem;
+    }
+  }
+}
