@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BASE_URL_IMG } from '../../../../utils/constants';
+
 import './Colors.scss';
 
 export const Colors = ({ colors }) => {
