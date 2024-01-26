@@ -10,12 +10,14 @@ import { CallbackPopup } from './components/CallbackPopup';
 import { InfoPopup } from './components/InfoPopup';
 import { Privacy } from './pages/Privacy/Privacy';
 import ImagePopup from './components/ImagePopup/ImagePopup';
+import { ArticlesList } from './pages/ArticlesList';
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/articles' element={<ArticlesList />} />
         <Route path='/articles/:id' element={<ArticlePage />} />
         <Route path='/catalog' element={<Catalog />} />
         <Route path='/cards/:id' element={<CardPage />} />

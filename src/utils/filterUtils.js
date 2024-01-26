@@ -53,6 +53,5 @@ export function buildUrlParams(filters) {
 
     params.append(key, filters[key]);
   }
-  console.log(params.toString());
   return params.toString();
 }

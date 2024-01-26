@@ -10,6 +10,10 @@
 
   @include media-medium {
     padding: 4.5rem 1rem 10.2rem;
+
+    .slick-list {
+      max-height: 42.3rem;
+    }
   }
 
   @include media-small {

@@ -85,6 +85,11 @@
 
   @include media-mobile {
     grid-template-rows: 9.9rem 5.6rem;
+
+    &_small {
+      grid-template-rows: 0.1rem 5.6rem;
+      gap: 0;
+    }
   }
 }
 

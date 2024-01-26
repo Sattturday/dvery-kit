@@ -26,7 +26,6 @@
       grid-template-columns: auto 15.1rem;
       align-items: start;
       column-gap: 0.8rem;
-      justify-self: end;
 
       .input__error {
         min-height: 0.8rem;
@@ -37,22 +36,16 @@
         margin: 0;
       }
 
-      @include media-medium {
-        grid-column: 3 / 4;
-        grid-row: 2 / 3;
-      }
-
-      @include media-small {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-      }
-
       @include media-mobile {
         grid-template-rows: min-content min-content;
         grid-template-columns: 1fr;
 
         input {
           padding: 1.1rem 4rem 1.1rem 1.6rem;
+        }
+
+        button {
+          transition: none;
         }
       }
     }

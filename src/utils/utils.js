@@ -1,5 +1,3 @@
-import { filterOptions } from './filterData';
-
 // записываем все в ЛС
 export const saveToLocalStorage = (title, state) => {
   try {
@@ -10,11 +8,10 @@ export const saveToLocalStorage = (title, state) => {
 };
 
 // достаем все из ЛС
-export const loadFromLocalStorage = () => {
+export const loadFromLocalStorage = (title) => {
   try {
-    const stateStr = localStorage.getItem('state');
+    const stateStr = localStorage.getItem(`${title}`);
     const state = stateStr ? JSON.parse(stateStr) : undefined;
-    console.log('state from ls:', state);
     return state;
   } catch (e) {
     console.error(e);

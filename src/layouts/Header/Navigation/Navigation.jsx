@@ -50,9 +50,16 @@ export const Navigation = ({ onBurgerClick, menuOpen }) => {
             </NavLink>
           </li>
           <li onClick={menuOpen ? onBurgerClick : undefined}>
-            <HashLink to='/#articles' className='navigation__item'>
+            <NavLink
+              to='/articles'
+              className={({ isActive }) => {
+                return isActive
+                  ? 'navigation__item navigation__item_type_active'
+                  : 'navigation__item';
+              }}
+            >
               Статьи
-            </HashLink>
+            </NavLink>
           </li>
           <li onClick={menuOpen ? onBurgerClick : undefined}>
             <HashLink to='/#measure' className='navigation__item'>

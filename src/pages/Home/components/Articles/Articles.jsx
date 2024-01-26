@@ -4,10 +4,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import { ArticleCard } from '../../../../components/ArticleCard';
 import { SliderButton } from '../../../../components/SliderButton';
 import { messages } from '../../../../utils/data';
 
-import { ArticleCard } from './ArticleCard/ArticleCard';
 import './Articles.scss';
 
 export const Articles = ({ error, isLoading }) => {
