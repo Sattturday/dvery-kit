@@ -2,6 +2,25 @@
 @import '../../../../styles/abstract/mixins.scss';
 @import '../../../../styles/abstract/placeholders.scss';
 
+.search-form {
+  width: 100%;
+  justify-self: end;
+  @include media-medium {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+
+  @include media-small {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  @include media-mobile {
+    &_hidden {
+      visibility: hidden;
+    }
+  }
+}
+
 .search-icon {
   width: 2.4rem;
   height: 2.4rem;
@@ -13,10 +32,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  // @include media-small {
-  //   top: 0.9rem;
-  // }
 
   @include media-mobile {
     top: 1.1rem;

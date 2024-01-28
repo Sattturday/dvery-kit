@@ -1,0 +1,56 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.articles-list {
+  padding: 12.8rem 0 16rem;
+
+  @include media-tablet {
+    padding: 7.8rem 0 6rem;
+  }
+
+  @include media-small {
+    padding: 7.2rem 0 8rem;
+  }
+}
+
+.articles-list__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.articles-list__button {
+  @include button;
+  margin-bottom: 2.3rem;
+  width: 3.6rem;
+  height: 2.4rem;
+  display: none;
+  background-image: url(../../images/icons/filter_list.svg);
+  background-position: 0;
+  background-repeat: no-repeat;
+  border-radius: 0.8rem;
+
+  &:active {
+    background-color: rgba(189, 180, 180, 0.4);
+  }
+
+  @include media-small {
+    display: flex;
+  }
+}
+
+.articles-list__title {
+  @include section-title;
+
+  @include media-small {
+    @include text-l;
+    @extend %font-thin;
+  }
+}
+
+.articles-list__items {
+  @include list;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}

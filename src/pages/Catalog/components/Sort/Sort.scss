@@ -15,10 +15,11 @@
 
   @include media-medium {
     grid-column: 3 / 4;
-    justify-self: start;
+    justify-self: end;
   }
 
   @include media-small {
+    justify-self: start;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
   }
