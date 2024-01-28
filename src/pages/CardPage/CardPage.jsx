@@ -125,9 +125,7 @@ export const CardPage = () => {
                   <div dangerouslySetInnerHTML={{ __html: data.description }} />
                 </div>
               </div>
-              {data.productalbumcolor.length !== 0 && (
-                <Colors colors={data.color_product} />
-              )}
+              {data.color_product && <Colors colors={data.color_product} />}
             </>
           )}
         </div>

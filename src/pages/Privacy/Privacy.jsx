@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import './Privacy.scss';
 
 export const Privacy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className='privacy'>
       <div className='wrapper'>
