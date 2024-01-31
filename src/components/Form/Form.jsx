@@ -24,7 +24,7 @@ export const Form = ({
         type='submit'
         disabled={!isValid}
       >
-        {isLoading ? loadingText : buttonText}
+        <span>{isLoading ? loadingText : buttonText}</span>
       </button>
     </form>
   );

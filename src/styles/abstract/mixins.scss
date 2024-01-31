@@ -45,6 +45,10 @@
 @mixin link($color: $color-dark-xl) {
   text-decoration: none;
   color: $color;
+
+  &:focus {
+    outline: 2px solid transparent;
+  }
 }
 
 @mixin button {

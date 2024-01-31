@@ -32,7 +32,7 @@ export const ImagesSlider = ({ images, sale }) => {
 
   const navSettings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -61,14 +61,11 @@ export const ImagesSlider = ({ images, sale }) => {
   return (
     <div className='image-slider'>
       <div className='image-slider__items'>
-        <Slider
-          ref={sliderNavRef}
-          {...navSettings}
-          className='thumbnail-slider'
-        >
-          {images.map((item, index) => (
-            <div key={index}>
+        {images.length < 3 ? (
+          <div className='thumbnail-slider'>
+            {images.map((item, index) => (
               <div
+                key={index}
                 className={`thumbnail-slider__item ${
                   index === currentSlide ? 'thumbnail-slider__item_active' : ''
                 }`}
@@ -82,9 +79,36 @@ export const ImagesSlider = ({ images, sale }) => {
                   alt={item.name}
                 />
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </div>
+        ) : (
+          <Slider
+            ref={sliderNavRef}
+            {...navSettings}
+            className='thumbnail-slider'
+          >
+            {images.map((item, index) => (
+              <div key={index}>
+                <div
+                  className={`thumbnail-slider__item ${
+                    index === currentSlide
+                      ? 'thumbnail-slider__item_active'
+                      : ''
+                  }`}
+                  onClick={() => {
+                    setCurrentSlide(index);
+                  }}
+                >
+                  <img
+                    className='thumbnail-slider__image'
+                    src={`${BASE_URL_IMG}${item.image}`}
+                    alt={item.name}
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
+        )}
       </div>
       <div className='image-slider__full'>
         {sale && <span className='image-slider__label'>{sale}</span>}
