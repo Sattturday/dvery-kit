@@ -37,15 +37,28 @@
       }
 
       @include media-mobile {
-        grid-template-rows: min-content min-content;
-        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr min-content;
+        column-gap: 0;
 
         input {
-          padding: 1.1rem 4rem 1.1rem 1.6rem;
+          padding: 1.1rem 1.6rem;
+          border-radius: 8px 0px 0px 8px;
         }
 
-        button {
+        .form__submit {
           transition: none;
+          width: 4.4rem;
+          min-height: 4.4rem;
+          background-image: url(../../images/icons/search-white.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: $color-bg;
+          border-radius: 0px 8px 8px 0px;
+
+          span {
+            display: none;
+          }
         }
       }
     }

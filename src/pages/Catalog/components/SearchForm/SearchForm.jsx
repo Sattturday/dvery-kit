@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useFormAndValidation } from '../../../../hooks/useFormAndValidation';
 import { setRequestFilter } from '../../../../store/filterSlice';
@@ -8,16 +8,26 @@ import { Input } from '../../../../components/Input';
 import Clean from '../../../../images/icons/close.svg';
 
 import './SearchForm.scss';
+import { loadFromLocalStorage } from '../../../../utils/utils';
 
 export const SearchForm = ({ searchHandler, isSearchBarHidden }) => {
-  const { values, handleChange, errors, isValid, resetForm } =
+  const { values, setValues, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
 
   const dispatch = useDispatch();
+  const search = useSelector((state) => state.filter.search);
 
   useEffect(() => {
-    resetForm();
-  }, [resetForm]);
+    // Проверяем LS, если там есть значение для поиска, то устанавливаем его в values
+    const storedFilter = loadFromLocalStorage('filter');
+
+    if (storedFilter && storedFilter.search) {
+      resetForm(true);
+      setValues({ search: storedFilter.search });
+    } else {
+      resetForm();
+    }
+  }, [setValues, resetForm]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,7 +57,7 @@ export const SearchForm = ({ searchHandler, isSearchBarHidden }) => {
           name='search'
           type='text'
           maxLength='40'
-          placeholder='Входная дверь белая'
+          placeholder='Введите поисковый запрос'
           errors={errors}
           values={values}
           handleChange={handleChange}

@@ -33,7 +33,6 @@ export const ProductCard = ({ cardData }) => {
       <div className='product-card__info'>
         <h3 className='product-card__title'>{cardData.name}</h3>
         <div className='product-card__price-container'>
-          <p>Цена:&nbsp;</p>
           {cardData.for_sale ? (
             <>
               <span className='product-card__price product-card__price_sale'>
