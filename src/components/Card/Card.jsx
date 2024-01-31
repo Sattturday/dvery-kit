@@ -35,7 +35,7 @@ export const Card = ({ data }) => {
       <div className='card__info'>
         <h3 className='card__title'>{data.name}</h3>
         <div className='card__price-container'>
-          <p>Цена:&nbsp;</p>
+          {/* <p>Цена:&nbsp;</p> */}
           {data.for_sale ? (
             <>
               <span className='card__price card__price_sale'>
