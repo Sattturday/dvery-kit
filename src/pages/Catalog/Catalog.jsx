@@ -122,7 +122,7 @@ export const Catalog = () => {
     }
   };
 
-  // Обработчик изменения флажков (select)
+  // Обработчик изменения флажков (radio)
   const radioHandler = (key) => {
     dispatch(setTypeFilter('interior_door'));
     dispatch(setCategoryFilter(key));

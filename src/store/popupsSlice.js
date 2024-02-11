@@ -16,7 +16,7 @@ const popupSlice = createSlice({
       state.isOpenCallPopup = false;
       state.isOpenInfoPopup = false;
       state.isOpenImagePopup = false;
-      state.image = {};
+      //state.image = {};
       state.message = '';
     },
     openCallPopup(state) {
