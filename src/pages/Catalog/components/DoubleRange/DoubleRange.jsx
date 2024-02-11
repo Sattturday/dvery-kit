@@ -21,7 +21,8 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
   });
 
   // Локальное состояние для хранения значений для начальной установки
-  const [maxValue, setMaxValue] = useState(100000);
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(500000);
   const [valueSet, setValueSet] = useState(false);
 
   // useEffect для установки начальных значений и обновления максимального значения после получения данных
@@ -31,7 +32,13 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
         min: filterData.min_price,
         max: filterData.max_price,
       });
-
+      dispatch(
+        setPriceFilter({
+          min: filterData.min_price,
+          max: filterData.max_price,
+        })
+      );
+      setMinValue(filterData.min_price);
       setMaxValue(filterData.max_price);
       setValueSet(true); // Устанавливаем флаг, чтобы больше не изменять начальные значения
     }
@@ -70,7 +77,7 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
         <input
           className='range__input'
           type='number'
-          min={0}
+          min={minValue}
           max={maxValue}
           step={100}
           value={localPrice.min || ''}
@@ -82,7 +89,7 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
         <input
           className='range__input'
           type='number'
-          min={0}
+          min={minValue}
           max={maxValue}
           step={100}
           value={localPrice.max || ''}
@@ -94,7 +101,7 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
         className='horizontal-slider'
         thumbClassName='example-thumb'
         trackClassName='example-track'
-        min={0}
+        min={minValue}
         max={maxValue}
         step={100}
         value={[localPrice.min, localPrice.max]}
