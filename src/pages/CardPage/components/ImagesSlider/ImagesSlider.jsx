@@ -61,9 +61,9 @@ export const ImagesSlider = ({ images, sale }) => {
   return (
     <div className='image-slider'>
       <div className='image-slider__items'>
-        {images.length < 3 ? (
+        {images?.length < 3 ? (
           <div className='thumbnail-slider'>
-            {images.map((item, index) => (
+            {images?.map((item, index) => (
               <div
                 key={index}
                 className={`thumbnail-slider__item ${
@@ -87,7 +87,7 @@ export const ImagesSlider = ({ images, sale }) => {
             {...navSettings}
             className='thumbnail-slider'
           >
-            {images.map((item, index) => (
+            {images?.map((item, index) => (
               <div key={index}>
                 <div
                   className={`thumbnail-slider__item ${
@@ -113,7 +113,7 @@ export const ImagesSlider = ({ images, sale }) => {
       <div className='image-slider__full'>
         {sale && <span className='image-slider__label'>{sale}</span>}
         <Slider ref={sliderRef} {...settings}>
-          {images.map((item, index) => (
+          {images?.map((item, index) => (
             <div key={index} className='image-slider__image'>
               <img
                 onClick={() => handleImagePopupOpen()}
