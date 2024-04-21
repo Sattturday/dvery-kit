@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './InputCheckbox.scss';
 import { useDispatch } from 'react-redux';
+
 import { closeAllPopups } from '../../store/popupsSlice';
 
 // Функциональный компонент для отображения чекбокса
