@@ -97,7 +97,7 @@ export const Catalog = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []); // Пустой массив зависимостей указывает, что этот эффект должен запускаться только один раз при монтировании компонента
+  }, []);
 
   const isSearchBarHidden = useMemo(
     () => window.innerWidth < 490 && previousScrollPosition > 0,
