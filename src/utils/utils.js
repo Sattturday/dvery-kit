@@ -8,7 +8,7 @@ export const saveToLocalStorage = (title, state) => {
 };
 
 // достаем все из ЛС
-export const loadFromLocalStorage = (title) => {
+export const loadFromLocalStorage = title => {
   try {
     const stateStr = localStorage.getItem(`${title}`);
     const state = stateStr ? JSON.parse(stateStr) : undefined;

@@ -1,4 +1,5 @@
 import { catalogData } from '../../../../utils/data';
+
 import { CatalogCard } from './CatalogCard';
 import './CatalogSection.scss';
 

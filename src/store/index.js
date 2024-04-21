@@ -1,12 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import { productsApi } from '../api/productsApi';
+
+import { articlesApi } from '../api/articlesApi';
+
+import { orderApi } from '../api/orderApi';
+
 import productsReducer from './productsSlice';
 import articlesReducer from './articlesSlice';
 import filterReducer from './filterSlice';
 import popupsReducer from './popupsSlice';
-import { productsApi } from '../api/productsApi';
-import { articlesApi } from '../api/articlesApi';
-import { orderApi } from '../api/orderApi';
 
 const store = configureStore({
   reducer: {

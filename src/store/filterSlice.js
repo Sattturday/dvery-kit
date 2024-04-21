@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { INITIAL_FILTER_STATE } from '../utils/filterData';
 import { saveToLocalStorage } from '../utils/utils';
 

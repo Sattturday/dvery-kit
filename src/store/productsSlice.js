@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { saveToLocalStorage } from '../utils/utils';
 
 const productsSlice = createSlice({
