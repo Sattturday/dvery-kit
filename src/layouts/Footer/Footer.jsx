@@ -1,7 +1,9 @@
 import { Logo } from '../../components/Logo';
-import { FooterNavigation } from './FooterNavigation';
+
 import { CallButton } from '../../components/CallButton';
 import { Social } from '../../components/Social';
+
+import { FooterNavigation } from './FooterNavigation';
 
 import './Footer.scss';
 

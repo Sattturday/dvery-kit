@@ -45,8 +45,8 @@ export const Catalog = () => {
   const infoMessage = isLoading
     ? messages.loadMessage
     : error
-    ? messages.errorMessage
-    : '';
+      ? messages.errorMessage
+      : '';
 
   // Обработчик изменения строки поиска
   const searchHandler = (value) => {
