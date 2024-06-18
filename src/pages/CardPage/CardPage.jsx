@@ -46,6 +46,7 @@ export const CardPage = () => {
   }, [data]);
 
   const handleClick = () => {
+    console.log('back');
     navigate(-1);
   };
 
