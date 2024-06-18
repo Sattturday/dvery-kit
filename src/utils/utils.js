@@ -37,7 +37,7 @@ export const findTitleByCategory = (category, options) => {
 };
 
 export function formatPrice(price) {
-  const priceStr = price.toString();
+  const priceStr = price !== null ? price.toString() : '';
 
   if (priceStr.length > 3) {
     const formattedPrice = priceStr.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
