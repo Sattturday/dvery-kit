@@ -15,9 +15,9 @@ export const Colors = ({ colors }) => {
   });
 
   return (
-    <section className='colors'>
-      <h2 className='colors__title'>Цвет:</h2>
-      <p className='colors__subtitle'>
+    <section className="colors">
+      <h2 className="colors__title">Цвет:</h2>
+      <p className="colors__subtitle">
         Цвет на фотографии не всегда передаёт фактический цвет товара и может
         отличаться.
       </p>
@@ -27,8 +27,8 @@ export const Colors = ({ colors }) => {
         dangerouslySetInnerHTML={{ __html: colors }}
       />
       <button
-        className='colors__show-button'
-        type='button'
+        className="colors__show-button"
+        type="button"
         onClick={handleShowToggle}
       >
         {isShow ? 'Свернуть' : 'Посмотреть все'}

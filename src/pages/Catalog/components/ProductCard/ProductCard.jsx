@@ -19,40 +19,40 @@ export const ProductCard = ({ cardData }) => {
   };
 
   return (
-    <div className='product-card' onClick={handleClick}>
-      <div className='product-card__labels'>
+    <div className="product-card" onClick={handleClick}>
+      <div className="product-card__labels">
         {cardData.for_sale && (
-          <span className='product-card__label product-card__label_type_sale'>
+          <span className="product-card__label product-card__label_type_sale">
             Акция
           </span>
         )}
         {cardData.for_order && (
-          <span className='product-card__label product-card__label_type_order'>
+          <span className="product-card__label product-card__label_type_order">
             Под заказ
           </span>
         )}
       </div>
-      <img src={src} alt={cardData.name} className='product-card__image' />
-      <div className='product-card__info'>
-        <h3 className='product-card__title'>{cardData.name}</h3>
-        <div className='product-card__price-container'>
+      <img src={src} alt={cardData.name} className="product-card__image" />
+      <div className="product-card__info">
+        <h3 className="product-card__title">{cardData.name}</h3>
+        <div className="product-card__price-container">
           {cardData.for_sale ? (
             <>
-              <span className='product-card__price product-card__price_sale'>
+              <span className="product-card__price product-card__price_sale">
                 {formatPrice(cardData.old_price)}₽&nbsp;
               </span>
-              <span className='product-card__sale'>
+              <span className="product-card__sale">
                 {formatPrice(cardData.price)}₽
               </span>
             </>
           ) : (
-            <span className='product-card__price'>
+            <span className="product-card__price">
               {formatPrice(cardData.price)}₽
             </span>
           )}
         </div>
       </div>
-      <Button size='small' />
+      <Button size="small" />
     </div>
   );
 };

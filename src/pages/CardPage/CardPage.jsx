@@ -52,69 +52,69 @@ export const CardPage = () => {
 
   return (
     <>
-      <section className='card-page'>
-        <div className='wrapper'>
+      <section className="card-page">
+        <div className="wrapper">
           {isLoading ? (
             <Preloader />
           ) : error ? (
-            <h1 className='info-message'>{messages.errorMessage}</h1>
+            <h1 className="info-message">{messages.errorMessage}</h1>
           ) : (
             <>
-              <div className='card-page__breadcrumb'>
+              <div className="card-page__breadcrumb">
                 <button
-                  className='card-page__breadcrumb-btn'
-                  type='button'
+                  className="card-page__breadcrumb-btn"
+                  type="button"
                   onClick={handleClick}
-                  aria-label='Вернуться'
+                  aria-label="Вернуться"
                 />
-                <p className='card-page__type'>
+                <p className="card-page__type">
                   {data && findTitleByCategory(filter['type'], filterOptions)}
                 </p>
               </div>
-              <p className='card-page__category'>
+              <p className="card-page__category">
                 {data && findTitleByCategory(filter['category'], filterOptions)}
               </p>
-              <div className='card-page__container'>
+              <div className="card-page__container">
                 <ImagesSlider images={images} sale={sale} />
-                <div className='card-page__info'>
-                  <div className='card-page__title-block'>
-                    <h1 className='card-page__title'>{data.name}</h1>
+                <div className="card-page__info">
+                  <div className="card-page__title-block">
+                    <h1 className="card-page__title">{data.name}</h1>
                     {(data.for_sale || data.for_order) && (
                       <div>
                         {data.for_order && (
-                          <span className='card-page__label card-page__label_type_order'>
+                          <span className="card-page__label card-page__label_type_order">
                             Под заказ
                           </span>
                         )}
                         {data.for_sale && (
-                          <span className='card-page__label card-page__label_type_sale'>
+                          <span className="card-page__label card-page__label_type_sale">
                             {sale}
                           </span>
                         )}
                       </div>
                     )}
                   </div>
-                  <div className='card-page__price-container'>
+                  <div className="card-page__price-container">
                     <p>Цена:&nbsp;</p>
                     {data.for_sale ? (
                       <>
-                        <span className='card-page__price card-page__price_sale'>
+                        <span className="card-page__price card-page__price_sale">
                           {formatPrice(data.old_price)}₽&nbsp;
                         </span>
-                        <span className='card-page__sale'>
+                        <span className="card-page__sale">
                           {formatPrice(data.price)}₽
                         </span>
                       </>
                     ) : (
-                      <span className='card-page__price'>
+                      <span className="card-page__price">
                         {formatPrice(data.price)}₽
                       </span>
                     )}
                   </div>
                   {data.size.length !== 0 && (
-                    <div className='card-page__size-block'>
+                    <div className="card-page__size-block">
                       <span>Размер:</span>
-                      <ul className='card-page__size-list'>
+                      <ul className="card-page__size-list">
                         {data.size.map((item, index) => (
                           <li key={index}>{item.size}</li>
                         ))}
@@ -122,7 +122,7 @@ export const CardPage = () => {
                     </div>
                   )}
                 </div>
-                <div className='card-page__description'>
+                <div className="card-page__description">
                   <h2>Описание</h2>
                   <div dangerouslySetInnerHTML={{ __html: data.description }} />
                 </div>

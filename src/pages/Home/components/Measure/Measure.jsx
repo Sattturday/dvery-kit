@@ -48,61 +48,61 @@ export const Measure = () => {
   }, [resetForm]);
 
   return (
-    <section className='measure' id={'measure'}>
-      <div className='wrapper'>
-        <h2 className='measure__title'>Записаться на&nbsp;замер </h2>
-        <div className='measure__container'>
+    <section className="measure" id={'measure'}>
+      <div className="wrapper">
+        <h2 className="measure__title">Записаться на&nbsp;замер </h2>
+        <div className="measure__container">
           <Form
-            name='measure'
-            buttonText='Записаться'
-            loadingText='Идет отправка...'
+            name="measure"
+            buttonText="Записаться"
+            loadingText="Идет отправка..."
             isLoading={isLoading}
             isValid={isValid && isConfirm}
             onSubmit={handleSubmit}
           >
             <Input
-              name='name_surname'
-              title='Имя'
-              type='text'
-              minLength='2'
-              maxLength='40'
-              placeholder='Имя Фамилия'
+              name="name_surname"
+              title="Имя"
+              type="text"
+              minLength="2"
+              maxLength="40"
+              placeholder="Имя Фамилия"
               errors={errors}
               values={values}
               handleChange={handleChange}
               pattern={nameRegex.source}
             />
             <Input
-              name='telefone'
-              title='Телефон'
-              type='tel'
-              minLength='5'
-              maxLength='18'
-              placeholder='+7'
+              name="telefone"
+              title="Телефон"
+              type="tel"
+              minLength="5"
+              maxLength="18"
+              placeholder="+7"
               errors={errors}
               values={values}
               handleChange={handleChange}
               pattern={phoneRegex.source}
             />
             <Input
-              name='address'
-              title='Адрес'
-              type='text'
-              minLength='10'
-              maxLength='200'
-              placeholder='Город, улица, дом'
+              name="address"
+              title="Адрес"
+              type="text"
+              minLength="10"
+              maxLength="200"
+              placeholder="Город, улица, дом"
               errors={errors}
               values={values}
               handleChange={handleChange}
               pattern={addressRegex.source}
             />
             <Input
-              name='content'
-              title='Что будем измерять?'
-              type='text'
-              minLength='4'
-              maxLength='200'
-              placeholder='Входная дверь, окна и т.д.'
+              name="content"
+              title="Что будем измерять?"
+              type="text"
+              minLength="4"
+              maxLength="200"
+              placeholder="Входная дверь, окна и т.д."
               errors={errors}
               values={values}
               handleChange={handleChange}
@@ -122,8 +122,8 @@ export const Measure = () => {
           </Form>
           <img
             src={img1}
-            alt='Фото замерщика за работой'
-            className='measure__img'
+            alt="Фото замерщика за работой"
+            className="measure__img"
           />
         </div>
       </div>

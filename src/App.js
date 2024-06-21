@@ -16,13 +16,13 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/articles' element={<ArticlesList />} />
-        <Route path='/articles/:id' element={<ArticlePage />} />
-        <Route path='/catalog' element={<Catalog />} />
-        <Route path='/cards/:id' element={<CardPage />} />
-        <Route path='/privacy' element={<Privacy />} />
-        <Route path='*' element={<NotFoundPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/articles" element={<ArticlesList />} />
+        <Route path="/articles/:id" element={<ArticlePage />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/cards/:id" element={<CardPage />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <CallbackPopup />
       <InfoPopup />

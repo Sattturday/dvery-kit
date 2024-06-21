@@ -16,10 +16,10 @@ export const CatalogCard = ({ data }) => {
   };
 
   return (
-    <div className='catalog-card' onClick={handleClick}>
-      <img src={data.img} alt={data.name} className='catalog-card__image' />
-      <div className='catalog-card__title-flex'>
-        <h3 className='catalog-card__title'>{data.name}</h3>
+    <div className="catalog-card" onClick={handleClick}>
+      <img src={data.img} alt={data.name} className="catalog-card__image" />
+      <div className="catalog-card__title-flex">
+        <h3 className="catalog-card__title">{data.name}</h3>
       </div>
       <Button />
     </div>

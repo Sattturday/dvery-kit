@@ -13,19 +13,19 @@ export const ArticleCard = ({ data, type = 'home' }) => {
     <div className={`article-card article-card_type_${type}`}>
       {type === 'page' && (
         <img
-          className='article-card__image'
+          className="article-card__image"
           src={data.image}
-          alt='Фото к статье'
+          alt="Фото к статье"
         />
       )}
       <div className={`article-card__column article-card__column_type_${type}`}>
-        <h3 className='article-card__title'>{data?.title}</h3>
-        <span className='article-card__date'>{formattedDate}</span>
+        <h3 className="article-card__title">{data?.title}</h3>
+        <span className="article-card__date">{formattedDate}</span>
         <p
-          className='article-card__text'
+          className="article-card__text"
           dangerouslySetInnerHTML={{ __html: data?.text }}
         />
-        <Link to={`/articles/${data?.id}`} className='article-card__link'>
+        <Link to={`/articles/${data?.id}`} className="article-card__link">
           Читать далее →
         </Link>
       </div>

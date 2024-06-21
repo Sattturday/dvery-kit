@@ -11,7 +11,7 @@ export const CallButton = ({ type }) => {
   return (
     <button
       className={`call-button call-button_type_${type}`}
-      type='button'
+      type="button"
       onClick={callHandler}
     >
       <span>Обратный звонок</span>

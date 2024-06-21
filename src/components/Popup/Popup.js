@@ -46,11 +46,11 @@ export const Popup = ({
           className ? className : ''
         }`}
       >
-        {title && <h2 className='popup__title'>{title}</h2>}
+        {title && <h2 className="popup__title">{title}</h2>}
         {children}
         <button
           className={`popup__close-btn popup__close-btn_${name}`}
-          type='button'
+          type="button"
           onClick={() => dispatch(closeAllPopups())}
         />
       </div>

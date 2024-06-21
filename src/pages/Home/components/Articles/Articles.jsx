@@ -40,24 +40,24 @@ export const Articles = ({ error, isLoading }) => {
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     arrows: true,
-    prevArrow: <SliderButton type='prev' />,
-    nextArrow: <SliderButton type='next' />,
+    prevArrow: <SliderButton type="prev" />,
+    nextArrow: <SliderButton type="next" />,
   };
 
   return (
-    <section className='articles' id='articles'>
-      <h2 className='articles__title'>Статьи</h2>
+    <section className="articles" id="articles">
+      <h2 className="articles__title">Статьи</h2>
       {articlesData && (
         <Slider {...articlesSettings}>
           {articlesData.map((data) => (
-            <div key={data.id} className='articles__container'>
+            <div key={data.id} className="articles__container">
               <ArticleCard data={data} />
             </div>
           ))}
         </Slider>
       )}
-      {isLoading && <p className='info-message'>{messages.loadMessage}</p>}
-      {error && <p className='info-message'>{messages.errorMessage}</p>}
+      {isLoading && <p className="info-message">{messages.loadMessage}</p>}
+      {error && <p className="info-message">{messages.errorMessage}</p>}
     </section>
   );
 };

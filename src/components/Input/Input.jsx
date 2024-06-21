@@ -10,8 +10,8 @@ export const Input = ({
   ...props
 }) => {
   return (
-    <label className='input'>
-      <span className='input__name'>
+    <label className="input">
+      <span className="input__name">
         {title}
         {isRequired && <span>*</span>}
       </span>
@@ -25,7 +25,7 @@ export const Input = ({
         required
         {...props}
       />
-      <span className='input__error'>{errors[name]}</span>
+      <span className="input__error">{errors[name]}</span>
     </label>
   );
 };

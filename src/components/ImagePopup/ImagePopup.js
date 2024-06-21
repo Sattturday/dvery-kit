@@ -14,10 +14,10 @@ function ImagePopup() {
   return (
     <Popup
       isOpen={isOpen}
-      name='image'
+      name="image"
       onClose={() => dispatch(closeAllPopups())}
     >
-      <img className='popup__image' src={src} alt={image.name} />
+      <img className="popup__image" src={src} alt={image.name} />
     </Popup>
   );
 }

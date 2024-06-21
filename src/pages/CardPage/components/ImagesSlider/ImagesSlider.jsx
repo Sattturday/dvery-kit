@@ -25,8 +25,8 @@ export const ImagesSlider = ({ images, sale }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    prevArrow: <SliderButton type='prev' />,
-    nextArrow: <SliderButton type='next' />,
+    prevArrow: <SliderButton type="prev" />,
+    nextArrow: <SliderButton type="next" />,
     afterChange: (current) => setCurrentSlide(current),
   };
 
@@ -39,8 +39,8 @@ export const ImagesSlider = ({ images, sale }) => {
     vertical: true,
     verticalSwiping: true,
     arrows: true,
-    prevArrow: <SliderVerticalButton type='prev' />,
-    nextArrow: <SliderVerticalButton type='next' />,
+    prevArrow: <SliderVerticalButton type="prev" />,
+    nextArrow: <SliderVerticalButton type="next" />,
     afterChange: (current) => setCurrentSlide(current),
   };
 
@@ -59,10 +59,10 @@ export const ImagesSlider = ({ images, sale }) => {
   };
 
   return (
-    <div className='image-slider'>
-      <div className='image-slider__items'>
+    <div className="image-slider">
+      <div className="image-slider__items">
         {images?.length < 3 ? (
-          <div className='thumbnail-slider'>
+          <div className="thumbnail-slider">
             {images?.map((item, index) => (
               <div
                 key={index}
@@ -74,7 +74,7 @@ export const ImagesSlider = ({ images, sale }) => {
                 }}
               >
                 <img
-                  className='thumbnail-slider__image'
+                  className="thumbnail-slider__image"
                   src={`${BASE_URL_IMG}${item.image}`}
                   alt={item.name}
                 />
@@ -85,7 +85,7 @@ export const ImagesSlider = ({ images, sale }) => {
           <Slider
             ref={sliderNavRef}
             {...navSettings}
-            className='thumbnail-slider'
+            className="thumbnail-slider"
           >
             {images?.map((item, index) => (
               <div key={index}>
@@ -100,7 +100,7 @@ export const ImagesSlider = ({ images, sale }) => {
                   }}
                 >
                   <img
-                    className='thumbnail-slider__image'
+                    className="thumbnail-slider__image"
                     src={`${BASE_URL_IMG}${item.image}`}
                     alt={item.name}
                   />
@@ -110,11 +110,11 @@ export const ImagesSlider = ({ images, sale }) => {
           </Slider>
         )}
       </div>
-      <div className='image-slider__full'>
-        {sale && <span className='image-slider__label'>{sale}</span>}
+      <div className="image-slider__full">
+        {sale && <span className="image-slider__label">{sale}</span>}
         <Slider ref={sliderRef} {...settings}>
           {images?.map((item, index) => (
-            <div key={index} className='image-slider__image'>
+            <div key={index} className="image-slider__image">
               <img
                 onClick={() => handleImagePopupOpen()}
                 src={`${BASE_URL_IMG}${item.image}`}

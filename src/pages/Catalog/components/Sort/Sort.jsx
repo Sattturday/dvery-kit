@@ -45,9 +45,9 @@ export function Sort({ sortHandler }) {
       <div
         className={`sort__wrapper${isActive ? ' sort__wrapper_active' : ''}`}
       >
-        <button className='sort__button' type='button' onClick={onClickNavTab}>
+        <button className="sort__button" type="button" onClick={onClickNavTab}>
           {buttonName}
-          <span className='sort__arrow'></span>
+          <span className="sort__arrow"></span>
         </button>
       </div>
       {/* Список опций сортировки */}
@@ -55,13 +55,13 @@ export function Sort({ sortHandler }) {
         {/* Перебор sortButtons для отображения отдельных опций сортировки */}
         {sortButtons.map((button) => {
           return (
-            <li className='sort__item' key={button.id}>
+            <li className="sort__item" key={button.id}>
               {/* Кнопка, представляющая каждую опцию сортировки */}
-              <label className='sort__label'>
+              <label className="sort__label">
                 <input
                   id={button.id}
-                  className='sort__radio'
-                  type='radio'
+                  className="sort__radio"
+                  type="radio"
                   name={button.id}
                   checked={ordering === button.id}
                   onChange={onClickSortHandler}

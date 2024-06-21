@@ -46,36 +46,36 @@ export const SearchForm = ({ searchHandler, isSearchBarHidden }) => {
       }
     >
       <Form
-        name='search'
-        buttonText='Найти'
-        loadingText='Ищем...'
+        name="search"
+        buttonText="Найти"
+        loadingText="Ищем..."
         isLoading={false}
         isValid={isValid}
         onSubmit={handleSubmit}
       >
         <Input
-          name='search'
-          type='text'
-          maxLength='40'
-          placeholder='Введите поисковый запрос'
+          name="search"
+          type="text"
+          maxLength="40"
+          placeholder="Введите поисковый запрос"
           errors={errors}
           values={values}
           handleChange={handleChange}
         />
         {isValid ? (
           <button
-            className='search-clean'
-            type='button'
+            className="search-clean"
+            type="button"
             onClick={handleCleanSearch}
           >
             <img
-              className='search-clean__img'
+              className="search-clean__img"
               src={Clean}
-              alt='Кнопка очистки поля поисковой строки'
+              alt="Кнопка очистки поля поисковой строки"
             />
           </button>
         ) : (
-          <span className='search-icon'></span>
+          <span className="search-icon"></span>
         )}
       </Form>
     </div>

@@ -43,18 +43,18 @@ export const SubProducts = ({ subData }) => {
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     arrows: true,
-    prevArrow: <SliderButton type='prev' />,
-    nextArrow: <SliderButton type='next' />,
+    prevArrow: <SliderButton type="prev" />,
+    nextArrow: <SliderButton type="next" />,
   };
 
   return (
-    <section className='sub-prod'>
-      <h2 className='sub-prod__title'>С этим товаром покупают</h2>
-      <div className='sub-prod__box'>
+    <section className="sub-prod">
+      <h2 className="sub-prod__title">С этим товаром покупают</h2>
+      <div className="sub-prod__box">
         {subData && (
           <Slider {...subProdSettings}>
             {subData.map((cardData) => (
-              <div key={cardData.id} className='sub-prod__container'>
+              <div key={cardData.id} className="sub-prod__container">
                 <Card data={cardData} />
               </div>
             ))}

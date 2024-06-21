@@ -8,13 +8,13 @@ import { FooterNavigation } from './FooterNavigation';
 import './Footer.scss';
 
 export const Footer = () => (
-  <footer className='footer'>
-    <div className='wrapper'>
-      <div className='footer__container'>
+  <footer className="footer">
+    <div className="wrapper">
+      <div className="footer__container">
         <Logo />
         <FooterNavigation />
-        <div className='footer__item-right'>
-          <CallButton type='footer' />
+        <div className="footer__item-right">
+          <CallButton type="footer" />
           <Social />
         </div>
       </div>

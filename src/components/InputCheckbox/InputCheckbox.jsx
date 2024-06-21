@@ -26,13 +26,13 @@ export function InputCheckbox({
       >
         <input
           type={type}
-          className='checkbox__input'
+          className="checkbox__input"
           name={option.slug}
           id={option.slug}
           checked={isChecked || false}
           onChange={() => onChange(option)}
         />
-        <span className='checkbox__input-new'></span>
+        <span className="checkbox__input-new"></span>
         <p>
           {option.name}
           <Link to={'/privacy'} onClick={handleClick}>
