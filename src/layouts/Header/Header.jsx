@@ -22,17 +22,17 @@ export const Header = () => {
   }, [menuOpen]);
 
   return (
-    <header className='header'>
+    <header className="header">
       <div
         className={`background ${(menuOpen && ' background_active') || ''}`}
         onClick={handleBurgerClick}
       />
-      <div className='wrapper'>
-        <div className='header__container'>
+      <div className="wrapper">
+        <div className="header__container">
           <Logo />
-          <div className='header__container-right'>
+          <div className="header__container-right">
             <Navigation menuOpen={menuOpen} onBurgerClick={handleBurgerClick} />
-            <CallButton type='header' />
+            <CallButton type="header" />
           </div>
         </div>
       </div>

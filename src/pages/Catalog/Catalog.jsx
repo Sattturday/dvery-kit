@@ -158,27 +158,27 @@ export const Catalog = () => {
 
   return (
     <>
-      <section className='catalog'>
+      <section className="catalog">
         <div
           className={`catalog__background ${
             (menuOpen && ' catalog__background_active') || ''
           }`}
           onClick={handleMenuClick}
         />
-        <div className='wrapper'>
-          <div className='catalog__filter-wrapper'>
+        <div className="wrapper">
+          <div className="catalog__filter-wrapper">
             <button
-              className='catalog__filter-button catalog__filter-button_back'
-              type='button'
+              className="catalog__filter-button catalog__filter-button_back"
+              type="button"
               onClick={handleClick}
-              aria-label='Вернуться на главную'
+              aria-label="Вернуться на главную"
             ></button>
-            <h1 className='catalog__title'>Каталог</h1>
-            <h1 className='catalog__title_s'>
+            <h1 className="catalog__title">Каталог</h1>
+            <h1 className="catalog__title_s">
               {findTitleByCategory(filter['type'], filterOptions)}
             </h1>
           </div>
-          <p className='catalog__subtitle_s'>
+          <p className="catalog__subtitle_s">
             {findTitleByCategory(filter['category'], filterOptions)}
           </p>
           <div
@@ -193,14 +193,14 @@ export const Catalog = () => {
                 (menuOpen && ' catalog__filter-menu_active') || ''
               }`}
             >
-              <div className='catalog__filter-wrapper'>
+              <div className="catalog__filter-wrapper">
                 <button
-                  className='catalog__filter-button'
-                  type='button'
+                  className="catalog__filter-button"
+                  type="button"
                   onClick={handleMenuClick}
-                  aria-label='Выйти из меню фильтров'
+                  aria-label="Выйти из меню фильтров"
                 ></button>
-                <p className='catalog__filter-title'>Фильтр</p>
+                <p className="catalog__filter-title">Фильтр</p>
               </div>
               <FilterList
                 filter={filter}
@@ -218,10 +218,10 @@ export const Catalog = () => {
               isSearchBarHidden={isSearchBarHidden}
             />
             <button
-              className='catalog__button'
-              type='button'
+              className="catalog__button"
+              type="button"
               onClick={handleMenuClick}
-              aria-label='Войти в меню фильтров'
+              aria-label="Войти в меню фильтров"
             />
             {windowWidth > 750 && (
               <ShowList

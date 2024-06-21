@@ -19,10 +19,10 @@ export function FilterList({
 }) {
   return (
     <aside>
-      <form className='filter' onSubmit={handleSubmit}>
+      <form className="filter" onSubmit={handleSubmit}>
         {filterOptions.map((block) => {
           return (
-            <div key={block.id} className='filter__wrapper'>
+            <div key={block.id} className="filter__wrapper">
               {block.type === 'checkbox' ? (
                 <FilterCheckbox
                   option={{
@@ -41,14 +41,14 @@ export function FilterList({
                       name: block.title,
                       slug: block.category,
                     }}
-                    type='radio'
+                    type="radio"
                     isChecked={filter['type'] === block.category}
                     onChange={() => {
                       selectHandler(block.category);
                     }}
                   />
                   {block.items && (
-                    <ul className='filter__list'>
+                    <ul className="filter__list">
                       {block.items.map((item) => {
                         return (
                           <li key={item.id}>
@@ -57,7 +57,7 @@ export function FilterList({
                                 name: item.title,
                                 slug: item.category,
                               }}
-                              type='radio'
+                              type="radio"
                               isChecked={
                                 filter['category'] === item.category &&
                                 filter['type'] === 'interior_door'

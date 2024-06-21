@@ -53,25 +53,25 @@ export const Bestsellers = ({ error, isLoading }) => {
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToScroll,
     arrows: true,
-    prevArrow: <SliderButton type='prev' />,
-    nextArrow: <SliderButton type='next' />,
+    prevArrow: <SliderButton type="prev" />,
+    nextArrow: <SliderButton type="next" />,
   };
 
   return (
-    <section className='bestsellers'>
-      <h2 className='bestsellers__title'>Хиты продаж</h2>
-      <div className='bestsellers__box'>
+    <section className="bestsellers">
+      <h2 className="bestsellers__title">Хиты продаж</h2>
+      <div className="bestsellers__box">
         {hitSaleData && (
           <Slider {...bestsellersSettings}>
             {hitSaleData.map((cardData) => (
-              <div key={cardData.id} className='bestsellers__container'>
+              <div key={cardData.id} className="bestsellers__container">
                 <Card data={cardData} />
               </div>
             ))}
           </Slider>
         )}
-        {isLoading && <p className='info-message'>{messages.loadMessage}</p>}
-        {error && <p className='info-message'>{messages.errorMessage}</p>}
+        {isLoading && <p className="info-message">{messages.loadMessage}</p>}
+        {error && <p className="info-message">{messages.errorMessage}</p>}
       </div>
     </section>
   );

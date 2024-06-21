@@ -71,12 +71,12 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
   };
 
   return (
-    <div className='range'>
-      <label className='range__label'>
+    <div className="range">
+      <label className="range__label">
         <p>От</p>
         <input
-          className='range__input'
-          type='number'
+          className="range__input"
+          type="number"
           min={minValue}
           max={maxValue}
           step={100}
@@ -84,23 +84,23 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
           onChange={(e) => handleInputChange('min', e)}
         />
       </label>
-      <label className='range__label'>
+      <label className="range__label">
         <p>До</p>
         <input
-          className='range__input'
-          type='number'
+          className="range__input"
+          type="number"
           min={minValue}
           max={maxValue}
           step={100}
           value={localPrice.max || ''}
-          inputMode='numeric'
+          inputMode="numeric"
           onChange={(e) => handleInputChange('max', e)}
         />
       </label>
       <ReactSlider
-        className='horizontal-slider'
-        thumbClassName='example-thumb'
-        trackClassName='example-track'
+        className="horizontal-slider"
+        thumbClassName="example-thumb"
+        trackClassName="example-track"
         min={minValue}
         max={maxValue}
         step={100}
@@ -109,9 +109,9 @@ export const DoubleRange = ({ handleSubmit, onMenuClick, windowWidth }) => {
         onChange={handleSliderChange}
       />
       <Button
-        size='large'
-        text='Применить'
-        type='button'
+        size="large"
+        text="Применить"
+        type="button"
         onClick={handleShowButtonClick}
       />
     </div>

@@ -46,34 +46,34 @@ export const CallbackPopup = () => {
   }
 
   return (
-    <Popup isOpen={isOpen} name='callback-popup' title='Обратный звонок'>
+    <Popup isOpen={isOpen} name="callback-popup" title="Обратный звонок">
       <Form
-        name='callback'
-        buttonText='Заказать звонок'
-        loadingText='Идет отправка...'
+        name="callback"
+        buttonText="Заказать звонок"
+        loadingText="Идет отправка..."
         isLoading={isLoading}
         isValid={isValid && isConfirm}
         onSubmit={handleSubmit}
       >
         <Input
-          name='name_surname'
-          title='Имя'
-          type='text'
-          minLength='2'
-          maxLength='40'
-          placeholder='Имя Фамилия'
+          name="name_surname"
+          title="Имя"
+          type="text"
+          minLength="2"
+          maxLength="40"
+          placeholder="Имя Фамилия"
           errors={errors}
           values={values}
           handleChange={handleChange}
           pattern={nameRegex.source}
         />
         <Input
-          name='telefone'
-          title='Телефон'
-          type='tel'
-          minLength='5'
-          maxLength='18'
-          placeholder='+7'
+          name="telefone"
+          title="Телефон"
+          type="tel"
+          minLength="5"
+          maxLength="18"
+          placeholder="+7"
           errors={errors}
           values={values}
           handleChange={handleChange}

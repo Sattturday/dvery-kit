@@ -10,10 +10,10 @@ export function InfoPopup() {
   return (
     <Popup
       isOpen={message}
-      name='info'
+      name="info"
       onClose={() => dispatch(closeAllPopups())}
     >
-      <p className='popup__title popup__title_info'>{message}</p>
+      <p className="popup__title popup__title_info">{message}</p>
     </Popup>
   );
 }

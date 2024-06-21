@@ -4,24 +4,24 @@ import './Delivery.scss';
 
 export const Delivery = () => {
   return (
-    <section className='delivery' id='delivery'>
-      <div className='wrapper'>
-        <div className='delivery__container'>
+    <section className="delivery" id="delivery">
+      <div className="wrapper">
+        <div className="delivery__container">
           <img
             src={img1}
-            alt='Грузовой автомобиль'
-            className='delivery__image'
+            alt="Грузовой автомобиль"
+            className="delivery__image"
           />
-          <div className='delivery__info'>
-            <h2 className='delivery__title'>Доставка</h2>
-            <p className='delivery__description'>
+          <div className="delivery__info">
+            <h2 className="delivery__title">Доставка</h2>
+            <p className="delivery__description">
               Интересуетесь способами доставки? Мы&nbsp;готовы ответить
               на&nbsp;все ваши вопросы! Наша компания предлагает несколько
               вариантов доставки, которые подойдут для любого клиента. Узнайте
               подробнее о&nbsp;наших услугах и&nbsp;выберите наиболее подходящий
               вариант для&nbsp;вас!
             </p>
-            <p className='delivery__description'>
+            <p className="delivery__description">
               По телефону <span>+7-937-393-91-93</span> – <span>Двери-КИТ</span>{' '}
               в г.Канаше, или <span>+7-927-999-10-40</span>{' '}
               <span>Двери-КИТ</span> в г.Новчебоксарске.

@@ -21,7 +21,7 @@ export const Form = ({
         className={`form__submit form__submit_type_${name}${
           (!isValid && ' form__submit_disabled') || ''
         }`}
-        type='submit'
+        type="submit"
         disabled={!isValid}
       >
         <span>{isLoading ? loadingText : buttonText}</span>

@@ -7,8 +7,8 @@ export const Privacy = () => {
   }, []);
 
   return (
-    <section className='privacy'>
-      <div className='wrapper'>
+    <section className="privacy">
+      <div className="wrapper">
         <h1>Политика в отношении обработки персональных данных</h1>
         <h2>1. Общие положения</h2>
         <p>

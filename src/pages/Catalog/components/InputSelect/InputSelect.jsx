@@ -13,13 +13,13 @@ export function InputSelect({
     >
       <input
         type={type}
-        className='select__input'
+        className="select__input"
         name={option.slug}
         id={option.slug}
         checked={isChecked || false}
         onChange={() => onChange(option)}
       />
-      <p className='select__name'>{option.name}</p>
+      <p className="select__name">{option.name}</p>
     </label>
   );
 }
