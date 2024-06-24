@@ -10,7 +10,7 @@ export function Sort({ sortHandler }) {
   const [isActive, setIsActive] = useState(false);
   const [buttonName, setButtonName] = useState('По возрастанию');
 
-  const { ordering } = useSelector((state) => state.filter);
+  const { ordering } = useSelector(state => state.filter);
 
   const sortRef = useRef(null);
 
@@ -25,12 +25,12 @@ export function Sort({ sortHandler }) {
   };
 
   // Обработчик сортировки при выборе опции сортировки
-  const onClickSortHandler = (e) => {
+  const onClickSortHandler = e => {
     sortHandler(e.target.id);
 
     // Устанавливаем название кнопки в зависимости от выбранной опции
     const selectedButton = sortButtons.find(
-      (button) => button.id === e.target.id
+      button => button.id === e.target.id,
     );
     if (selectedButton) {
       setButtonName(selectedButton.title);
@@ -49,11 +49,18 @@ export function Sort({ sortHandler }) {
           {buttonName}
           <span className="sort__arrow"></span>
         </button>
+        <button
+          className={`sort__button-s sort__button-s_${
+            buttonName === 'По возрастанию' ? 'up' : 'down'
+          }`}
+          type="button"
+          onClick={onClickNavTab}
+        ></button>
       </div>
       {/* Список опций сортировки */}
       <ul className={`sort__list ${isActive ? 'sort__list_active' : ''}`}>
         {/* Перебор sortButtons для отображения отдельных опций сортировки */}
-        {sortButtons.map((button) => {
+        {sortButtons.map(button => {
           return (
             <li className="sort__item" key={button.id}>
               {/* Кнопка, представляющая каждую опцию сортировки */}

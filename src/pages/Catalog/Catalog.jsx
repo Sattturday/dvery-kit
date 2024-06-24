@@ -171,12 +171,14 @@ export const Catalog = () => {
 
         <div className="wrapper">
           <div className="catalog__filter-wrapper">
-            <button
-              className="catalog__filter-button catalog__filter-button_back"
-              type="button"
-              onClick={handleResetFilter}
-              aria-label="Вернуться в начало каталога"
-            ></button>
+            {showCatalogList && (
+              <button
+                className="catalog__filter-button catalog__filter-button_back"
+                type="button"
+                onClick={handleResetFilter}
+                aria-label="Вернуться в начало каталога"
+              ></button>
+            )}
             <h1 className="catalog__title" onClick={handleResetFilter}>
               Каталог
             </h1>
@@ -220,6 +222,15 @@ export const Catalog = () => {
                 windowWidth={windowWidth}
               />
             </div>
+            {showCatalogList && (
+              <button
+                className="catalog__button-reset"
+                type="button"
+                onClick={handleResetFilter}
+              >
+                Каталог
+              </button>
+            )}
             <Sort sortHandler={sortHandler} />
             <SearchForm
               searchHandler={searchHandler}
