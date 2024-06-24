@@ -18,6 +18,7 @@ export function InputSelect({
         id={option.slug}
         checked={isChecked || false}
         onChange={() => onChange(option)}
+        onClick={() => onChange(option)}
       />
       <p className="select__name">{option.name}</p>
     </label>

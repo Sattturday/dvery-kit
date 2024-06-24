@@ -24,6 +24,7 @@
 .catalog__title {
   @include section-title;
   padding-bottom: 3.3rem;
+  cursor: pointer;
 
   @include media-laptop {
     padding-bottom: 3.2rem;

@@ -46,8 +46,14 @@ export const CardPage = () => {
   }, [data]);
 
   const handleClick = () => {
-    console.log('back');
-    navigate(-1);
+    navigate('/catalog');
+  };
+
+  const handleClickType = () => {
+    if (filter['category']) {
+      dispatch(setCategoryFilter(''));
+    }
+    navigate('/catalog');
   };
 
   return (
@@ -67,11 +73,11 @@ export const CardPage = () => {
                   onClick={handleClick}
                   aria-label="Вернуться"
                 />
-                <p className="card-page__type">
+                <p className="card-page__type" onClick={handleClickType}>
                   {data && findTitleByCategory(filter['type'], filterOptions)}
                 </p>
               </div>
-              <p className="card-page__category">
+              <p className="card-page__category" onClick={handleClick}>
                 {data && findTitleByCategory(filter['category'], filterOptions)}
               </p>
               <div className="card-page__container">
