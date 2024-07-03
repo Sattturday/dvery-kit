@@ -24,6 +24,7 @@
 .catalog__title {
   @include section-title;
   padding-bottom: 3.3rem;
+  cursor: pointer;
 
   @include media-laptop {
     padding-bottom: 3.2rem;
@@ -203,5 +204,26 @@
     grid-row: 2 / 3;
     grid-column: 1 / 2;
     justify-self: end;
+  }
+}
+
+.catalog__button-reset {
+  @include button;
+  @include text;
+  padding: 1.2rem;
+  width: 12rem;
+  min-height: 4.6rem;
+  display: none;
+  justify-self: start;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: $color-light-xl;
+  border-radius: 0.8rem;
+  color: $color-bg-violet;
+  outline: none;
+  @extend %transition-all;
+
+  @include media-small {
+    display: flex;
   }
 }

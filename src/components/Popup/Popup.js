@@ -15,22 +15,30 @@ export const Popup = ({
 
   useEffect(() => {
     if (!isOpen) return;
-    const closeByEscape = (e) => {
+
+    const closeByEscape = e => {
       if (e.key === 'Escape') {
         dispatch(closeAllPopups());
       }
     };
 
+    const handlePopState = () => {
+      dispatch(closeAllPopups());
+    };
+
     document.addEventListener('keydown', closeByEscape);
     document.body.classList.add('page_lock');
+    window.history.pushState({ popup: true }, '', window.location.href);
+    window.addEventListener('popstate', handlePopState);
 
     return () => {
       document.body.classList.remove('page_lock');
       document.removeEventListener('keydown', closeByEscape);
+      window.removeEventListener('popstate', handlePopState);
     };
   }, [isOpen, dispatch]);
 
-  const handleOverlay = (e) => {
+  const handleOverlay = e => {
     if (e.target === e.currentTarget) {
       dispatch(closeAllPopups());
     }

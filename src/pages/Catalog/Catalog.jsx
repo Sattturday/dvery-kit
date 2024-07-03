@@ -10,6 +10,7 @@ import {
   setSortFilter,
   setTypeFilter,
 } from '../../store/filterSlice';
+import { CatalogSection } from '../../components/CatalogSection';
 import { buildUrlParams } from '../../utils/filterUtils';
 import { useGetFilterProductsQuery } from '../../api/productsApi';
 import { findTitleByCategory, loadFromLocalStorage } from '../../utils/utils';
@@ -23,7 +24,7 @@ import { Sort } from './components/Sort';
 import './Catalog.scss';
 
 export const Catalog = () => {
-  const filter = useSelector((state) => state.filter);
+  const filter = useSelector(state => state.filter);
   const [paramsUrl, setParamsUrl] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -45,11 +46,11 @@ export const Catalog = () => {
   const infoMessage = isLoading
     ? messages.loadMessage
     : error
-      ? messages.errorMessage
-      : '';
+    ? messages.errorMessage
+    : '';
 
   // Обработчик изменения строки поиска
-  const searchHandler = (value) => {
+  const searchHandler = value => {
     dispatch(setRequestFilter(value));
   };
 
@@ -76,7 +77,6 @@ export const Catalog = () => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -101,29 +101,29 @@ export const Catalog = () => {
 
   const isSearchBarHidden = useMemo(
     () => window.innerWidth < 490 && previousScrollPosition > 0,
-    [previousScrollPosition]
+    [previousScrollPosition],
   );
 
-  const sortHandler = (btnId) => {
+  const sortHandler = btnId => {
     dispatch(setSortFilter(btnId));
   };
 
   // Обработчик изменения флажков (checkbox)
-  const checkboxHandler = (key) => {
+  const checkboxHandler = key => {
     dispatch(setCheckboxFilter(key));
   };
 
   // Обработчик изменения флажков (select)
-  const selectHandler = (key) => {
+  const selectHandler = key => {
+    dispatch(setCategoryFilter(''));
     dispatch(setTypeFilter(key));
-
-    if (key !== 'intrior_door') {
-      dispatch(setCategoryFilter(''));
-    }
+    // if (key !== 'intrior_door') {
+    //   dispatch(setCategoryFilter(''));
+    // }
   };
 
   // Обработчик изменения флажков (radio)
-  const radioHandler = (key) => {
+  const radioHandler = key => {
     dispatch(setTypeFilter('interior_door'));
     dispatch(setCategoryFilter(key));
   };
@@ -135,7 +135,7 @@ export const Catalog = () => {
   }
 
   // Обработчик отправки формы с фильтрами
-  const handleSubmit = (evt) => {
+  const handleSubmit = evt => {
     evt.preventDefault();
     updateParamsUrl(filter);
   };
@@ -152,9 +152,12 @@ export const Catalog = () => {
     }
   }, [menuOpen]);
 
-  const handleClick = () => {
-    navigate('/');
+  const handleResetFilter = () => {
+    dispatch(setTypeFilter(''));
+    dispatch(setCategoryFilter(''));
   };
+
+  const showCatalogList = filter.search || filter.type || filter.category;
 
   return (
     <>
@@ -165,17 +168,24 @@ export const Catalog = () => {
           }`}
           onClick={handleMenuClick}
         />
+
         <div className="wrapper">
           <div className="catalog__filter-wrapper">
-            <button
-              className="catalog__filter-button catalog__filter-button_back"
-              type="button"
-              onClick={handleClick}
-              aria-label="Вернуться на главную"
-            ></button>
-            <h1 className="catalog__title">Каталог</h1>
+            {showCatalogList && (
+              <button
+                className="catalog__filter-button catalog__filter-button_back"
+                type="button"
+                onClick={handleResetFilter}
+                aria-label="Вернуться в начало каталога"
+              ></button>
+            )}
+            <h1 className="catalog__title" onClick={handleResetFilter}>
+              Каталог
+            </h1>
             <h1 className="catalog__title_s">
-              {findTitleByCategory(filter['type'], filterOptions)}
+              {showCatalogList
+                ? findTitleByCategory(filter['type'], filterOptions)
+                : 'Каталог'}
             </h1>
           </div>
           <p className="catalog__subtitle_s">
@@ -212,6 +222,15 @@ export const Catalog = () => {
                 windowWidth={windowWidth}
               />
             </div>
+            {showCatalogList && (
+              <button
+                className="catalog__button-reset"
+                type="button"
+                onClick={handleResetFilter}
+              >
+                Каталог
+              </button>
+            )}
             <Sort sortHandler={sortHandler} />
             <SearchForm
               searchHandler={searchHandler}
@@ -223,21 +242,27 @@ export const Catalog = () => {
               onClick={handleMenuClick}
               aria-label="Войти в меню фильтров"
             />
-            {windowWidth > 750 && (
-              <ShowList
-                data={ProductsData ? ProductsData : []}
-                message={infoMessage}
-              />
-            )}
+            {windowWidth > 750 &&
+              (showCatalogList ? (
+                <ShowList
+                  data={ProductsData ? ProductsData : []}
+                  message={infoMessage}
+                />
+              ) : (
+                <CatalogSection type="catalog" />
+              ))}
           </div>
         </div>
       </section>
-      {windowWidth <= 750 && (
-        <ShowList
-          data={ProductsData ? ProductsData : []}
-          message={infoMessage}
-        />
-      )}
+      {windowWidth <= 750 &&
+        (showCatalogList ? (
+          <ShowList
+            data={ProductsData ? ProductsData : []}
+            message={infoMessage}
+          />
+        ) : (
+          <CatalogSection type="catalog" />
+        ))}
     </>
   );
 };

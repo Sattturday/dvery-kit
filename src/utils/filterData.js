@@ -2,7 +2,7 @@ export const INITIAL_FILTER_STATE = {
   search: '',
   ordering: 'ascending',
 
-  type: 'entrance_door',
+  type: '',
   category: '',
   for_sale: false,
 
