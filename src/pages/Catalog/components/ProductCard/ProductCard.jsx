@@ -21,6 +21,11 @@ export const ProductCard = ({ cardData }) => {
   return (
     <div className="product-card" onClick={handleClick}>
       <div className="product-card__labels">
+        {cardData.new && (
+          <span className="product-card__label product-card__label_type_new">
+            Новинка
+          </span>
+        )}
         {cardData.for_sale && (
           <span className="product-card__label product-card__label_type_sale">
             Акция

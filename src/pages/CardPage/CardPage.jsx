@@ -85,11 +85,16 @@ export const CardPage = () => {
                 <div className="card-page__info">
                   <div className="card-page__title-block">
                     <h1 className="card-page__title">{data.name}</h1>
-                    {(data.for_sale || data.for_order) && (
+                    {(data.for_sale || data.for_order || data.new) && (
                       <div>
                         {data.for_order && (
                           <span className="card-page__label card-page__label_type_order">
                             Под заказ
+                          </span>
+                        )}
+                        {data.new && (
+                          <span className="card-page__label card-page__label_type_new">
+                            Новинка
                           </span>
                         )}
                         {data.for_sale && (
