@@ -49,6 +49,11 @@
       @include text-s($color-light-xl);
       background-color: $color-bg-light;
     }
+
+    &_new {
+      @include text-s($color-light-xl);
+      background-color: $color-bg-middle;
+    }
   }
 
   @include media-laptop {

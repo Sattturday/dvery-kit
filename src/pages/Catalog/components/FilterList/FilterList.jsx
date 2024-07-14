@@ -2,9 +2,10 @@ import React from 'react';
 
 import { InputCheckbox } from '../../../../components/InputCheckbox/InputCheckbox';
 import { filterOptions } from '../../../../utils/filterData';
+import { Button } from '../../../../components/Button/Button';
 import { FilterCheckbox } from '../FilterCheckbox/FilterCheckbox';
 import { InputSelect } from '../InputSelect/InputSelect';
-import { DoubleRange } from '../DoubleRange/DoubleRange';
+// import { DoubleRange } from '../DoubleRange/DoubleRange';
 
 import './FilterList.scss';
 
@@ -20,7 +21,7 @@ export function FilterList({
   return (
     <aside>
       <form className="filter" onSubmit={handleSubmit}>
-        {filterOptions.map((block) => {
+        {filterOptions.map(block => {
           return (
             <div key={block.id} className="filter__wrapper">
               {block.type === 'checkbox' ? (
@@ -49,7 +50,7 @@ export function FilterList({
                   />
                   {block.items && (
                     <ul className="filter__list">
-                      {block.items.map((item) => {
+                      {block.items.map(item => {
                         return (
                           <li key={item.id}>
                             <InputCheckbox
@@ -76,11 +77,21 @@ export function FilterList({
             </div>
           );
         })}
-        <DoubleRange
+        {/* <DoubleRange
           handleSubmit={handleSubmit}
           onMenuClick={onMenuClick}
           windowWidth={windowWidth}
-        />
+        /> */}
+        {windowWidth < 750 && (
+          <div style={{ paddingTop: '50px' }}>
+            <Button
+              size="large"
+              text="Применить"
+              type="button"
+              onClick={onMenuClick}
+            />
+          </div>
+        )}
       </form>
     </aside>
   );

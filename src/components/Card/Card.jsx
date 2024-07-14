@@ -7,6 +7,7 @@ import { Button } from '../Button/Button';
 import './Card.scss';
 
 export const Card = ({ data }) => {
+  console.log('data: ', data);
   const navigate = useNavigate();
 
   const src =
@@ -24,11 +25,14 @@ export const Card = ({ data }) => {
   return (
     <div className="card" onClick={handleClick}>
       <div className="card__labels">
+        {data.new && (
+          <span className="card__label card__label_type_new">Новинка</span>
+        )}
         {data.for_sale && (
           <span className="card__label card__label_type_sale">Акция</span>
         )}
         {data.for_order && (
-          <span className="card__label card__label_type_order">Под заказ </span>
+          <span className="card__label card__label_type_order">Под заказ</span>
         )}
       </div>
       <img src={src} alt={alt} className="card__image" />

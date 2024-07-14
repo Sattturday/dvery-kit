@@ -2,7 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   message: '',
-  image: {},
+  image: null,
+  images: [],
+  currentSlide: 0,
   isOpenCallPopup: false,
   isOpenInfoPopup: false,
   isOpenImagePopup: false,
@@ -10,13 +12,15 @@ const initialState = {
 
 const popupSlice = createSlice({
   name: 'popups',
-  initialState: initialState,
+  initialState,
   reducers: {
     closeAllPopups(state) {
       state.isOpenCallPopup = false;
       state.isOpenInfoPopup = false;
       state.isOpenImagePopup = false;
-      //state.image = {};
+      state.image = null;
+      state.images = [];
+      state.currentSlide = 0;
       state.message = '';
     },
     openCallPopup(state) {
@@ -29,7 +33,11 @@ const popupSlice = createSlice({
       state.message = action.payload;
     },
     setImage(state, action) {
-      state.image = action.payload;
+      state.currentSlide = action.payload;
+      state.image = state.images[action.payload];
+    },
+    setImages(state, action) {
+      state.images = action.payload;
     },
   },
 });
@@ -40,6 +48,7 @@ export const {
   openImagePopup,
   setMessage,
   setImage,
+  setImages,
 } = popupSlice.actions;
 
 export default popupSlice.reducer;
