@@ -3,6 +3,7 @@
 @import '../../styles/abstract/placeholders.scss';
 
 .popup {
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -27,6 +28,7 @@
   }
 
   &_type_image {
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
   }
 
@@ -50,6 +52,7 @@
   border-radius: 1.2rem;
 
   &_type_image {
+    max-width: 80vw;
     margin: 0;
     padding: 0;
     width: auto;
@@ -66,13 +69,6 @@
   @include text-l;
   @extend %font-thin;
   padding-bottom: 2rem;
-}
-
-.popup__image {
-  max-width: 75vw;
-  max-height: 75vh;
-  width: 100%;
-  aspect-ratio: auto;
 }
 
 .popup__close-btn {
@@ -95,6 +91,7 @@
   &_image {
     top: -2rem;
     right: -4rem;
+    background-image: url(../../images/icons/close_img.svg);
   }
 
   @include media-small {

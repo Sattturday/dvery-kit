@@ -5,7 +5,11 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { SliderVerticalButton } from '../../../../components/SliderVerticalButton/SliderVerticalButton';
-import { openImagePopup, setImage } from '../../../../store/popupsSlice';
+import {
+  openImagePopup,
+  setImage,
+  setImages,
+} from '../../../../store/popupsSlice';
 import { BASE_URL_IMG } from '../../../../utils/constants';
 import { SliderButton } from '../../../../components/SliderButton';
 
@@ -27,7 +31,7 @@ export const ImagesSlider = ({ images, sale }) => {
     arrows: true,
     prevArrow: <SliderButton type="prev" />,
     nextArrow: <SliderButton type="next" />,
-    afterChange: (current) => setCurrentSlide(current),
+    afterChange: current => setCurrentSlide(current),
   };
 
   const navSettings = {
@@ -41,10 +45,10 @@ export const ImagesSlider = ({ images, sale }) => {
     arrows: true,
     prevArrow: <SliderVerticalButton type="prev" />,
     nextArrow: <SliderVerticalButton type="next" />,
-    afterChange: (current) => setCurrentSlide(current),
+    afterChange: current => setCurrentSlide(current),
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = index => {
     sliderRef.current.slickGoTo(index);
   };
 
@@ -54,7 +58,8 @@ export const ImagesSlider = ({ images, sale }) => {
 
   // Обработчик открытия попапа с изображением
   const handleImagePopupOpen = () => {
-    dispatch(setImage(images[currentSlide]));
+    dispatch(setImages(images));
+    dispatch(setImage(currentSlide));
     dispatch(openImagePopup());
   };
 
