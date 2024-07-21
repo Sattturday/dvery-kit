@@ -9,6 +9,23 @@ export function buildUrlParams(filters) {
   }
 
   for (const key in filters) {
+    // Проверяем, есть ли параметы для пагинации
+    if (key === 'limit') {
+      params.append('limit', filters['limit']);
+      continue;
+    }
+
+    if (key === 'offset') {
+      params.append('offset', filters['offset']);
+      console.log('offset: ', filters['offset']);
+      continue;
+    }
+
+    if (key === 'currentPage') {
+      continue;
+    }
+
+    // Дальше проверям параметры для фильтрации
     if (key === 'ordering' && filters[key] === 'ascending') {
       params.append(key, 'price');
       continue;
