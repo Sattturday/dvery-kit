@@ -5,7 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import {
   setCategoryFilter,
   setCheckboxFilter,
+  setCurrentPageFilter,
   setFilterAllData,
+  setLimitFilter,
+  setOffsetFilter,
   setRequestFilter,
   setSortFilter,
   setTypeFilter,
@@ -35,7 +38,6 @@ export const Catalog = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const {
     data: ProductsData = [],
@@ -48,6 +50,8 @@ export const Catalog = () => {
     : error
     ? messages.errorMessage
     : '';
+
+  const totalPages = ProductsData.count % filter.limit;
 
   // Обработчик изменения строки поиска
   const searchHandler = value => {
@@ -62,15 +66,33 @@ export const Catalog = () => {
     }
   }, [dispatch]);
 
-  // Обработка изменений фильтра сортировки
+  // Определение limit
   useEffect(() => {
-    updateParamsUrl(filter);
-  }, [filter.ordering]);
+    if (windowWidth >= 1440) {
+      dispatch(setLimitFilter(8));
+    } else if (windowWidth < 1440 && windowWidth >= 1107) {
+      dispatch(setLimitFilter(9));
+    } else if (windowWidth < 1107 && windowWidth >= 1025) {
+      dispatch(setLimitFilter(6));
+    } else if (windowWidth < 1025 && windowWidth >= 998) {
+      dispatch(setLimitFilter(8));
+    } else if (windowWidth < 998 && windowWidth >= 766) {
+      dispatch(setLimitFilter(9));
+    } else if (windowWidth < 766 && windowWidth >= 751) {
+      dispatch(setLimitFilter(6));
+    } else if (windowWidth < 751 && windowWidth >= 630) {
+      dispatch(setLimitFilter(8));
+    } else if (windowWidth < 630 && windowWidth >= 468) {
+      dispatch(setLimitFilter(9));
+    } else {
+      dispatch(setLimitFilter(6));
+    }
+  }, [windowWidth]);
 
   // Обработка изменений фильтра сортировки
   useEffect(() => {
     updateParamsUrl(filter);
-  }, [filter]);
+  }, [filter.ordering, filter]);
 
   // useEffect для отслеживания изменений размеров окна
   useEffect(() => {
@@ -117,9 +139,6 @@ export const Catalog = () => {
   const selectHandler = key => {
     dispatch(setCategoryFilter(''));
     dispatch(setTypeFilter(key));
-    // if (key !== 'intrior_door') {
-    //   dispatch(setCategoryFilter(''));
-    // }
   };
 
   // Обработчик изменения флажков (radio)
@@ -158,6 +177,12 @@ export const Catalog = () => {
   };
 
   const showCatalogList = filter.search || filter.type || filter.category;
+
+  const handlePageChange = page => {
+    console.log('page: ', page);
+    dispatch(setCurrentPageFilter(page));
+    dispatch(setOffsetFilter(filter.limit * (page - 1)));
+  };
 
   return (
     <>
@@ -245,8 +270,11 @@ export const Catalog = () => {
             {windowWidth > 750 &&
               (showCatalogList ? (
                 <ShowList
-                  data={ProductsData ? ProductsData : []}
+                  data={ProductsData.results ? ProductsData.results : []}
                   message={infoMessage}
+                  currentPage={filter.currentPage}
+                  totalPages={totalPages}
+                  onPageChange={handlePageChange}
                 />
               ) : (
                 <CatalogSection type="catalog" />
@@ -257,8 +285,11 @@ export const Catalog = () => {
       {windowWidth <= 750 &&
         (showCatalogList ? (
           <ShowList
-            data={ProductsData ? ProductsData : []}
+            data={ProductsData.results ? ProductsData.results : []}
             message={infoMessage}
+            currentPage={filter.currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
           />
         ) : (
           <CatalogSection type="catalog" />

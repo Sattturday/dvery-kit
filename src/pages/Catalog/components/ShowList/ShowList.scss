@@ -2,7 +2,7 @@
 @import '../../../../styles/abstract/mixins.scss';
 @import '../../../../styles/abstract/placeholders.scss';
 
-.show-list {
+.show-list__block {
   width: 100%;
   grid-column: 2 / 4;
   display: grid;
@@ -21,13 +21,91 @@
   }
 
   @include media-small {
-    padding: 30rem 1.6rem 8rem;
+    padding: 27rem 1.6rem 1rem;
     justify-content: center;
     grid-column: 1 / 2;
   }
 
   @include media-mobile {
-    padding-top: 27rem;
+    padding-top: 25rem;
     gap: 1.6rem 1.4rem;
   }
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 0.6rem;
+  grid-column: 2 / 4;
+
+  @include media-medium {
+    grid-row: 4 / 5;
+  }
+
+  @include media-laptop {
+    grid-column: 3 / 4;
+  }
+
+  @include media-small {
+    padding: 1rem 1.6rem 2rem;
+    justify-content: center;
+    grid-column: 1 / 2;
+  }
+
+  @include media-mobile {
+    gap: 1.6rem 1.4rem;
+  }
+}
+
+.pagination__button {
+  @include button;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30rem;
+  border: 2px solid $color-bg;
+  @extend %transition-all;
+
+  @include media-hover {
+    &:hover {
+      color: $color-light-xl;
+      background-color: $color-bg;
+    }
+  }
+
+  &_active {
+    color: $color-light-xl;
+    background-color: $color-bg;
+  }
+
+  &_type {
+    &_prev {
+      width: 5.2rem;
+      background-image: url(../../../../images/icons/arrow-left-purple.svg);
+
+      @include media-hover {
+        &:hover {
+          background-image: url(../../../../images/icons/arrow-left.svg);
+        }
+      }
+    }
+
+    &_next {
+      width: 5.2rem;
+      background-image: url(../../../../images/icons/arrow-right-purple.svg);
+
+      @include media-hover {
+        &:hover {
+          background-image: url(../../../../images/icons/arrow-right.svg);
+        }
+      }
+    }
+  }
+}
+
+.pagination__dots {
+  @include text($color-bg);
+  padding: 0 0.6rem;
 }
