@@ -14,6 +14,11 @@ export const ProductCard = ({ cardData }) => {
       ? `${BASE_URL_IMG}${cardData.productalbum[0].image}`
       : '';
 
+  const alt =
+    cardData.productalbum.length !== 0
+      ? `${cardData.productalbum[0].name}`
+      : '';
+
   const handleClick = () => {
     navigate(`/cards/${cardData.id}`);
   };
@@ -37,7 +42,7 @@ export const ProductCard = ({ cardData }) => {
           </span>
         )}
       </div>
-      <img src={src} alt={cardData.name} className="product-card__image" />
+      <img src={src} alt={alt} className="product-card__image" />
       <div className="product-card__info">
         <h3 className="product-card__title">{cardData.name}</h3>
         <div className="product-card__price-container">
