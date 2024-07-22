@@ -9,6 +9,18 @@ const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
+    setLimitFilter(state, action) {
+      state.limit = action.payload;
+      saveToLocalStorage('filter', state);
+    },
+    setCurrentPageFilter(state, action) {
+      state.currentPage = action.payload;
+      saveToLocalStorage('filter', state);
+    },
+    setOffsetFilter(state, action) {
+      state.offset = action.payload;
+      saveToLocalStorage('filter', state);
+    },
     setRequestFilter(state, action) {
       state.search = action.payload;
       saveToLocalStorage('filter', state);
@@ -53,6 +65,9 @@ const filterSlice = createSlice({
 });
 
 export const {
+  setLimitFilter,
+  setCurrentPageFilter,
+  setOffsetFilter,
   setRequestFilter,
   setSortFilter,
   setTypeFilter,

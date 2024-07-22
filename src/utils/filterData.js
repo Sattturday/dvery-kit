@@ -1,4 +1,8 @@
 export const INITIAL_FILTER_STATE = {
+  limit: 8,
+  currentPage: 1,
+  offset: 0,
+
   search: '',
   ordering: 'ascending',
 
