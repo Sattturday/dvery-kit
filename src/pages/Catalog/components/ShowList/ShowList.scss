@@ -54,12 +54,13 @@
   }
 
   @include media-mobile {
-    gap: 1.6rem 1.4rem;
+    gap: 0.4rem;
   }
 }
 
 .pagination__button {
   @include button;
+  @include text($color-bg);
   width: 3.2rem;
   height: 3.2rem;
   background-position: center;
@@ -78,6 +79,10 @@
   &_active {
     color: $color-light-xl;
     background-color: $color-bg;
+  }
+
+  &_disable {
+    opacity: 0.6;
   }
 
   &_type {
@@ -108,4 +113,8 @@
 .pagination__dots {
   @include text($color-bg);
   padding: 0 0.6rem;
+
+  @include media-mobile {
+    padding: 0 0.4rem;
+  }
 }

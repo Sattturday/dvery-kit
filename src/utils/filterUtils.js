@@ -17,7 +17,6 @@ export function buildUrlParams(filters) {
 
     if (key === 'offset') {
       params.append('offset', filters['offset']);
-      console.log('offset: ', filters['offset']);
       continue;
     }
 

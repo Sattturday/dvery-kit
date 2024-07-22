@@ -51,11 +51,12 @@ export const Catalog = () => {
     ? messages.errorMessage
     : '';
 
-  const totalPages = ProductsData.count % filter.limit;
+  const totalPages = Math.ceil(ProductsData.count / filter.limit);
 
   // Обработчик изменения строки поиска
   const searchHandler = value => {
     dispatch(setRequestFilter(value));
+    handleResetPagination();
   };
 
   // Проверяем LS, если там есть состояния фильтров, то отправляем их в стор
@@ -128,23 +129,27 @@ export const Catalog = () => {
 
   const sortHandler = btnId => {
     dispatch(setSortFilter(btnId));
+    handleResetPagination();
   };
 
   // Обработчик изменения флажков (checkbox)
   const checkboxHandler = key => {
     dispatch(setCheckboxFilter(key));
+    handleResetPagination();
   };
 
   // Обработчик изменения флажков (select)
   const selectHandler = key => {
     dispatch(setCategoryFilter(''));
     dispatch(setTypeFilter(key));
+    handleResetPagination();
   };
 
   // Обработчик изменения флажков (radio)
   const radioHandler = key => {
     dispatch(setTypeFilter('interior_door'));
     dispatch(setCategoryFilter(key));
+    handleResetPagination();
   };
 
   // Функция для обработки отфильтрованных данных перед запросом на сервер
@@ -174,14 +179,19 @@ export const Catalog = () => {
   const handleResetFilter = () => {
     dispatch(setTypeFilter(''));
     dispatch(setCategoryFilter(''));
+    handleResetPagination();
   };
 
   const showCatalogList = filter.search || filter.type || filter.category;
 
   const handlePageChange = page => {
-    console.log('page: ', page);
     dispatch(setCurrentPageFilter(page));
     dispatch(setOffsetFilter(filter.limit * (page - 1)));
+  };
+
+  const handleResetPagination = () => {
+    dispatch(setCurrentPageFilter(1));
+    dispatch(setOffsetFilter(0));
   };
 
   return (
