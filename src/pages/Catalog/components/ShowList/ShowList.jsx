@@ -38,6 +38,7 @@ export const ShowList = ({
       setSecondBtn(currentPage - 1);
       setThirdBtn(currentPage);
     }
+    window.scrollTo(0, 0);
   }, [currentPage, totalPages]);
 
   const handlePreviousPage = () => {
@@ -55,13 +56,14 @@ export const ShowList = ({
   const getPaginationButtons = () => {
     const buttons = [];
 
-    if (totalPages > 3 && currentPage > 2) {
-      buttons.push(
-        <span key="ellipsis-prev" className="pagination__dots">
-          ...
-        </span>,
-      );
-    }
+    buttons.push(
+      <span
+        key="ellipsis-prev"
+        className="pagination__dots pagination__dots_prev"
+      >
+        {totalPages > 3 && currentPage > 2 ? '...' : ''}
+      </span>,
+    );
 
     buttons.push(
       <button
@@ -103,20 +105,21 @@ export const ShowList = ({
       );
     }
 
-    if (totalPages > 3 && currentPage < totalPages - 1) {
-      buttons.push(
-        <span key="ellipsis-next" className="pagination__dots">
-          ...
-        </span>,
-      );
-    }
+    buttons.push(
+      <span
+        key="ellipsis-next"
+        className="pagination__dots pagination__dots_next"
+      >
+        {totalPages > 3 && currentPage < totalPages - 1 ? '...' : ''}
+      </span>,
+    );
 
     return buttons;
   };
 
   return (
     <>
-      <div className="show-list__block">
+      <div className="show-list">
         {message ? (
           <p className="info-message">{message}</p>
         ) : data.length !== 0 ? (

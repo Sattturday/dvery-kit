@@ -69,15 +69,15 @@ export const Catalog = () => {
 
   // Определение limit
   useEffect(() => {
-    if (windowWidth >= 1440) {
+    if (windowWidth >= 1457) {
       dispatch(setLimitFilter(8));
-    } else if (windowWidth < 1440 && windowWidth >= 1107) {
+    } else if (windowWidth < 1440 && windowWidth >= 1124) {
       dispatch(setLimitFilter(9));
-    } else if (windowWidth < 1107 && windowWidth >= 1025) {
+    } else if (windowWidth < 1124 && windowWidth >= 1025) {
       dispatch(setLimitFilter(6));
-    } else if (windowWidth < 1025 && windowWidth >= 998) {
+    } else if (windowWidth < 1025 && windowWidth >= 1015) {
       dispatch(setLimitFilter(8));
-    } else if (windowWidth < 998 && windowWidth >= 766) {
+    } else if (windowWidth < 1015 && windowWidth >= 766) {
       dispatch(setLimitFilter(9));
     } else if (windowWidth < 766 && windowWidth >= 751) {
       dispatch(setLimitFilter(6));

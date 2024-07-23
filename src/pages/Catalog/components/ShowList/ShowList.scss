@@ -2,7 +2,7 @@
 @import '../../../../styles/abstract/mixins.scss';
 @import '../../../../styles/abstract/placeholders.scss';
 
-.show-list__block {
+.show-list {
   width: 100%;
   grid-column: 2 / 4;
   display: grid;
@@ -82,6 +82,7 @@
   }
 
   &_disable {
+    @include disabled;
     opacity: 0.6;
   }
 
@@ -112,9 +113,23 @@
 
 .pagination__dots {
   @include text($color-bg);
-  padding: 0 0.6rem;
+  width: 16px;
+
+  &_prev {
+    padding: 0 0 0 0.6rem;
+  }
+
+  &_next {
+    padding: 0 0.6rem 0 0;
+  }
 
   @include media-mobile {
-    padding: 0 0.4rem;
+    &_prev {
+      padding: 0 0 0 0.4rem;
+    }
+
+    &_next {
+      padding: 0 0.4rem 0 0;
+    }
   }
 }
