@@ -7,7 +7,6 @@ import { Button } from '../Button/Button';
 import './Card.scss';
 
 export const Card = ({ data }) => {
-  console.log('data: ', data);
   const navigate = useNavigate();
 
   const src =

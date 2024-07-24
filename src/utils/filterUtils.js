@@ -1,9 +1,10 @@
 // Функция для формирования строки параметров URL на основе фильтров
 export function buildUrlParams(filters) {
   const params = new URLSearchParams();
-
   // Проверяем, есть ли параметр search
   if (filters['search']) {
+    params.append('limit', filters['limit']);
+    params.append('offset', filters['offset']);
     params.append('search', filters['search']);
     return params.toString();
   }
