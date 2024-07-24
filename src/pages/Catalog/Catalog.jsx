@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 import {
   setCategoryFilter,
@@ -48,8 +47,8 @@ export const Catalog = () => {
   const infoMessage = isLoading
     ? messages.loadMessage
     : error
-    ? messages.errorMessage
-    : '';
+      ? messages.errorMessage
+      : '';
 
   const totalPages = Math.ceil(ProductsData.count / filter.limit);
 
