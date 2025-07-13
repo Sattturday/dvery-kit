@@ -136,6 +136,40 @@ export const CardPage = () => {
                 <div className="card-page__description">
                   <h2>Описание</h2>
                   <div dangerouslySetInnerHTML={{ __html: data.description }} />
+                  <p className="card-page__description-block card-page__description-block_slogan">
+                    Хорошим людям - хороший товар!
+                  </p>
+                  <p className="card-page__description-block">
+                    Подробности узнавайте в наших магазинах.
+                  </p>
+                  <p className="card-page__description-block">
+                    г.&nbsp;Новочебоксарск, ул.&nbsp;Винокурова, д.59,
+                    ТЦ&nbsp;-&nbsp;цокольный этаж{' '}
+                    <a
+                      className="card-page__description-block card-page__description-block_tel"
+                      href="tel:+79279991040"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      ☎ +7-927-999-10-40
+                    </a>
+                  </p>
+                  <p className="card-page__description-block">
+                    г.&nbsp;Новочебоксарск, ул.&nbsp;10&nbsp;Пятилетки, д.23а,
+                    2&nbsp;этаж, офис&nbsp;31{' '}
+                    <a
+                      className="card-page__description-block card-page__description-block_tel"
+                      href="tel:+79279991827"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      ☎ +7-927-999-18-27
+                    </a>
+                  </p>
+                  <p className="card-page__description-block">
+                    Оттенок на фотографии не всегда передает фактический оттенок
+                    товара и может отличаться. Нашли ошибку? Напишите нам!
+                  </p>
                 </div>
               </div>
               {data.color_product && <Colors colors={data.color_product} />}

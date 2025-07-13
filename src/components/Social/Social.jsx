@@ -6,7 +6,7 @@ export const Social = () => {
       <li>
         <a
           className="social__icon social__icon_type_vk"
-          href="http://vk.com/dveri_v_novocheboksarsk_dverikit"
+          href="https://vk.com/dveri_v_novocheboksarsk_do_ort"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="VK"

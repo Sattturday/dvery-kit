@@ -18,6 +18,7 @@
 
 .footer__container {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
 
   @include media-small {

@@ -20,7 +20,7 @@ export const Navigation = ({ onBurgerClick, menuOpen }) => {
       >
         <ul className="navigation__list">
           <li className="navigation__add">
-            <p className="navigation__location">Новочебоксарск | Канаш</p>
+            <p className="navigation__location">Новочебоксарск</p>
           </li>
           <li className="navigation__add">
             <CallButton type="menu" />

@@ -46,12 +46,13 @@
     }
 
     &_order {
-      @include text-s($color-light-xl);
+      @include text-s;
+      font-size: 1.3rem;
       background-color: $color-bg-light;
     }
 
     &_new {
-      @include text-s($color-light-xl);
+      @include text-s;
       background-color: $color-bg-middle;
     }
   }

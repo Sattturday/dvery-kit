@@ -52,12 +52,12 @@
   height: 14.4rem;
   display: flex;
   align-items: center;
-  border: 2px solid rgba(102, 0, 102, 0.4);
+  border: 2px solid rgba(143, 104, 86, 0.3);
   border-radius: 1rem;
   cursor: pointer;
 
   &_active {
-    border: 2px solid #660066;
+    border: 2px solid #e88d78;
   }
 }
 
