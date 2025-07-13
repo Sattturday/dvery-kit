@@ -15,7 +15,7 @@ export const SearchForm = ({ searchHandler, isSearchBarHidden }) => {
     useFormAndValidation();
 
   const dispatch = useDispatch();
-  const search = useSelector((state) => state.filter.search);
+  // const search = useSelector((state) => state.filter.search);
 
   useEffect(() => {
     // Проверяем LS, если там есть значение для поиска, то устанавливаем его в values

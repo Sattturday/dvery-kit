@@ -5,21 +5,36 @@
 .logo {
   @include link($color-light-xl);
   @extend %transition-all;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 
   @include media-hover {
     &:hover {
       transform: scale(1.03);
     }
   }
+
+  @include media-medium {
+    align-items: flex-end;
+  }
 }
 
 .logo__img {
-  width: 22.6rem;
-  height: 4.7rem;
+  width: 5rem;
+  height: 5rem;
   object-fit: contain;
 
   @include media-medium {
-    width: 12rem;
-    height: 2.4rem;
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}
+
+.logo__text {
+  @include text-l($color-light-xl);
+
+  @include media-medium {
+    @include text($color-light-xl);
   }
 }

@@ -1,4 +1,4 @@
-import img1 from '../../../../images/delivery_b.jpg';
+import img1 from '../../../../images/delivery-1.jpg';
 
 import './Delivery.scss';
 
@@ -22,9 +22,8 @@ export const Delivery = () => {
               вариант для&nbsp;вас!
             </p>
             <p className="delivery__description">
-              По телефону <span>+7-937-393-91-93</span> – <span>Двери-КИТ</span>{' '}
-              в г.Канаше, или <span>+7-927-999-10-40</span>{' '}
-              <span>Двери-КИТ</span> в г.Новчебоксарске.
+              По телефону <span>+7-927-999-10-40</span>{' '}
+              <span>"Двери и Окна ОРТ"</span> в г.Новчебоксарске.
             </p>
           </div>
         </div>
